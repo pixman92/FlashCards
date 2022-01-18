@@ -12,8 +12,8 @@ function makingEmail(){
     pushToEmail('sam@gmail.com');
 }
 function firstIndex(){
-    myJSONFlashCards[0] = '';
-    myJSONFlashCards.addMoreToIndex(0, [[0, ['email', 'sam@gmail.com']], [0, ['title', 'spanish']]]);
+    myJSONFlashCards.JSONobj.innerArray[0] = '';
+    myJSONFlashCards.addMoreToIndex(0, [['email', 'sam@gmail.com'],['title', 'spanish']]);
 }
 
 function addQuestionAddAnswer(question, answer){
