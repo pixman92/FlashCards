@@ -12,14 +12,19 @@ function makingEmail(){
     pushToEmail('sam@gmail.com');
 }
 function firstIndex(){
-    myJSONFlashCards.JSONobj.innerArray[0] = '';
-    myJSONFlashCards.addMoreToIndex(0, [['email', 'sam@gmail.com'],['title', 'spanish']]);
+    myJSONFlashCards.addMoreToIndex(0, [[[0], [['email', 'sam@gmail.com'],['title', 'spanish']]]]);
 }
 
 function addQuestionAddAnswer(question, answer){
-    myJSONFlashCards.addToObj([['question', question], ['answer', answer]]);
+    myJSONFlashCards.addToObj([[[0], [['question', question], ['answer', answer], ['score', -1]]]])
+    myJSONFlashCards.print();
 
 }
 
-// function
+function pushFlashCardData(){
+    // saves title and data
+    // to be pushed to Firebase
+    addToFirebaseBasedOnUID(myJSONFlashCards.JSONobj.innerArray[0][0][1][1], myJSONFlashCards.stringMe())
+
+}
 

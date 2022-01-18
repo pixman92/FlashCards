@@ -115,6 +115,7 @@ function pullEmailGetUIDWhere(emailSearch){
 }
  
 var foundMe = false;
+//helper function
 function runningThroughSavedArrays(savedArrayEmails, savedArrayUID, emailSearch){
     //function that takes the arrays, and runs through them
     //to find the corresponding email

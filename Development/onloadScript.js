@@ -4,5 +4,8 @@ window.onload = ()=>{
     
     makeInstanceFlashCards();
     firstIndex();
+    addQuestionAddAnswer('how tall are you?' , 'very tall')
+    addQuestionAddAnswer('time of day?', 'noon')
+    addQuestionAddAnswer('favorite hobby?', 'programming')
     
 };
