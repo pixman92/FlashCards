@@ -1,6 +1,12 @@
+
+
 var myJSONFlashCards;
 
-
+window.onload = ()=>{ 
+    makeInstance();
+    firstIndex();
+    
+};
 //creates the myJSONFlashCards instance
 function makeInstance(){
   myJSONFlashCards = new JSON_Instance();
@@ -16,5 +22,6 @@ function firstIndex(){
 
 function addQuestionAddAnswer(question, answer){
     myJSONFlashCards.addToObj([['question', question], ['answer', answer]]);
-    
+
 }
+
