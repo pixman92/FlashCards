@@ -1,5 +1,5 @@
 window.onload = ()=>{
-    init(); 
+    firebaseInit(); 
     collectionName = 'flashCards'; 
     
     makeInstanceFlashCards();

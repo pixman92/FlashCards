@@ -8,7 +8,7 @@
 
 // =================
 var db; 
-function init(){ 
+function firebaseInit(){ 
         //   var firebaseApp = firebase.initializeApp(firebaseConfig); 
         
         // adding Firebase to project
@@ -166,7 +166,7 @@ function addToFirebaseBasedOnUID(objName, dataString){
     
     // obj['test'] = JSON.stringify(obj['test']);
     try{
-        db.collection(collectionName).doc(savedUIDstr).set(obj, {merge: false});
+        db.collection(collectionName).doc(savedUIDstr).set(obj, {merge: true});
  
     }catch(err){
         console.log('Errored out, ', err);
