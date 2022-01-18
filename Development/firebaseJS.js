@@ -7,12 +7,6 @@
 
 
 // =================
-
-
-window.onload = ()=>{ 
-      init(); 
-      collectionName = 'flashCards'; 
-}; 
 var db; 
 function init(){ 
         //   var firebaseApp = firebase.initializeApp(firebaseConfig); 
