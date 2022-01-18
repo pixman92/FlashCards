@@ -25,6 +25,7 @@ function state(){
 
 // pulls emails from the 'shared Emails list'
 function pullEmails(){
+    // pulls emails from local memory - NOT Firebase
     console.log('emails', myJSON.JSONobj.innerArray[0]["emails"]);
 
     return myJSON.JSONobj.innerArray[0]["emails"];
