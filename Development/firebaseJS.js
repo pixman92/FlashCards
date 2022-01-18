@@ -162,13 +162,16 @@ function addToFirebaseBasedOnUID(objName, dataString){
     //pushes custom obj - using <objName> & <dataString>
     // to make custom obj, that is pushed to a record - found by UID
     // using previous <pullEmailGetUID()> function
+
+
+    // NOTE: merge:false - meaning - donwload WHOLE string, update it and push again, as in new string
     var obj = {};
     // obj[0] = objName;
     obj[objName.toString()] = dataString;
     
     // obj['test'] = JSON.stringify(obj['test']);
     try{
-        db.collection(collectionName).doc(savedUIDstr).set(obj, {merge: true});
+        db.collection(collectionName).doc(savedUIDstr).set(obj, {merge: false});
  
     }catch(err){
         console.log('Errored out, ', err);
