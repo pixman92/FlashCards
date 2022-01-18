@@ -1,9 +1,26 @@
 
 // =================
-// adding Firebase to project
+
+
+// const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+
+
+// =================
+
+
+window.onload = ()=>{ 
+      init(); 
+      collectionName = 'flashCards'; 
+}; 
+var db; 
+function init(){ 
+        //   var firebaseApp = firebase.initializeApp(firebaseConfig); 
+        
+        // adding Firebase to project
 // import Afirebase from 'firebase';
 
-const firebase = {
+const firebaseConfig = {
     apiKey: "AIzaSyBYD67JqdmGaAJpDyj8iLy1e5xXjB4rp-c",
     authDomain: "flashcards-ca11e.firebaseapp.com",
     projectId: "flashcards-ca11e",
@@ -11,26 +28,10 @@ const firebase = {
     messagingSenderId: "686642076264",
     appId: "1:686642076264:web:94d5224c8cf76aeb4779dd"
   };
-
- 
-// const firebaseApp = firebase.initializeApp(firebaseConfig);
-
-
-// // for database 
-// const db = firebaseApp.firestore();
-
-// =================
-
- 
-window.onload = ()=>{ 
-      init(); 
-      collectionName = 'flashCards'; 
-}; 
-var db; 
-function init(){ 
-//   var firebaseApp = firebase.initializeApp(firebaseConfig); 
-    
-    var db = firebase.firestore(); 
+  // // for database
+  var firebaseApp = firebase.initializeApp(firebaseConfig)
+  db = firebaseApp.firestore();
+    // var db = firebase.firestore(); 
 }
 
 // =================
@@ -52,6 +53,8 @@ function pushData(data){
   }) 
   .catch((error) => { 
       console.error("Error adding document: ", error); 
+    });
+}   
 // =================
 // adding Firebase to project
 // import firebase from 'firebase';
@@ -76,7 +79,7 @@ function pushData(data){
  
 // =================
 // basic adding email
-function pushToEmail(decision, newEmail){
+function pushToEmail(newEmail){
     //use this function to push new Email to Firebase 
     pushData({'email': newEmail});
 }
