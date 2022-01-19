@@ -7,7 +7,7 @@
 }
 .centerHorizontally2{
   margin: auto;
-  width: 50%;
+  width: 800px;
 }
 
 .displayGood{
@@ -44,6 +44,10 @@
     margin-top: 1em;
     margin-bottom: 1em;
 }
+/* ============================= */
+.none{
+    display: none;
+}
 
 /* ================= */
 
@@ -73,3 +77,35 @@
 .marginAllAround{
     margin: 1em 1em 1em 1em;
 }
+.paddingAllAround{
+    padding: .8em .8em .8em .8em ;
+}
+.paddingUp{
+    padding-top: 1.8em;
+}
+.paddingDown{
+    padding-bottom: 1.8em;
+
+}
+
+.left{
+    position: relative;
+    left: .8em;
+}
+.greyBorder{
+    border: 2px solid grey;
+}
+
+/* ============================= */
+.cardGrid {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 2em 2em; 
+    grid-template-areas: 
+      "title area1"
+      "title area2"; 
+}
+.title { grid-area: title; }
+.area1 { grid-area: area1; }
+.area2 { grid-area: area2; }

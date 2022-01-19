@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 12,
+            "activePatchIndex": 24,
             "patches": [
                 {
                     "date": 1642579062806,
@@ -56,6 +56,54 @@
                 {
                     "date": 1642580708756,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,6 +70,6 @@\n     font-size: 3em;\r\n }\r\n \r\n .marginAllAround{\r\n-    margin: 1em 1em 1em;\r\n+    margin: 1em 1em 1em 1em;\r\n }\r\n"
+                },
+                {
+                    "date": 1642580830326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     text-align: center;  \r\n }\r\n .centerHorizontally2{\r\n   margin: auto;\r\n-  width: 50%;\r\n+  width: 800px;\r\n }\r\n \r\n .displayGood{\r\n     display: block;\r\n"
+                },
+                {
+                    "date": 1642581115169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,4 +72,9 @@\n \r\n .marginAllAround{\r\n     margin: 1em 1em 1em 1em;\r\n }\r\n+\r\n+.left{\r\n+    position: relative;\r\n+    left: .8em;\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642581164827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,12 @@\n .marginUpAndDown{\r\n     margin-top: 1em;\r\n     margin-bottom: 1em;\r\n }\r\n+/* ============================= */\r\n+.none{\r\n+    display: none;\r\n+}\r\n \r\n /* ================= */\r\n \r\n .grid1{\r\n"
+                },
+                {
+                    "date": 1642581213621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,5 +80,8 @@\n \r\n .left{\r\n     position: relative;\r\n     left: .8em;\r\n+}\r\n+.greyBorder{\r\n+    border: solid grey 2px;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642581247417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,6 +82,6 @@\n     position: relative;\r\n     left: .8em;\r\n }\r\n .greyBorder{\r\n-    border: solid grey 2px;\r\n+    border: 2px solid grey;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642581286290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,8 +76,11 @@\n \r\n .marginAllAround{\r\n     margin: 1em 1em 1em 1em;\r\n }\r\n+.paddingAllAround{\r\n+    padding: .8em .8em .8em .8em ;\r\n+}\r\n \r\n .left{\r\n     position: relative;\r\n     left: .8em;\r\n"
+                },
+                {
+                    "date": 1642581463201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,5 +86,16 @@\n     left: .8em;\r\n }\r\n .greyBorder{\r\n     border: 2px solid grey;\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+/* ============================= */\r\n+.cardGrid {\r\n+    display: grid; \r\n+    grid-template-columns: 1fr 1fr; \r\n+    grid-template-rows: 1fr 1fr; \r\n+    gap: 2em 2em; \r\n+    grid-template-areas: \r\n+      \"title area1\"\r\n+      \"title area2\"; \r\n+  }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642581915363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -97,5 +97,14 @@\n     gap: 2em 2em; \r\n     grid-template-areas: \r\n       \"title area1\"\r\n       \"title area2\"; \r\n-  }\n\\ No newline at end of file\n+}\r\n+.item1{\r\n+    grid-area: title;\r\n+}\r\n+.item2{\r\n+    grid-area: area1;\r\n+}\r\n+.item3{\r\n+    grid-area: area2;\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642582340594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,18 +93,12 @@\n .cardGrid {\r\n     display: grid; \r\n     grid-template-columns: 1fr 1fr; \r\n     grid-template-rows: 1fr 1fr; \r\n-    gap: 2em 2em; \r\n+    gap: 0px 0px; \r\n     grid-template-areas: \r\n       \"title area1\"\r\n       \"title area2\"; \r\n-}\r\n-.item1{\r\n-    grid-area: title;\r\n-}\r\n-.item2{\r\n-    grid-area: area1;\r\n-}\r\n-.item3{\r\n-    grid-area: area2;\r\n\\ No newline at end of file\n-}\n+  }\r\n+.title { grid-area: title; }\r\n+.area1 { grid-area: area1; }\r\n+.area2 { grid-area: area2; }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642582396871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,12 +93,12 @@\n .cardGrid {\r\n     display: grid; \r\n     grid-template-columns: 1fr 1fr; \r\n     grid-template-rows: 1fr 1fr; \r\n-    gap: 0px 0px; \r\n+    gap: 2em 2em; \r\n     grid-template-areas: \r\n       \"title area1\"\r\n       \"title area2\"; \r\n-  }\r\n+}\r\n .title { grid-area: title; }\r\n .area1 { grid-area: area1; }\r\n .area2 { grid-area: area2; }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642582807423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,9 +79,16 @@\n }\r\n .paddingAllAround{\r\n     padding: .8em .8em .8em .8em ;\r\n }\r\n+.paddingUp{\r\n+    padding-top: 1em;\r\n+}\r\n+.paddingDown{\r\n+    padding-bottom: 1em;\r\n \r\n+}\r\n+\r\n .left{\r\n     position: relative;\r\n     left: .8em;\r\n }\r\n"
+                },
+                {
+                    "date": 1642582860172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,12 +80,12 @@\n .paddingAllAround{\r\n     padding: .8em .8em .8em .8em ;\r\n }\r\n .paddingUp{\r\n-    padding-top: 1em;\r\n+    padding-top: 1.8em;\r\n }\r\n .paddingDown{\r\n-    padding-bottom: 1em;\r\n+    padding-bottom: 1.8em;\r\n \r\n }\r\n \r\n .left{\r\n"
                 }
             ],
             "date": 1642579062806,

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 36,
+            "activePatchIndex": 43,
             "patches": [
                 {
                     "date": 1642578985874,
@@ -152,6 +152,34 @@
                 {
                     "date": 1642580743798,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n \r\n     //boxes for deckNames\r\n     changeCSS('boxMeCards', ['marginMe']);\r\n \r\n-    changeCSS('cardExample', ['marginAllAround', ''])\r\n-    changeCSS('deckNameText', ['headerFont'])\r\n+    changeCSS('cardExample', ['marginAllAround', '']);\r\n+    changeCSS('deckNameText', ['headerFont;])\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642580810153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n function runMyCSS(){\r\n-    changeCSS('firstScreen', ['centerHorizontally2', 'widthFull']);\r\n+    changeCSS('firstScreen', ['centerHorizontally2']);\r\n     changeCSS('deckMode', ['centerHorizontally']);\r\n \r\n     //header\r\n     changeCSS('headerDeckMode', ['headerFont']);\r\n@@ -8,6 +8,6 @@\n     //boxes for deckNames\r\n     changeCSS('boxMeCards', ['marginMe']);\r\n \r\n     changeCSS('cardExample', ['marginAllAround', '']);\r\n-    changeCSS('deckNameText', ['headerFont;])\r\n+    changeCSS('deckNameText', ['headerFont'])\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642580839038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n function runMyCSS(){\r\n-    changeCSS('firstScreen', ['centerHorizontally2']);\r\n+    changeCSS('firstScreen', ['centerHorizontally']);\r\n     changeCSS('deckMode', ['centerHorizontally']);\r\n \r\n     //header\r\n     changeCSS('headerDeckMode', ['headerFont']);\r\n"
+                },
+                {
+                    "date": 1642580847607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n function runMyCSS(){\r\n     changeCSS('firstScreen', ['centerHorizontally']);\r\n-    changeCSS('deckMode', ['centerHorizontally']);\r\n+    // changeCSS('deckMode', ['centerHorizontally']);\r\n \r\n     //header\r\n     changeCSS('headerDeckMode', ['headerFont']);\r\n \r\n"
+                },
+                {
+                    "date": 1642581171662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,8 @@\n function runMyCSS(){\r\n+\r\n+    changeCSS('box', ['none'])\r\n+\r\n     changeCSS('firstScreen', ['centerHorizontally']);\r\n     // changeCSS('deckMode', ['centerHorizontally']);\r\n \r\n     //header\r\n"
+                },
+                {
+                    "date": 1642581326237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n \r\n     //boxes for deckNames\r\n     changeCSS('boxMeCards', ['marginMe']);\r\n \r\n-    changeCSS('cardExample', ['marginAllAround', '']);\r\n+    changeCSS('cardExample', ['marginAllAround', 'greyBorder']);\r\n     changeCSS('deckNameText', ['headerFont'])\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642582114357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n     //boxes for deckNames\r\n     changeCSS('boxMeCards', ['marginMe']);\r\n \r\n     changeCSS('cardExample', ['marginAllAround', 'greyBorder']);\r\n-    changeCSS('deckNameText', ['headerFont'])\r\n+    changeCSS('deckNameText', ['headerFont', 'title'])\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642582523147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n     //boxes for deckNames\r\n     changeCSS('boxMeCards', ['marginMe']);\r\n \r\n     changeCSS('cardExample', ['marginAllAround', 'greyBorder']);\r\n-    changeCSS('deckNameText', ['headerFont', 'title'])\r\n+    changeCSS('deckNameText', ['headerFont'])\r\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1642578985874,
