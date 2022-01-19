@@ -30,49 +30,37 @@ async function pushFlashCardData(){
 }
 
 // =================
+
+
+// =================
+
+
+
+
+// =================
+
 var values = [];
-async function pushToRetrieveLocalVariable(entryName){
-    var keys = Object.keys(wholeDocDataPull[0]);
-    values = Object.values(wholeDocDataPull[0]);
-
-    console.log('keys', keys);
-    console.log('values', values);
-
-    var savedIndex = -1;
-    keys.forEach((item, index)=>{
-        console.log('item', item);
-        if(item == entryName){
-            savedIndex = index;
-            console.log('found index', index);
-        }
-    });
-
-    myJSONFlashCardsPULLED.insertJSON(values[savedIndex])
-}
-
-// =================
-
-async function tmp(){}
-var myJSONFlashCardsPULLED = {};
-async function makeFlashCardPulledInstance(){
-    myJSONFlashCardsPULLED = new JSON_Instance();
-
-}
-async function totalEmailSearch(emailSearch){
-    await tmp().then(async()=>{
-        await searchForEmailGetUID(emailSearch);
-        await pullDataBasedOnUID();
-        await makeFlashCardPulledInstance();
-        await pushToRetrieveLocalVariable('math');    
-    });
-
-}
-
-// =================
-
+var myJSONFlashCardsPULLED = {}; 
 async function getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName){
     // function to make a new instance OBJ, that will hold pulled JSON Data
     
+    totalEmailSearch(emailSearch, deckName);
+    async function totalEmailSearch(emailSearch){
+        await tmp().then(async()=>{
+            await searchForEmailGetUID(emailSearch);        //found local
+            await pullDataBasedOnUID();                     //found in script.js
+            await makeFlashCardPulledInstance();            //found local
+            await pushToRetrieveLocalVariable(deckName);    //found local
+        });
+    
+    }
+
+    // =============================
+    async function tmp(){}
+    async function makeFlashCardPulledInstance(){
+        myJSONFlashCardsPULLED = new JSON_Instance();
+    }
+    // =============================
     async function searchForEmailGetUID(emailSearch){
         var savedArrayUID = []; var savedArrayEmails = [];
         await db.collection(collectionName).get().then(async (querySnapshot) => {
@@ -100,6 +88,25 @@ async function getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName){
             });
         });
     
+    }
+    // =============================
+    async function pushToRetrieveLocalVariable(entryName){
+        var keys = Object.keys(wholeDocDataPull[0]);
+        values = Object.values(wholeDocDataPull[0]);
+    
+        console.log('keys', keys);
+        console.log('values', values);
+    
+        var savedIndex = -1;
+        keys.forEach((item, index)=>{
+            console.log('item', item);
+            if(item == entryName){
+                savedIndex = index;
+                console.log('found index', index);
+            }
+        });
+    
+        myJSONFlashCardsPULLED.insertJSON(values[savedIndex])
     }
     
 }
