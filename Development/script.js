@@ -153,14 +153,18 @@ function addQuestionAddAnswerToPullFlashCards(question, answer){
     myJSONFlashCardsPULLED.addToObj([[[0], [['question', question], ['answer', answer], ['score', -1]]]])
     myJSONFlashCards.print();
 }
-
 function pullFlashCardsManipulateTAGS(TAGMe){
     //this is the Indexing - to get to TAGS within the first element of Flash Card data
-    var myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1];
-    myTagsArray+=TAGMe;
-    myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1] = myTagsArray;
+    if(myJSONFlashCardsPULLED){
+        myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0];
     
-    console.log('am I updated?', myJSONFlashCardsPULLED);
+        myTagsArray.push(TAGMe);
+        myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0] = myTagsArray;
+        
+        pushFlashCardDataAfterEdit();
+    }else{
+        console.log('Destination - Undefined');
+    }
 }
 
 async function pushFlashCardDataAfterEdit(){
@@ -169,7 +173,7 @@ async function pushFlashCardDataAfterEdit(){
     // to be pushed to Firebase
 
     //title, JSON.stringMe() - my own JSON.stringify
-    addToFirebaseBasedOnUID(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1], myJSONFlashCards.stringMe())
+    addToFirebaseBasedOnUID(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1], myJSONFlashCardsPULLED.stringMe())
 }
 
 

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 52,
+            "activePatchIndex": 61,
             "patches": [
                 {
                     "date": 1642573411286,
@@ -216,6 +216,42 @@
                 {
                     "date": 1642576955920,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -156,9 +156,9 @@\n \r\n function pullFlashCardsManipulateTAGS(TAGMe){\r\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n     var myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1];\r\n-    myTagsArray.push(TAGMe)\r\n+    myTagsArray+=TAGMel\r\n     myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1] = myTagsArray;\r\n     \r\n     console.log('am I updated?', myJSONFlashCardsPULLED);\r\n }\r\n"
+                },
+                {
+                    "date": 1642577118680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -155,10 +155,10 @@\n }\r\n \r\n function pullFlashCardsManipulateTAGS(TAGMe){\r\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n-    var myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1];\r\n-    myTagsArray+=TAGMel\r\n+    var myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0];\r\n+    myTagsArray.append(TAGMe);\r\n     myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1] = myTagsArray;\r\n     \r\n     console.log('am I updated?', myJSONFlashCardsPULLED);\r\n }\r\n"
+                },
+                {
+                    "date": 1642577142911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -156,8 +156,9 @@\n \r\n function pullFlashCardsManipulateTAGS(TAGMe){\r\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n     var myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0];\r\n+    console.log('myTagsArray', myTagsArray);\r\n     myTagsArray.append(TAGMe);\r\n     myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1] = myTagsArray;\r\n     \r\n     console.log('am I updated?', myJSONFlashCardsPULLED);\r\n"
+                },
+                {
+                    "date": 1642577162782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -152,12 +152,12 @@\n function addQuestionAddAnswerToPullFlashCards(question, answer){\r\n     myJSONFlashCardsPULLED.addToObj([[[0], [['question', question], ['answer', answer], ['score', -1]]]])\r\n     myJSONFlashCards.print();\r\n }\r\n-\r\n+var myTagsArray\r\n function pullFlashCardsManipulateTAGS(TAGMe){\r\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n-    var myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0];\r\n+    myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0];\r\n     console.log('myTagsArray', myTagsArray);\r\n     myTagsArray.append(TAGMe);\r\n     myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1] = myTagsArray;\r\n     \r\n"
+                },
+                {
+                    "date": 1642577179541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -157,9 +157,9 @@\n function pullFlashCardsManipulateTAGS(TAGMe){\r\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n     myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0];\r\n     console.log('myTagsArray', myTagsArray);\r\n-    myTagsArray.append(TAGMe);\r\n+    myTagsArray.push(TAGMe);\r\n     myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1] = myTagsArray;\r\n     \r\n     console.log('am I updated?', myJSONFlashCardsPULLED);\r\n }\r\n"
+                },
+                {
+                    "date": 1642577185128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -152,13 +152,12 @@\n function addQuestionAddAnswerToPullFlashCards(question, answer){\r\n     myJSONFlashCardsPULLED.addToObj([[[0], [['question', question], ['answer', answer], ['score', -1]]]])\r\n     myJSONFlashCards.print();\r\n }\r\n-var myTagsArray\r\n function pullFlashCardsManipulateTAGS(TAGMe){\r\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n     myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0];\r\n-    console.log('myTagsArray', myTagsArray);\r\n+\r\n     myTagsArray.push(TAGMe);\r\n     myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1] = myTagsArray;\r\n     \r\n     console.log('am I updated?', myJSONFlashCardsPULLED);\r\n"
+                },
+                {
+                    "date": 1642577239213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -157,9 +157,9 @@\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n     myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0];\r\n \r\n     myTagsArray.push(TAGMe);\r\n-    myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1] = myTagsArray;\r\n+    myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0] = myTagsArray;\r\n     \r\n     console.log('am I updated?', myJSONFlashCardsPULLED);\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642577273956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -159,9 +159,9 @@\n \r\n     myTagsArray.push(TAGMe);\r\n     myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0] = myTagsArray;\r\n     \r\n-    console.log('am I updated?', myJSONFlashCardsPULLED);\r\n+    pushFlashCardDataAfterEdit();\r\n }\r\n \r\n async function pushFlashCardDataAfterEdit(){\r\n     await pullEmailGetUID('sam@gmail.com')\r\n"
+                },
+                {
+                    "date": 1642577329211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -168,9 +168,9 @@\n     // saves title and data\r\n     // to be pushed to Firebase\r\n \r\n     //title, JSON.stringMe() - my own JSON.stringify\r\n-    addToFirebaseBasedOnUID(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1], myJSONFlashCards.stringMe())\r\n+    addToFirebaseBasedOnUID(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1], myJSONFlashCardsPULLED.stringMe())\r\n }\r\n \r\n \r\n // =============================\r\n"
+                },
+                {
+                    "date": 1642577414318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -154,14 +154,18 @@\n     myJSONFlashCards.print();\r\n }\r\n function pullFlashCardsManipulateTAGS(TAGMe){\r\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n-    myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0];\r\n-\r\n-    myTagsArray.push(TAGMe);\r\n-    myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0] = myTagsArray;\r\n+    if(myJSONFlashCardsPULLED){\r\n+        myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0];\r\n     \r\n-    pushFlashCardDataAfterEdit();\r\n+        myTagsArray.push(TAGMe);\r\n+        myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0] = myTagsArray;\r\n+        \r\n+        pushFlashCardDataAfterEdit();\r\n+    }else{\r\n+        console.log('Destination - Undefined');\r\n+    }\r\n }\r\n \r\n async function pushFlashCardDataAfterEdit(){\r\n     await pullEmailGetUID('sam@gmail.com')\r\n"
                 }
             ],
             "date": 1642573411286,
