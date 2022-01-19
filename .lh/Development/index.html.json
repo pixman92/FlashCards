@@ -1,0 +1,22 @@
+{
+    "sourceFile": "Development/index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1642578608394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642578649387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,10 +42,11 @@\n \r\n <!-- ================= -->\r\n \r\n <script src=\"onloadScript.js\" defer></script>\r\n+<script src=\"firebaseJS.js\"></script>\r\n <script src=\"backgroundLogicScript.js\"></script>\r\n-<script src=\"firebaseJS.js\"></script>\r\n+<script src=\"foregroundHTMLScript.js\"></script>\r\n \r\n \r\n <!-- =================== -->\r\n <body>\r\n"
+                }
+            ],
+            "date": 1642578608394,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Flash Cards</title>\r\n</head>\r\n<link rel=\"stylesheet\" href=\"style.css\">\r\n\r\n\r\n<!-- //W3 CSS library -->\r\n<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">\r\n\r\n\r\n<!-- Firebase Background - Helper functions -->\r\n<script src=\"https://raw.githack.com/pixman92/Learned/master/WebBuilding/Javascript/firebase_background_functions.js\"></script>\r\n\r\n<!-- JSON instance -->\r\n<!-- <script src=\"https://raw.githubusercontent.com/pixman92/JSON_Instance/main/JSON_Instance.js\"></script> -->\r\n<script src=\"https://rawcdn.githack.com/pixman92/JSON_Instance/598c34b4cfe2b55c71ac3c9e40c36c1b1fc77ac9/JSON_Instance.js\"></script>\r\n\r\n<!-- changing CSS - strip it first, then replace \r\nthe magic? - the elem of DOM is held in memory!-->\r\n<script src=\"https://raw.githack.com/pixman92/CSS_Strip/main/changeCSS.js\"></script>\r\n\r\n\r\n\r\n\r\n<!-- GOOGLE Icons -->\r\n<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\">\r\n<!-- example -->\r\n<!-- <i class=\"material-icons\">home</i> -->\r\n\r\n\r\n<!-- cash script tag -->\r\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/cash/8.1.0/cash.min.js\"></script>\r\n\r\n<!-- ================= -->\r\n<script src=\"https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js\" defer></script>\r\n<script src=\"https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js\" defer></script>\r\n\r\n<!-- ================= -->\r\n\r\n<script src=\"onloadScript.js\" defer></script>\r\n<script src=\"backgroundLogicScript.js\"></script>\r\n<script src=\"firebaseJS.js\"></script>\r\n\r\n\r\n<!-- =================== -->\r\n<body>\r\n\r\n    <!-- TODO - boxes -->\r\n    \r\n\r\n    <!-- TODO - add a box - if previous box is NOT empty -->\r\n\r\n    <!-- TODO - save button -->\r\n\r\n\r\n    <div class=\"box centerHorizontally\">\r\n  \r\n        <div class=\"column\">\r\n          <div class=\"centerHorizontally grid1\">\r\n            Question:\r\n          </div>\r\n          <div class=\"question\">\r\n            <div class=\"questionBox centerHorizontaly grid1\">\r\n\r\n\r\n            </div>\r\n      \r\n          </div>\r\n      \r\n        </div>\r\n        <!-- ================= -->\r\n        <div class=\"column\">\r\n          <div class=\"centerHorizontally grid1\">\r\n            Answer:\r\n          </div>\r\n          <div class=\"answerBox centerHorizontaly grid1\">\r\n\r\n\r\n          </div>\r\n      \r\n      \r\n        </div>\r\n\r\n        <div class=\"column2\">\r\n          <div class=\"deleteColumn centerHorizontally\">\r\n            <!-- <button>X</button> -->\r\n\r\n          </div>\r\n\r\n        </div>\r\n        \r\n      </div>\r\n\r\n</body>\r\n</html>\r\n\r\n\r\n\r\n\r\n\r\n"
+        }
+    ]
+}
