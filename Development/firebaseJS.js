@@ -175,15 +175,3 @@ function addToFirebaseBasedOnUID(objName, dataString){
 }
  
 // ==================================
-var arrayMe = ["mainHomePage", "dynamicURLPage"];
-function hide() {
-    for (var i = 0; i < arrayMe.length; i++) {
-        document.querySelector('.' + arrayMe[i]).style.display = 'none';
-    }
- 
-}
- 
-function show(classIt) {
-    document.querySelector("." + classIt).style.display = 'block';
-}
- 

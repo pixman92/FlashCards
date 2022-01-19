@@ -1,0 +1,26 @@
+{
+    "sourceFile": "Development/onloadScript.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1642578822132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642578866008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,7 @@\n     // firstIndex();\r\n     // addQuestionAddAnswer('how tall are you?' , 'very tall')\r\n     // addQuestionAddAnswer('time of day?', 'noon')\r\n     // addQuestionAddAnswer('favorite hobby?', 'programming')\r\n+    hide();\r\n     show('deckMode')\r\n };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642579024984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,8 @@\n     // addQuestionAddAnswer('how tall are you?' , 'very tall')\r\n     // addQuestionAddAnswer('time of day?', 'noon')\r\n     // addQuestionAddAnswer('favorite hobby?', 'programming')\r\n     hide();\r\n-    show('deckMode')\r\n+    show('deckMode');\r\n+\r\n+    runMyCSS();\r\n };\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1642578822132,
+            "name": "Commit-0",
+            "content": "window.onload = ()=>{\r\n    firebaseInit(); \r\n    collectionName = 'flashCards'; \r\n    \r\n    makeInstanceFlashCards();\r\n    // firstIndex();\r\n    // addQuestionAddAnswer('how tall are you?' , 'very tall')\r\n    // addQuestionAddAnswer('time of day?', 'noon')\r\n    // addQuestionAddAnswer('favorite hobby?', 'programming')\r\n    show('deckMode')\r\n};"
+        }
+    ]
+}

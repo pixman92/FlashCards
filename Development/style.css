@@ -2,7 +2,15 @@
     display: flex;
     justify-content: center; /* horizontal */  
 }
-
+.center-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+  }
+  
 .column{
     float: left;
     width: 25%;
@@ -37,3 +45,11 @@
 .marginMe{
   margin-top:1.8em;
 }   
+
+/* ============================= */
+.width500px{
+    width: 500px;
+}
+.redText{
+    color: aqua;
+}

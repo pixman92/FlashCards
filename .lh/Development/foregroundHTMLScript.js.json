@@ -1,0 +1,38 @@
+{
+    "sourceFile": "Development/foregroundHTMLScript.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1642578758960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642578809698,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,4 +9,5 @@\n function show(classIt) {\r\n     document.querySelector(\".\" + classIt).style.display = 'block';\r\n }\r\n  \r\n+\r\n"
+                },
+                {
+                    "date": 1642578846195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-var arrayMe = [\"mainHomePage\", \"dynamicURLPage\", \"deckMode\"];\r\n+var arrayMe = [\"mainHomePage\", \"dynamicURLPage\", \"deckMode\", 'box'];\r\n function hide() {\r\n     for (var i = 0; i < arrayMe.length; i++) {\r\n         document.querySelector('.' + arrayMe[i]).style.display = 'none';\r\n     }\r\n"
+                },
+                {
+                    "date": 1642578853691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-var arrayMe = [\"mainHomePage\", \"dynamicURLPage\", \"deckMode\", 'box'];\r\n+var arrayMe = [\"mainHomePage\", \"dynamicURLPage\", \"deckMode\", \"box\"];\r\n function hide() {\r\n     for (var i = 0; i < arrayMe.length; i++) {\r\n         document.querySelector('.' + arrayMe[i]).style.display = 'none';\r\n     }\r\n"
+                },
+                {
+                    "date": 1642578884318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n-var arrayMe = [\"mainHomePage\", \"dynamicURLPage\", \"deckMode\", \"box\"];\r\n+var arrayOfClasses = [\"mainHomePage\", \"dynamicURLPage\", \"deckMode\", \"box\"];\r\n function hide() {\r\n-    for (var i = 0; i < arrayMe.length; i++) {\r\n-        document.querySelector('.' + arrayMe[i]).style.display = 'none';\r\n+    for (var i = 0; i < arrayOfClasses.length; i++) {\r\n+        document.querySelector('.' + arrayOfClasses[i]).style.display = 'none';\r\n     }\r\n  \r\n }\r\n  \r\n"
+                },
+                {
+                    "date": 1642578911128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-var arrayOfClasses = [\"mainHomePage\", \"dynamicURLPage\", \"deckMode\", \"box\"];\r\n+var arrayOfClasses = [\"deckMode\", \"box\"];\r\n function hide() {\r\n     for (var i = 0; i < arrayOfClasses.length; i++) {\r\n         document.querySelector('.' + arrayOfClasses[i]).style.display = 'none';\r\n     }\r\n"
+                }
+            ],
+            "date": 1642578758960,
+            "name": "Commit-0",
+            "content": "var arrayMe = [\"mainHomePage\", \"dynamicURLPage\", \"deckMode\"];\r\nfunction hide() {\r\n    for (var i = 0; i < arrayMe.length; i++) {\r\n        document.querySelector('.' + arrayMe[i]).style.display = 'none';\r\n    }\r\n \r\n}\r\n \r\nfunction show(classIt) {\r\n    document.querySelector(\".\" + classIt).style.display = 'block';\r\n}\r\n \r\n"
+        }
+    ]
+}
