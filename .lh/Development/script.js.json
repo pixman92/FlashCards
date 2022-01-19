@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 28,
+            "activePatchIndex": 33,
             "patches": [
                 {
                     "date": 1642573411286,
@@ -120,6 +120,26 @@
                 {
                     "date": 1642575682999,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,14 +38,18 @@\n }\r\n \r\n var holdingArr = [];\r\n function pushFlashCardsManipulateTAGS(tagsArray){\r\n-    run(tagsArray);\r\n-    function run(){\r\n-        holdingArr = Array.from(arguments);\r\n+    if(myJSONFlashCards.JSONobj.innerArray[0]){\r\n+        run(tagsArray);\r\n+        function run(){\r\n+            holdingArr = Array.from(arguments);\r\n+        }\r\n+        myJSONFlashCards.JSONobj.innerArray[0][0].push([['TAGS', holdingArr]]);\r\n+        // myJSONFlashCards.addToObj([[[0], holdingArr]]);\r\n+    }else{\r\n+        console.log('Destination - undefined!', );\r\n     }\r\n-    myJSONFlashCards.JSONobj.innerArray[0][0].push([['TAGS', holdingArr]]);\r\n-    // myJSONFlashCards.addToObj([[[0], holdingArr]]);\r\n }\r\n \r\n async function pushFlashCardData(){\r\n     await pullEmailGetUID('sam@gmail.com')\r\n"
+                },
+                {
+                    "date": 1642575740412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n \r\n function prepForSendingJSON(){\r\n     makeInstanceFlashCards();\r\n-    firstIndex(math);\r\n+    firstIndex('math');\r\n \r\n     // addQuestionAddAnswerToPushFlashCards(question, answer)\r\n     pushFlashCardData();\r\n }\r\n@@ -46,9 +46,9 @@\n         }\r\n         myJSONFlashCards.JSONobj.innerArray[0][0].push([['TAGS', holdingArr]]);\r\n         // myJSONFlashCards.addToObj([[[0], holdingArr]]);\r\n     }else{\r\n-        console.log('Destination - undefined!', );\r\n+        console.log('Destination - undefined!');\r\n     }\r\n }\r\n \r\n async function pushFlashCardData(){\r\n"
+                },
+                {
+                    "date": 1642575809270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,11 @@\n     makeInstanceFlashCards();\r\n     firstIndex('math');\r\n \r\n     // addQuestionAddAnswerToPushFlashCards(question, answer)\r\n+    pushFlashCardsManipulateTAGS(['lover', 'kind', 'royal', 'peace'])\r\n     pushFlashCardData();\r\n+\r\n }\r\n \r\n function prepForPullingJSON(){\r\n     getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName);\r\n"
+                },
+                {
+                    "date": 1642575820094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n \r\n function prepForSendingJSON(){\r\n     makeInstanceFlashCards();\r\n-    firstIndex('math');\r\n+    firstIndex('latin');\r\n \r\n     // addQuestionAddAnswerToPushFlashCards(question, answer)\r\n     pushFlashCardsManipulateTAGS(['lover', 'kind', 'royal', 'peace'])\r\n     pushFlashCardData();\r\n"
+                },
+                {
+                    "date": 1642575876129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n \r\n function prepForSendingJSON(){\r\n     makeInstanceFlashCards();\r\n-    firstIndex('latin');\r\n-\r\n+    firstIndex('history');\r\n+    addQuestionAddAnswerToPushFlashCards('WWII?', 'long time ago')\r\n+    addQuestionAddAnswerToPushFlashCards('Romans big success?', 'Trojan horse');\r\n     // addQuestionAddAnswerToPushFlashCards(question, answer)\r\n     pushFlashCardsManipulateTAGS(['lover', 'kind', 'royal', 'peace'])\r\n     pushFlashCardData();\r\n \r\n"
+                },
+                {
+                    "date": 1642576014685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -147,6 +147,8 @@\n     myJSONFlashCards.print();\r\n }\r\n \r\n function pullFlashCardsManipulateTAGS(){\r\n+    //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n+    var myTagsArray = myJSONFlashCards.JSONobj.innerArray[0][0][3][0][1];\r\n \r\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1642573411286,

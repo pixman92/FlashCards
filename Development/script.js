@@ -1,10 +1,13 @@
 
 function prepForSendingJSON(){
     makeInstanceFlashCards();
-    firstIndex(math);
-
+    firstIndex('history');
+    addQuestionAddAnswerToPushFlashCards('WWII?', 'long time ago')
+    addQuestionAddAnswerToPushFlashCards('Romans big success?', 'Trojan horse');
     // addQuestionAddAnswerToPushFlashCards(question, answer)
+    pushFlashCardsManipulateTAGS(['lover', 'kind', 'royal', 'peace'])
     pushFlashCardData();
+
 }
 
 function prepForPullingJSON(){
@@ -145,5 +148,7 @@ function addQuestionAddAnswerToPullFlashCards(question, answer){
 }
 
 function pullFlashCardsManipulateTAGS(){
+    //this is the Indexing - to get to TAGS within the first element of Flash Card data
+    var myTagsArray = myJSONFlashCards.JSONobj.innerArray[0][0][3][0][1];
 
 }
