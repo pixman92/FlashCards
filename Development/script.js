@@ -1,4 +1,20 @@
 
+function prepForSendingJSON(){
+    makeInstanceFlashCards();
+    firstIndex(math);
+
+    // addQuestionAddAnswerToPushFlashCards(question, answer)
+    pushFlashCardData();
+}
+
+function prepForPullingJSON(){
+    getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName);
+
+        
+}
+
+
+//=============================
 
 var myJSONFlashCards;
 
@@ -12,13 +28,27 @@ function makingEmail(){
     pushToEmail('sam@gmail.com');
 }
 function firstIndex(title){
-    myJSONFlashCards.addMoreToIndex(0, [[[0], [['email', 'sam@gmail.com'],['title', title]]]]);
+    myJSONFlashCards.addMoreToIndex(0, [[[0], [['emailOwner', 'sam@gmail.com'],['title', title], ['sharedWithEmails', '-1']]]]);
 }
 
-function addQuestionAddAnswer(question, answer){
+function addQuestionAddAnswerToPushFlashCards(question, answer){
     myJSONFlashCards.addToObj([[[0], [['question', question], ['answer', answer], ['score', -1]]]])
     myJSONFlashCards.print();
 
+}
+
+var holdingArr = [];
+function pushFlashCardsManipulateTAGS(tagsArray){
+    if(myJSONFlashCards.JSONobj.innerArray[0]){
+        run(tagsArray);
+        function run(){
+            holdingArr = Array.from(arguments);
+        }
+        myJSONFlashCards.JSONobj.innerArray[0][0].push([['TAGS', holdingArr]]);
+        // myJSONFlashCards.addToObj([[[0], holdingArr]]);
+    }else{
+        console.log('Destination - undefined!');
+    }
 }
 
 async function pushFlashCardData(){
@@ -29,12 +59,6 @@ async function pushFlashCardData(){
 
 }
 
-// =================
-
-
-// =================
-
-
 
 
 // =================
@@ -43,6 +67,7 @@ var values = [];
 var myJSONFlashCardsPULLED = {}; 
 async function getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName){
     // function to make a new instance OBJ, that will hold pulled JSON Data
+    // pushes out JSON data (my custom) - to myJSONFlashCardsPULLED
     
     totalEmailSearch(emailSearch, deckName);
     async function totalEmailSearch(emailSearch){
@@ -51,6 +76,7 @@ async function getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName){
             await pullDataBasedOnUID();                     //found in script.js
             await makeFlashCardPulledInstance();            //found local
             await pushToRetrieveLocalVariable(deckName);    //found local
+            myJSONFlashCardsPULLED.parseMe();
         });
     
     }
@@ -109,4 +135,15 @@ async function getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName){
         myJSONFlashCardsPULLED.insertJSON(values[savedIndex])
     }
     
+}
+
+
+// =============================
+function addQuestionAddAnswerToPullFlashCards(question, answer){
+    myJSONFlashCardsPULLED.addToObj([[[0], [['question', question], ['answer', answer], ['score', -1]]]])
+    myJSONFlashCards.print();
+}
+
+function pullFlashCardsManipulateTAGS(){
+
 }
