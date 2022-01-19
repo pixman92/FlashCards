@@ -70,7 +70,7 @@ async function totalEmailSearch(emailSearch){
 
 // =================
 
-async function getDataFromFirebaseToAddToJSONInstance(deckName){
+async function getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName){
     // function to make a new instance OBJ, that will hold pulled JSON Data
     
     async function searchForEmailGetUID(emailSearch){

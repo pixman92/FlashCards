@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1642573411286,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642573811126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n }\r\n \r\n // =================\r\n \r\n-async function getDataFromFirebaseToAddToJSONInstance(deckName){\r\n+async function getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName){\r\n     // function to make a new instance OBJ, that will hold pulled JSON Data\r\n     \r\n     async function searchForEmailGetUID(emailSearch){\r\n         var savedArrayUID = []; var savedArrayEmails = [];\r\n"
                 }
             ],
             "date": 1642573411286,
