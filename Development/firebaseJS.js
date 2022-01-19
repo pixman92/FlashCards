@@ -140,10 +140,10 @@ function runningThroughSavedArrays(savedArrayEmails, savedArrayUID, emailSearch)
  
 //=================
 var wholeDocDataPull = [];
-function pullDataBasedOnUID(){
+async function pullDataBasedOnUID(){
     //pulls based on a found 'savedUIDstr'
     try{
-        db.collection(collectionName).doc(savedUIDstr).get().then(doc =>{
+        await db.collection(collectionName).doc(savedUIDstr).get().then(doc =>{
             console.log(doc.data());
             wholeDocDataPull.push(doc.data());
             console.log('...saved to wholeDocDataPull...');

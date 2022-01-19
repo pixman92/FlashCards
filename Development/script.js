@@ -11,8 +11,8 @@ function makeInstanceFlashCards(){
 function makingEmail(){
     pushToEmail('sam@gmail.com');
 }
-function firstIndex(){
-    myJSONFlashCards.addMoreToIndex(0, [[[0], [['email', 'sam@gmail.com'],['title', 'randoms']]]]);
+function firstIndex(title){
+    myJSONFlashCards.addMoreToIndex(0, [[[0], [['email', 'sam@gmail.com'],['title', title]]]]);
 }
 
 function addQuestionAddAnswer(question, answer){
@@ -30,12 +30,77 @@ async function pushFlashCardData(){
 }
 
 // =================
-var myJSONFlashCardsPULLED;
-async function getDataFromFirebaseToAddToJSONInstance(){
+var values = [];
+async function pushToRetrieveLocalVariable(entryName){
+    var keys = Object.keys(wholeDocDataPull[0]);
+    values = Object.values(wholeDocDataPull[0]);
+
+    console.log('keys', keys);
+    console.log('values', values);
+
+    var savedIndex = -1;
+    keys.forEach((item, index)=>{
+        console.log('item', item);
+        if(item == entryName){
+            savedIndex = index;
+            console.log('found index', index);
+        }
+    });
+
+    myJSONFlashCardsPULLED.insertJSON(values[savedIndex])
+}
+
+// =================
+async function searchForEmailGetUID(emailSearch){
+    var savedArrayUID = []; var savedArrayEmails = [];
+    await db.collection(collectionName).get().then(async (querySnapshot) => {
+        await querySnapshot.forEach(async (doc) => {
+            await savedArrayUID.push(doc.id);
+            await savedArrayEmails.push(doc.data());
+            // console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
+        });
+    }).then(async ()=>{
+        await savedArrayEmails.forEach(async (item, index)=>{
+            // console.log(item) 
+            // console.log(item.email)
+            // console.log('index', index);
+            
+            if(item.email==emailSearch){
+                console.log('Found at ', index, ' index');
+                console.log( '=====\n', savedArrayUID[index]);
+     
+                savedUIDstr = savedArrayUID[index];
+                foundMe = true;
+            }
+            if(index>=savedArrayEmails.length-1 && foundMe==false){
+                console.log('not found');
+            }
+        });
+    });
+
+}
+async function tmp(){}
+var myJSONFlashCardsPULLED = {};
+async function makeFlashCardPulledInstance(){
+    myJSONFlashCardsPULLED = new JSON_Instance();
+
+}
+async function totalEmailSearch(emailSearch){
+    await tmp().then(async()=>{
+        await searchForEmailGetUID(emailSearch);
+        await pullDataBasedOnUID();
+        await makeFlashCardPulledInstance();
+        await pushToRetrieveLocalVariable('math');    
+    });
+
+}
+
+// =================
+
+async function getDataFromFirebaseToAddToJSONInstance(deckName){
     // function to make a new instance OBJ, that will hold pulled JSON Data
     
     // makeInstanceFlashCards();
-    // myJSONFlashCardsPULLED = new JSON_Instance();
     // await pullEmailGetUID('sam@gmail.com').then(async ()=>{
     //     await pullDataBasedOnUID();   
         
@@ -46,6 +111,7 @@ async function getDataFromFirebaseToAddToJSONInstance(){
 
     // this errors out, BUT it works!!
 
+
     main();
 
     async function main (){
@@ -53,6 +119,7 @@ async function getDataFromFirebaseToAddToJSONInstance(){
             let first = await one();
             let second = await two(first);        
             let third = await three(second);            
+            let fourth = await four(third);
         }catch(e){
             console.log(e);
             throw e;
@@ -62,19 +129,24 @@ async function getDataFromFirebaseToAddToJSONInstance(){
     
     async function one(){
         console.log('first');
-        await pullEmailGetUID('sam@gmail.com')
+        var myJSONFlashCardsPULLED = new JSON_Instance();
+
+        // await makeFlashCardPulledInstance()
+
     }
     
     async function two(){
         console.log('second');
-        await pullDataBasedOnUID();   
-
+        await pullEmailGetUID('sam@gmail.com')
+        
     }
     async function three(){
         console.log('third');
-        await myJSONFlashCardsPULLED.insertJSON(wholeDocDataPull[0].randoms)
-
-
+        await pullDataBasedOnUID();   
+    }
+    async function four(){
+        console.log('fourth');
+        await pushToRetrieveLocalVariable()
     }
     
     
