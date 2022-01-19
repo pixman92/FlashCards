@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 24,
             "patches": [
                 {
                     "date": 1642578608394,
@@ -28,6 +28,82 @@
                 {
                     "date": 1642579284777,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n     <!-- ============================= -->\r\n     <div class=\"deckMode\">\r\n       <div class=\"header\"><h1>Deck Names</h1></div>\r\n \r\n-      <div class=\"boxMe\"></div>\r\n+      <div class=\"boxMe\">asdfsdff</div>\r\n \r\n     </div>\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1642579435675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,13 +51,16 @@\n \r\n <!-- =================== -->\r\n <body>\r\n     <!-- ============================= -->\r\n-    <div class=\"deckMode\">\r\n-      <div class=\"header\"><h1>Deck Names</h1></div>\r\n+    <div class=\"whole\">\r\n+      <div class=\"deckMode\">\r\n+        <div class=\"header\">Deck Names</div>\r\n+  \r\n+        <div class=\"boxMe\">asdfsdff</div>\r\n+  \r\n+      </div>\r\n \r\n-      <div class=\"boxMe\">asdfsdff</div>\r\n-\r\n     </div>\r\n \r\n \r\n     <!-- ============================= -->\r\n"
+                },
+                {
+                    "date": 1642579481600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,19 +51,15 @@\n \r\n <!-- =================== -->\r\n <body>\r\n     <!-- ============================= -->\r\n-    <div class=\"whole\">\r\n       <div class=\"deckMode\">\r\n         <div class=\"header\">Deck Names</div>\r\n   \r\n         <div class=\"boxMe\">asdfsdff</div>\r\n   \r\n       </div>\r\n \r\n-    </div>\r\n-\r\n-\r\n     <!-- ============================= -->\r\n \r\n     <!-- TODO - boxes -->\r\n     \r\n"
+                },
+                {
+                    "date": 1642579624346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n \r\n <!-- =================== -->\r\n <body>\r\n     <!-- ============================= -->\r\n-      <div class=\"deckMode\">\r\n+      <div class=\"deckMode centerHorizontally\">\r\n         <div class=\"header\">Deck Names</div>\r\n   \r\n         <div class=\"boxMe\">asdfsdff</div>\r\n   \r\n"
+                },
+                {
+                    "date": 1642579689164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,8 +51,9 @@\n \r\n <!-- =================== -->\r\n <body>\r\n     <!-- ============================= -->\r\n+    <div class=\"firstScreen\"></div>\r\n       <div class=\"deckMode centerHorizontally\">\r\n         <div class=\"header\">Deck Names</div>\r\n   \r\n         <div class=\"boxMe\">asdfsdff</div>\r\n"
+                },
+                {
+                    "date": 1642579902323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n <!-- =================== -->\r\n <body>\r\n     <!-- ============================= -->\r\n     <div class=\"firstScreen\"></div>\r\n-      <div class=\"deckMode centerHorizontally\">\r\n+      <div class=\"deckMode \">\r\n         <div class=\"header\">Deck Names</div>\r\n   \r\n         <div class=\"boxMe\">asdfsdff</div>\r\n   \r\n"
+                },
+                {
+                    "date": 1642579928066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n <!-- =================== -->\r\n <body>\r\n     <!-- ============================= -->\r\n     <div class=\"firstScreen\"></div>\r\n-      <div class=\"deckMode \">\r\n+      <div class=\"deckMode\">\r\n         <div class=\"header\">Deck Names</div>\r\n   \r\n         <div class=\"boxMe\">asdfsdff</div>\r\n   \r\n"
+                },
+                {
+                    "date": 1642579947685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,10 +53,11 @@\n <body>\r\n     <!-- ============================= -->\r\n     <div class=\"firstScreen\"></div>\r\n       <div class=\"deckMode\">\r\n-        <div class=\"header\">Deck Names</div>\r\n+        <div class=\"headerDeckMode\">Deck Names</div>\r\n   \r\n+    \r\n         <div class=\"boxMe\">asdfsdff</div>\r\n   \r\n       </div>\r\n \r\n"
+                },
+                {
+                    "date": 1642580048383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,17 +51,19 @@\n \r\n <!-- =================== -->\r\n <body>\r\n     <!-- ============================= -->\r\n-    <div class=\"firstScreen\"></div>\r\n+    <div class=\"firstScreen\">\r\n       <div class=\"deckMode\">\r\n         <div class=\"headerDeckMode\">Deck Names</div>\r\n   \r\n     \r\n         <div class=\"boxMe\">asdfsdff</div>\r\n   \r\n       </div>\r\n \r\n+    </div>\r\n+\r\n     <!-- ============================= -->\r\n \r\n     <!-- TODO - boxes -->\r\n     \r\n"
+                },
+                {
+                    "date": 1642580140999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n \r\n <!-- =================== -->\r\n <body>\r\n     <!-- ============================= -->\r\n-    <div class=\"firstScreen\">\r\n+    <div class=\"firstScreen centerHorizontally\">\r\n       <div class=\"deckMode\">\r\n         <div class=\"headerDeckMode\">Deck Names</div>\r\n   \r\n     \r\n"
+                },
+                {
+                    "date": 1642580149075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,10 +51,10 @@\n \r\n <!-- =================== -->\r\n <body>\r\n     <!-- ============================= -->\r\n-    <div class=\"firstScreen centerHorizontally\">\r\n-      <div class=\"deckMode\">\r\n+    <div class=\"firstScreen\">\r\n+      <div class=\"deckMode centerHorizontally\">\r\n         <div class=\"headerDeckMode\">Deck Names</div>\r\n   \r\n     \r\n         <div class=\"boxMe\">asdfsdff</div>\r\n"
+                },
+                {
+                    "date": 1642580154953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n <!-- =================== -->\r\n <body>\r\n     <!-- ============================= -->\r\n     <div class=\"firstScreen\">\r\n-      <div class=\"deckMode centerHorizontally\">\r\n+      <div class=\"deckMode\">\r\n         <div class=\"headerDeckMode\">Deck Names</div>\r\n   \r\n     \r\n         <div class=\"boxMe\">asdfsdff</div>\r\n"
+                },
+                {
+                    "date": 1642580521880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,22 @@\n       <div class=\"deckMode\">\r\n         <div class=\"headerDeckMode\">Deck Names</div>\r\n   \r\n     \r\n-        <div class=\"boxMe\">asdfsdff</div>\r\n+        <div class=\"boxMe\">\r\n+          <div class=\"w3-card-2\">\r\n+            <div class=\"w3-container w3-blue\">\r\n+              <div class=\"deckNameText\">\r\n+\r\n+              </div>\r\n+              <div class=\"editBtn\"></div>\r\n+              <div class=\"studyBtn\"></div>\r\n+            </div>\r\n+            <div class=\"w3-container\">\r\n+\r\n+            </div>\r\n+          </div>\r\n+        </div>\r\n   \r\n       </div>\r\n \r\n     </div>\r\n"
+                },
+                {
+                    "date": 1642580529065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,11 @@\n               <div class=\"editBtn\"></div>\r\n               <div class=\"studyBtn\"></div>\r\n             </div>\r\n             <div class=\"w3-container\">\r\n-\r\n+              <div class=\"TAGS\">\r\n+                \r\n+              </div>\r\n             </div>\r\n           </div>\r\n         </div>\r\n   \r\n"
+                },
+                {
+                    "date": 1642580540029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,16 +60,16 @@\n         <div class=\"boxMe\">\r\n           <div class=\"w3-card-2\">\r\n             <div class=\"w3-container w3-blue\">\r\n               <div class=\"deckNameText\">\r\n-\r\n+                Spanish\r\n               </div>\r\n               <div class=\"editBtn\"></div>\r\n               <div class=\"studyBtn\"></div>\r\n             </div>\r\n             <div class=\"w3-container\">\r\n               <div class=\"TAGS\">\r\n-                \r\n+\r\n               </div>\r\n             </div>\r\n           </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1642580598581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,14 +62,14 @@\n             <div class=\"w3-container w3-blue\">\r\n               <div class=\"deckNameText\">\r\n                 Spanish\r\n               </div>\r\n-              <div class=\"editBtn\"></div>\r\n-              <div class=\"studyBtn\"></div>\r\n+              <div class=\"editBtn\"><button id=\"edit1\">Edit</button></div>\r\n+              <div class=\"studyBtn\"><button id=\"study1\">Study</button></div>\r\n             </div>\r\n             <div class=\"w3-container\">\r\n               <div class=\"TAGS\">\r\n-\r\n+                afasfasdsdf\r\n               </div>\r\n             </div>\r\n           </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1642580616894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n       <div class=\"deckMode\">\r\n         <div class=\"headerDeckMode\">Deck Names</div>\r\n   \r\n     \r\n-        <div class=\"boxMe\">\r\n+        <div class=\"boxMeCards\">\r\n           <div class=\"w3-card-2\">\r\n             <div class=\"w3-container w3-blue\">\r\n               <div class=\"deckNameText\">\r\n                 Spanish\r\n"
+                },
+                {
+                    "date": 1642580647323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n         <div class=\"headerDeckMode\">Deck Names</div>\r\n   \r\n     \r\n         <div class=\"boxMeCards\">\r\n-          <div class=\"w3-card-2\">\r\n+          <div class=\"w3-card-2 marginAllAround\">\r\n             <div class=\"w3-container w3-blue\">\r\n               <div class=\"deckNameText\">\r\n                 Spanish\r\n               </div>\r\n"
+                },
+                {
+                    "date": 1642580660694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n         <div class=\"headerDeckMode\">Deck Names</div>\r\n   \r\n     \r\n         <div class=\"boxMeCards\">\r\n-          <div class=\"w3-card-2 marginAllAround\">\r\n+          <div class=\"cardExample w3-card-2 marginAllAround\">\r\n             <div class=\"w3-container w3-blue\">\r\n               <div class=\"deckNameText\">\r\n                 Spanish\r\n               </div>\r\n"
+                },
+                {
+                    "date": 1642580758205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n         <div class=\"headerDeckMode\">Deck Names</div>\r\n   \r\n     \r\n         <div class=\"boxMeCards\">\r\n-          <div class=\"cardExample w3-card-2 marginAllAround\">\r\n+          <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n               <div class=\"deckNameText\">\r\n                 Spanish\r\n               </div>\r\n"
                 }
             ],
             "date": 1642578608394,

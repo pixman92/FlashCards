@@ -1,6 +1,17 @@
 .centerHorizontally{
     display: flex;
-    justify-content: center; /* horizontal */  
+    flex-direction: column;
+    justify-content: center; /* horizontal */
+    align-items: center;
+    text-align: center;  
+}
+.centerHorizontally2{
+  margin: auto;
+  width: 50%;
+}
+
+.displayGood{
+    display: block;
 }
 .center-screen {
     display: flex;
@@ -50,6 +61,15 @@
 .width500px{
     width: 500px;
 }
-.redText{
-    color: aqua;
+.widthFull{
+    width: 100%;
+}
+
+/* ============================= */
+.headerFont{
+    font-size: 3em;
+}
+
+.marginAllAround{
+    margin: 1em 1em 1em 1em;
 }

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1642578822132,
@@ -16,6 +16,14 @@
                 {
                     "date": 1642579024984,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,8 @@\n     // addQuestionAddAnswer('how tall are you?' , 'very tall')\r\n     // addQuestionAddAnswer('time of day?', 'noon')\r\n     // addQuestionAddAnswer('favorite hobby?', 'programming')\r\n     hide();\r\n-    show('deckMode')\r\n+    show('deckMode');\r\n+\r\n+    runMyCSS();\r\n };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642579666496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     // firstIndex();\r\n     // addQuestionAddAnswer('how tall are you?' , 'very tall')\r\n     // addQuestionAddAnswer('time of day?', 'noon')\r\n     // addQuestionAddAnswer('favorite hobby?', 'programming')\r\n+    runMyCSS();\r\n     hide();\r\n     show('deckMode');\r\n \r\n-    runMyCSS();\r\n };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642579698124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n     // addQuestionAddAnswer('time of day?', 'noon')\r\n     // addQuestionAddAnswer('favorite hobby?', 'programming')\r\n     runMyCSS();\r\n     hide();\r\n-    show('deckMode');\r\n+    show('firstScreen');\r\n \r\n };\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1642578822132,

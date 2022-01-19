@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 12,
             "patches": [
                 {
                     "date": 1642579062806,
@@ -16,6 +16,46 @@
                 {
                     "date": 1642579236292,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,17 @@\n .centerHorizontally{\r\n     display: flex;\r\n     justify-content: center; /* horizontal */  \r\n }\r\n-\r\n+.center-screen {\r\n+    display: flex;\r\n+    flex-direction: column;\r\n+    justify-content: center;\r\n+    align-items: center;\r\n+    text-align: center;\r\n+    min-height: 100vh;\r\n+  }\r\n+  \r\n .column{\r\n     float: left;\r\n     width: 25%;\r\n     height: 400px;\r\n"
+                },
+                {
+                    "date": 1642579550690,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,7 +49,10 @@\n /* ============================= */\r\n .width500px{\r\n     width: 500px;\r\n }\r\n+.widthFull{\r\n+    width: 100%;\r\n+}\r\n .redText{\r\n     color: aqua;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642579584872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n .centerHorizontally{\r\n     display: flex;\r\n-    justify-content: center; /* horizontal */  \r\n+    justify-content: center; /* horizontal */\r\n+    align-items: center;\r\n+    text-align: center;  \r\n }\r\n .center-screen {\r\n     display: flex;\r\n     flex-direction: column;\r\n"
+                },
+                {
+                    "date": 1642579806605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,5 +56,8 @@\n     width: 100%;\r\n }\r\n .redText{\r\n     color: aqua;\r\n+}\r\n+.displayGood{\r\n+    display: block;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642579879412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,10 +54,4 @@\n }\r\n .widthFull{\r\n     width: 100%;\r\n }\r\n-.redText{\r\n-    color: aqua;\r\n-}\r\n-.displayGood{\r\n-    display: block;\r\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642579985035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,11 @@\n     justify-content: center; /* horizontal */\r\n     align-items: center;\r\n     text-align: center;  \r\n }\r\n+.displayGood{\r\n+    display: block;\r\n+}\r\n .center-screen {\r\n     display: flex;\r\n     flex-direction: column;\r\n     justify-content: center;\r\n@@ -54,4 +57,9 @@\n }\r\n .widthFull{\r\n     width: 100%;\r\n }\r\n+\r\n+/* ============================= */\r\n+.headerFont{\r\n+    font-size: 3em;\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642580115378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n .centerHorizontally{\r\n     display: flex;\r\n+    flex-direction: column;\r\n     justify-content: center; /* horizontal */\r\n     align-items: center;\r\n     text-align: center;  \r\n }\r\n"
+                },
+                {
+                    "date": 1642580202331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,13 @@\n     justify-content: center; /* horizontal */\r\n     align-items: center;\r\n     text-align: center;  \r\n }\r\n+.centerHorizontaly2{\r\n+    margin: auto;\r\n+    width: 50%;\r\n+  }\r\n+\r\n .displayGood{\r\n     display: block;\r\n }\r\n .center-screen {\r\n"
+                },
+                {
+                    "date": 1642580224729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,12 @@\n     justify-content: center; /* horizontal */\r\n     align-items: center;\r\n     text-align: center;  \r\n }\r\n-.centerHorizontaly2{\r\n-    margin: auto;\r\n-    width: 50%;\r\n-  }\r\n+.centerHorizontally2{\r\n+  margin: auto;\r\n+  width: 50%;\r\n+}\r\n \r\n .displayGood{\r\n     display: block;\r\n }\r\n"
+                },
+                {
+                    "date": 1642580702500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,5 +67,9 @@\n \r\n /* ============================= */\r\n .headerFont{\r\n     font-size: 3em;\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+.marginAllAround{\r\n+    margin: 1em 1em 1em;\r\n+}\r\n"
+                },
+                {
+                    "date": 1642580708756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,6 +70,6 @@\n     font-size: 3em;\r\n }\r\n \r\n .marginAllAround{\r\n-    margin: 1em 1em 1em;\r\n+    margin: 1em 1em 1em 1em;\r\n }\r\n"
                 }
             ],
             "date": 1642579062806,

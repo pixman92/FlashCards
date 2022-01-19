@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1642578758960,
@@ -28,6 +28,10 @@
                 {
                     "date": 1642578911128,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-var arrayOfClasses = [\"mainHomePage\", \"dynamicURLPage\", \"deckMode\", \"box\"];\r\n+var arrayOfClasses = [\"deckMode\", \"box\"];\r\n function hide() {\r\n     for (var i = 0; i < arrayOfClasses.length; i++) {\r\n         document.querySelector('.' + arrayOfClasses[i]).style.display = 'none';\r\n     }\r\n"
+                },
+                {
+                    "date": 1642579711132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-var arrayOfClasses = [\"deckMode\", \"box\"];\r\n+var arrayOfClasses = [\"firstScreen\", \"box\"];\r\n function hide() {\r\n     for (var i = 0; i < arrayOfClasses.length; i++) {\r\n         document.querySelector('.' + arrayOfClasses[i]).style.display = 'none';\r\n     }\r\n"
                 }
             ],
             "date": 1642578758960,

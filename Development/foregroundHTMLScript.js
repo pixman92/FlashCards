@@ -1,4 +1,4 @@
-var arrayOfClasses = ["deckMode", "box"];
+var arrayOfClasses = ["firstScreen", "box"];
 function hide() {
     for (var i = 0; i < arrayOfClasses.length; i++) {
         document.querySelector('.' + arrayOfClasses[i]).style.display = 'none';
