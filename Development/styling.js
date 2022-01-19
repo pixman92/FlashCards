@@ -1,6 +1,9 @@
 function runMyCSS(){
-    changeCSS('firstScreen', ['centerHorizontally2', 'widthFull']);
-    changeCSS('deckMode', ['centerHorizontally']);
+
+    changeCSS('box', ['none'])
+
+    changeCSS('firstScreen', ['centerHorizontally']);
+    // changeCSS('deckMode', ['centerHorizontally']);
 
     //header
     changeCSS('headerDeckMode', ['headerFont']);
@@ -8,6 +11,6 @@ function runMyCSS(){
     //boxes for deckNames
     changeCSS('boxMeCards', ['marginMe']);
 
-    changeCSS('cardExample', ['marginAllAround', '']);
+    changeCSS('cardExample', ['marginAllAround', 'greyBorder']);
     changeCSS('deckNameText', ['headerFont'])
 }
