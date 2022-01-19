@@ -4,6 +4,7 @@
 // history/math/etc: deckNames
 //
 
+// 2 Functions - 1 goes up. 1 pulls down
 function prepForSendingJSON(){
     makeInstanceFlashCards();
     firstIndex('history');
@@ -25,7 +26,7 @@ function prepForPullingJSON(){
 
 //=============================
 
-var myJSONFlashCards;
+var myJSONFlashCards;       // global variable for 'pushed' variable
 
 
 //creates the myJSONFlashCards instance
@@ -48,6 +49,7 @@ function addQuestionAddAnswerToPushFlashCards(question, answer){
 
 var holdingArr = [];
 function pushFlashCardsManipulateTAGS(tagsArray){
+    // function to Edit tags!, take an Array, for 1st time creation
     if(myJSONFlashCards.JSONobj.innerArray[0]){
         run(tagsArray);
         function run(){
@@ -61,6 +63,7 @@ function pushFlashCardsManipulateTAGS(tagsArray){
 }
 
 async function pushFlashCardData(){
+    //function that pushes FlashCardData to Firebase
     await pullEmailGetUID('sam@gmail.com')
     // saves title and data
     // to be pushed to Firebase
@@ -146,12 +149,14 @@ async function searchForEmailGetUID(emailSearch){
     });
 
 }
-
-
-// =============================
+// ==========================================================
 function addQuestionAddAnswerToPullFlashCards(question, answer){
+    //function to add questions to PULLED OBJ
     myJSONFlashCardsPULLED.addToObj([[[0], [['question', question], ['answer', answer], ['score', -1]]]])
-    myJSONFlashCards.print();
+    myJSONFlashCardsPULLED.print();
+
+    
+    addToFirebaseBasedOnUID(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1], myJSONFlashCardsPULLED.stringMe())       //this code adds back, with NEW Q/As
 }
 function pullFlashCardsManipulateTAGS(TAGMe){
     //this is the Indexing - to get to TAGS within the first element of Flash Card data
@@ -167,6 +172,28 @@ function pullFlashCardsManipulateTAGS(TAGMe){
     }
 }
 
+function changeScore(index, newScore){
+    if(index!=0){
+        myJSONFlashCardsPULLED.JSONobj.innerArray[index][0][2][1] = newScore;
+    
+        pushFlashCardDataAfterEdit();
+    }else{
+        console.log('Cannot manipulate 0th index - RESTRICTED AREA -');
+    }
+}
+
+
+function deleteAQuestion(index){
+    if(index!=0){
+        myJSONFlashCardsPULLED.JSONobj.innerArray.splice(index, 1);
+        pushFlashCardDataAfterEdit();
+    }else{
+        console.log('Cannot delete 0th index, RESTRICTED AREA');
+    }
+
+}
+
+//=============================
 async function pushFlashCardDataAfterEdit(){
     await pullEmailGetUID('sam@gmail.com')
     // saves title and data
@@ -175,7 +202,6 @@ async function pushFlashCardDataAfterEdit(){
     //title, JSON.stringMe() - my own JSON.stringify
     addToFirebaseBasedOnUID(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1], myJSONFlashCardsPULLED.stringMe())
 }
-
 
 // =============================
 async function pullAllDocData(emailSearch){

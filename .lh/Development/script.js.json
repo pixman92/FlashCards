@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 61,
+            "activePatchIndex": 77,
             "patches": [
                 {
                     "date": 1642573411286,
@@ -252,6 +252,70 @@
                 {
                     "date": 1642577414318,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -154,14 +154,18 @@\n     myJSONFlashCards.print();\r\n }\r\n function pullFlashCardsManipulateTAGS(TAGMe){\r\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n-    myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0];\r\n-\r\n-    myTagsArray.push(TAGMe);\r\n-    myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0] = myTagsArray;\r\n+    if(myJSONFlashCardsPULLED){\r\n+        myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0];\r\n     \r\n-    pushFlashCardDataAfterEdit();\r\n+        myTagsArray.push(TAGMe);\r\n+        myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0] = myTagsArray;\r\n+        \r\n+        pushFlashCardDataAfterEdit();\r\n+    }else{\r\n+        console.log('Destination - Undefined');\r\n+    }\r\n }\r\n \r\n async function pushFlashCardDataAfterEdit(){\r\n     await pullEmailGetUID('sam@gmail.com')\r\n"
+                },
+                {
+                    "date": 1642577520229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n // email: is the Account holder\r\n // history/math/etc: deckNames\r\n //\r\n \r\n+// 2 Functions - 1 goes up. 1 pulls down\r\n function prepForSendingJSON(){\r\n     makeInstanceFlashCards();\r\n     firstIndex('history');\r\n     addQuestionAddAnswerToPushFlashCards('WWII?', 'long time ago')\r\n"
+                },
+                {
+                    "date": 1642577542294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \r\n \r\n //=============================\r\n \r\n-var myJSONFlashCards;\r\n+var myJSONFlashCards;       // global variable for 'pushed' variable\r\n \r\n \r\n //creates the myJSONFlashCards instance\r\n function makeInstanceFlashCards(){\r\n"
+                },
+                {
+                    "date": 1642577570074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,8 +48,9 @@\n }\r\n \r\n var holdingArr = [];\r\n function pushFlashCardsManipulateTAGS(tagsArray){\r\n+    // function to Edit tags!, take an Array, for 1st time creation\r\n     if(myJSONFlashCards.JSONobj.innerArray[0]){\r\n         run(tagsArray);\r\n         function run(){\r\n             holdingArr = Array.from(arguments);\r\n"
+                },
+                {
+                    "date": 1642577586758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,8 +62,9 @@\n     }\r\n }\r\n \r\n async function pushFlashCardData(){\r\n+    //function that pushes FlashCardData to Firebase\r\n     await pullEmailGetUID('sam@gmail.com')\r\n     // saves title and data\r\n     // to be pushed to Firebase\r\n     addToFirebaseBasedOnUID(myJSONFlashCards.JSONobj.innerArray[0][0][1][1], myJSONFlashCards.stringMe())\r\n"
+                },
+                {
+                    "date": 1642577601415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,11 +148,9 @@\n         });\r\n     });\r\n \r\n }\r\n-\r\n-\r\n-// =============================\r\n+// ==========================================================\r\n function addQuestionAddAnswerToPullFlashCards(question, answer){\r\n     myJSONFlashCardsPULLED.addToObj([[[0], [['question', question], ['answer', answer], ['score', -1]]]])\r\n     myJSONFlashCards.print();\r\n }\r\n"
+                },
+                {
+                    "date": 1642577631353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -150,8 +150,9 @@\n \r\n }\r\n // ==========================================================\r\n function addQuestionAddAnswerToPullFlashCards(question, answer){\r\n+    //function to add questions to PULLED OBJ\r\n     myJSONFlashCardsPULLED.addToObj([[[0], [['question', question], ['answer', answer], ['score', -1]]]])\r\n     myJSONFlashCards.print();\r\n }\r\n function pullFlashCardsManipulateTAGS(TAGMe){\r\n"
+                },
+                {
+                    "date": 1642577636973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -152,9 +152,9 @@\n // ==========================================================\r\n function addQuestionAddAnswerToPullFlashCards(question, answer){\r\n     //function to add questions to PULLED OBJ\r\n     myJSONFlashCardsPULLED.addToObj([[[0], [['question', question], ['answer', answer], ['score', -1]]]])\r\n-    myJSONFlashCards.print();\r\n+    myJSONFlashCardsPULLED.print();\r\n }\r\n function pullFlashCardsManipulateTAGS(TAGMe){\r\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n     if(myJSONFlashCardsPULLED){\r\n"
+                },
+                {
+                    "date": 1642577678569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,8 +153,11 @@\n function addQuestionAddAnswerToPullFlashCards(question, answer){\r\n     //function to add questions to PULLED OBJ\r\n     myJSONFlashCardsPULLED.addToObj([[[0], [['question', question], ['answer', answer], ['score', -1]]]])\r\n     myJSONFlashCardsPULLED.print();\r\n+\r\n+    \r\n+    addToFirebaseBasedOnUID(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1], myJSONFlashCardsPULLED.stringMe())       //this code adds back, with NEW Q/As\r\n }\r\n function pullFlashCardsManipulateTAGS(TAGMe){\r\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n     if(myJSONFlashCardsPULLED){\r\n"
+                },
+                {
+                    "date": 1642577918467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -180,9 +180,18 @@\n     //title, JSON.stringMe() - my own JSON.stringify\r\n     addToFirebaseBasedOnUID(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1], myJSONFlashCardsPULLED.stringMe())\r\n }\r\n \r\n+function deleteAQuestion(){\r\n+    if(index!=0){\r\n+        myJSONFlashCardsPULLED.JSONobj.innerArray.splice(index, 1);\r\n+    }else{\r\n+        console.log('Cannot delete 0th index, RESTRICTED AREA');\r\n+    }\r\n \r\n+}\r\n+\r\n+\r\n // =============================\r\n async function pullAllDocData(emailSearch){\r\n     //function to get ALL 'key' data from Firebase Decks\r\n     // essentially DeckNames\r\n"
+                },
+                {
+                    "date": 1642577948567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -180,11 +180,12 @@\n     //title, JSON.stringMe() - my own JSON.stringify\r\n     addToFirebaseBasedOnUID(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1], myJSONFlashCardsPULLED.stringMe())\r\n }\r\n \r\n-function deleteAQuestion(){\r\n+function deleteAQuestion(index){\r\n     if(index!=0){\r\n         myJSONFlashCardsPULLED.JSONobj.innerArray.splice(index, 1);\r\n+        pushFlashCardDataAfterEdit\r\n     }else{\r\n         console.log('Cannot delete 0th index, RESTRICTED AREA');\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1642578073715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -183,9 +183,9 @@\n \r\n function deleteAQuestion(index){\r\n     if(index!=0){\r\n         myJSONFlashCardsPULLED.JSONobj.innerArray.splice(index, 1);\r\n-        pushFlashCardDataAfterEdit\r\n+        pushFlashCardDataAfterEdit();\r\n     }else{\r\n         console.log('Cannot delete 0th index, RESTRICTED AREA');\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1642578207531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -171,16 +171,9 @@\n         console.log('Destination - Undefined');\r\n     }\r\n }\r\n \r\n-async function pushFlashCardDataAfterEdit(){\r\n-    await pullEmailGetUID('sam@gmail.com')\r\n-    // saves title and data\r\n-    // to be pushed to Firebase\r\n \r\n-    //title, JSON.stringMe() - my own JSON.stringify\r\n-    addToFirebaseBasedOnUID(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1], myJSONFlashCardsPULLED.stringMe())\r\n-}\r\n \r\n function deleteAQuestion(index){\r\n     if(index!=0){\r\n         myJSONFlashCardsPULLED.JSONobj.innerArray.splice(index, 1);\r\n@@ -190,9 +183,18 @@\n     }\r\n \r\n }\r\n \r\n+//=============================\r\n+async function pushFlashCardDataAfterEdit(){\r\n+    await pullEmailGetUID('sam@gmail.com')\r\n+    // saves title and data\r\n+    // to be pushed to Firebase\r\n \r\n+    //title, JSON.stringMe() - my own JSON.stringify\r\n+    addToFirebaseBasedOnUID(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1], myJSONFlashCardsPULLED.stringMe())\r\n+}\r\n+\r\n // =============================\r\n async function pullAllDocData(emailSearch){\r\n     //function to get ALL 'key' data from Firebase Decks\r\n     // essentially DeckNames\r\n"
+                },
+                {
+                    "date": 1642578255390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -171,10 +171,15 @@\n         console.log('Destination - Undefined');\r\n     }\r\n }\r\n \r\n+function changeScore(newScore){\r\n+    myJSONFlashCardsPULLED.JSONobj.innerArray[1][0][2][1] = newScore;\r\n \r\n+    pushFlashCardDataAfterEdit();\r\n+}\r\n \r\n+\r\n function deleteAQuestion(index){\r\n     if(index!=0){\r\n         myJSONFlashCardsPULLED.JSONobj.innerArray.splice(index, 1);\r\n         pushFlashCardDataAfterEdit();\r\n"
+                },
+                {
+                    "date": 1642578270225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -171,9 +171,9 @@\n         console.log('Destination - Undefined');\r\n     }\r\n }\r\n \r\n-function changeScore(newScore){\r\n+function changeScore(index, newScore){\r\n     myJSONFlashCardsPULLED.JSONobj.innerArray[1][0][2][1] = newScore;\r\n \r\n     pushFlashCardDataAfterEdit();\r\n }\r\n"
+                },
+                {
+                    "date": 1642578299652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -172,9 +172,9 @@\n     }\r\n }\r\n \r\n function changeScore(index, newScore){\r\n-    myJSONFlashCardsPULLED.JSONobj.innerArray[1][0][2][1] = newScore;\r\n+    myJSONFlashCardsPULLED.JSONobj.innerArray[index][0][2][1] = newScore;\r\n \r\n     pushFlashCardDataAfterEdit();\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642578387242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -172,11 +172,15 @@\n     }\r\n }\r\n \r\n function changeScore(index, newScore){\r\n-    myJSONFlashCardsPULLED.JSONobj.innerArray[index][0][2][1] = newScore;\r\n-\r\n-    pushFlashCardDataAfterEdit();\r\n+    if(index!=0){\r\n+        myJSONFlashCardsPULLED.JSONobj.innerArray[index][0][2][1] = newScore;\r\n+    \r\n+        pushFlashCardDataAfterEdit();\r\n+    }else{\r\n+        console.log('Cannot manipulate 0th index - RESTRICTED AREA -');\r\n+    }\r\n }\r\n \r\n \r\n function deleteAQuestion(index){\r\n"
                 }
             ],
             "date": 1642573411286,
