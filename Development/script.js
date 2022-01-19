@@ -1,4 +1,9 @@
 
+// Account Setup:
+// email: is the Account holder
+// history/math/etc: deckNames
+//
+
 function prepForSendingJSON(){
     makeInstanceFlashCards();
     firstIndex('history');
@@ -11,6 +16,7 @@ function prepForSendingJSON(){
 }
 
 function prepForPullingJSON(){
+    emailSearch = "sam@gmail.com"; deckName = 'history';
     getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName);
 
         
@@ -90,34 +96,7 @@ async function getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName){
         myJSONFlashCardsPULLED = new JSON_Instance();
     }
     // =============================
-    async function searchForEmailGetUID(emailSearch){
-        var savedArrayUID = []; var savedArrayEmails = [];
-        await db.collection(collectionName).get().then(async (querySnapshot) => {
-            await querySnapshot.forEach(async (doc) => {
-                await savedArrayUID.push(doc.id);
-                await savedArrayEmails.push(doc.data());
-                // console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
-            });
-        }).then(async ()=>{
-            await savedArrayEmails.forEach(async (item, index)=>{
-                // console.log(item) 
-                // console.log(item.email)
-                // console.log('index', index);
-                
-                if(item.email==emailSearch){
-                    console.log('Found at ', index, ' index');
-                    console.log( '=====\n', savedArrayUID[index]);
-         
-                    savedUIDstr = savedArrayUID[index];
-                    foundMe = true;
-                }
-                if(index>=savedArrayEmails.length-1 && foundMe==false){
-                    console.log('not found');
-                }
-            });
-        });
     
-    }
     // =============================
     async function pushToRetrieveLocalVariable(entryName){
         var keys = Object.keys(wholeDocDataPull[0]);
@@ -139,6 +118,34 @@ async function getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName){
     }
     
 }
+async function searchForEmailGetUID(emailSearch){
+    var savedArrayUID = []; var savedArrayEmails = [];
+    await db.collection(collectionName).get().then(async (querySnapshot) => {
+        await querySnapshot.forEach(async (doc) => {
+            await savedArrayUID.push(doc.id);
+            await savedArrayEmails.push(doc.data());
+            // console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
+        });
+    }).then(async ()=>{
+        await savedArrayEmails.forEach(async (item, index)=>{
+            // console.log(item) 
+            // console.log(item.email)
+            // console.log('index', index);
+            
+            if(item.email==emailSearch){
+                console.log('Found at ', index, ' index');
+                console.log( '=====\n', savedArrayUID[index]);
+     
+                savedUIDstr = savedArrayUID[index];
+                foundMe = true;
+            }
+            if(index>=savedArrayEmails.length-1 && foundMe==false){
+                console.log('not found');
+            }
+        });
+    });
+
+}
 
 
 // =============================
@@ -147,8 +154,32 @@ function addQuestionAddAnswerToPullFlashCards(question, answer){
     myJSONFlashCards.print();
 }
 
-function pullFlashCardsManipulateTAGS(){
+function pullFlashCardsManipulateTAGS(TAGMe){
     //this is the Indexing - to get to TAGS within the first element of Flash Card data
-    var myTagsArray = myJSONFlashCards.JSONobj.innerArray[0][0][3][0][1];
+    var myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1];
+    myTagsArray+=TAGMe;
+    myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1] = myTagsArray;
+    
+    console.log('am I updated?', myJSONFlashCardsPULLED);
+}
 
+async function pushFlashCardDataAfterEdit(){
+    await pullEmailGetUID('sam@gmail.com')
+    // saves title and data
+    // to be pushed to Firebase
+
+    //title, JSON.stringMe() - my own JSON.stringify
+    addToFirebaseBasedOnUID(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1], myJSONFlashCards.stringMe())
+}
+
+
+// =============================
+async function pullAllDocData(emailSearch){
+    //function to get ALL 'key' data from Firebase Decks
+    // essentially DeckNames
+    await searchForEmailGetUID(emailSearch);        //found local
+    await pullDataBasedOnUID();  
+    console.log('wholeDocDataPull', wholeDocDataPull);
+    var keys = Object.keys(wholeDocDataPull[0]);
+    console.log('keys!', keys);
 }

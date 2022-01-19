@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 33,
+            "activePatchIndex": 52,
             "patches": [
                 {
                     "date": 1642573411286,
@@ -140,6 +140,82 @@
                 {
                     "date": 1642576014685,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -147,6 +147,8 @@\n     myJSONFlashCards.print();\r\n }\r\n \r\n function pullFlashCardsManipulateTAGS(){\r\n+    //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n+    var myTagsArray = myJSONFlashCards.JSONobj.innerArray[0][0][3][0][1];\r\n \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642576087953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n     pushFlashCardData();\r\n \r\n }\r\n \r\n-function prepForPullingJSON(){\r\n+function prepForPullingJSON(emailSearch, deckName){\r\n+    emailSearch = \"sam@gmail.com\"; deckName = 'history';\r\n     getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName);\r\n \r\n         \r\n }\r\n"
+                },
+                {
+                    "date": 1642576132887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -151,5 +151,11 @@\n function pullFlashCardsManipulateTAGS(){\r\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n     var myTagsArray = myJSONFlashCards.JSONobj.innerArray[0][0][3][0][1];\r\n \r\n+}\r\n+\r\n+\r\n+// =============================\r\n+function pullAllDocData(searchEmail){\r\n+    \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642576158978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -156,6 +156,7 @@\n \r\n \r\n // =============================\r\n function pullAllDocData(searchEmail){\r\n-    \r\n+    await searchForEmailGetUID(emailSearch);        //found local\r\n+    await pullDataBasedOnUID();  \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642576177559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,36 +90,9 @@\n     async function makeFlashCardPulledInstance(){\r\n         myJSONFlashCardsPULLED = new JSON_Instance();\r\n     }\r\n     // =============================\r\n-    async function searchForEmailGetUID(emailSearch){\r\n-        var savedArrayUID = []; var savedArrayEmails = [];\r\n-        await db.collection(collectionName).get().then(async (querySnapshot) => {\r\n-            await querySnapshot.forEach(async (doc) => {\r\n-                await savedArrayUID.push(doc.id);\r\n-                await savedArrayEmails.push(doc.data());\r\n-                // console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);\r\n-            });\r\n-        }).then(async ()=>{\r\n-            await savedArrayEmails.forEach(async (item, index)=>{\r\n-                // console.log(item) \r\n-                // console.log(item.email)\r\n-                // console.log('index', index);\r\n-                \r\n-                if(item.email==emailSearch){\r\n-                    console.log('Found at ', index, ' index');\r\n-                    console.log( '=====\\n', savedArrayUID[index]);\r\n-         \r\n-                    savedUIDstr = savedArrayUID[index];\r\n-                    foundMe = true;\r\n-                }\r\n-                if(index>=savedArrayEmails.length-1 && foundMe==false){\r\n-                    console.log('not found');\r\n-                }\r\n-            });\r\n-        });\r\n     \r\n-    }\r\n     // =============================\r\n     async function pushToRetrieveLocalVariable(entryName){\r\n         var keys = Object.keys(wholeDocDataPull[0]);\r\n         values = Object.values(wholeDocDataPull[0]);\r\n@@ -139,10 +112,38 @@\n         myJSONFlashCardsPULLED.insertJSON(values[savedIndex])\r\n     }\r\n     \r\n }\r\n+async function searchForEmailGetUID(emailSearch){\r\n+    var savedArrayUID = []; var savedArrayEmails = [];\r\n+    await db.collection(collectionName).get().then(async (querySnapshot) => {\r\n+        await querySnapshot.forEach(async (doc) => {\r\n+            await savedArrayUID.push(doc.id);\r\n+            await savedArrayEmails.push(doc.data());\r\n+            // console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);\r\n+        });\r\n+    }).then(async ()=>{\r\n+        await savedArrayEmails.forEach(async (item, index)=>{\r\n+            // console.log(item) \r\n+            // console.log(item.email)\r\n+            // console.log('index', index);\r\n+            \r\n+            if(item.email==emailSearch){\r\n+                console.log('Found at ', index, ' index');\r\n+                console.log( '=====\\n', savedArrayUID[index]);\r\n+     \r\n+                savedUIDstr = savedArrayUID[index];\r\n+                foundMe = true;\r\n+            }\r\n+            if(index>=savedArrayEmails.length-1 && foundMe==false){\r\n+                console.log('not found');\r\n+            }\r\n+        });\r\n+    });\r\n \r\n+}\r\n \r\n+\r\n // =============================\r\n function addQuestionAddAnswerToPullFlashCards(question, answer){\r\n     myJSONFlashCardsPULLED.addToObj([[[0], [['question', question], ['answer', answer], ['score', -1]]]])\r\n     myJSONFlashCards.print();\r\n"
+                },
+                {
+                    "date": 1642576207939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -159,5 +159,6 @@\n // =============================\r\n function pullAllDocData(searchEmail){\r\n     await searchForEmailGetUID(emailSearch);        //found local\r\n     await pullDataBasedOnUID();  \r\n+    console.log('wholeDocDataPull', wholeDocDataPull);\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642576217563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -156,9 +156,9 @@\n }\r\n \r\n \r\n // =============================\r\n-function pullAllDocData(searchEmail){\r\n+function pullAllDocData(emailSearch){\r\n     await searchForEmailGetUID(emailSearch);        //found local\r\n     await pullDataBasedOnUID();  \r\n     console.log('wholeDocDataPull', wholeDocDataPull);\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642576232501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -156,9 +156,9 @@\n }\r\n \r\n \r\n // =============================\r\n-function pullAllDocData(emailSearch){\r\n+async function pullAllDocData(emailSearch){\r\n     await searchForEmailGetUID(emailSearch);        //found local\r\n     await pullDataBasedOnUID();  \r\n     console.log('wholeDocDataPull', wholeDocDataPull);\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642576269211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -160,5 +160,7 @@\n async function pullAllDocData(emailSearch){\r\n     await searchForEmailGetUID(emailSearch);        //found local\r\n     await pullDataBasedOnUID();  \r\n     console.log('wholeDocDataPull', wholeDocDataPull);\r\n+    var keys = Object.keys(wholeDocDataPull[0]);\r\n+    console.log('keys!', keys);\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642576416822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,10 @@\n \r\n+// Account Setup:\r\n+// email: is the Account holder\r\n+// history/math/etc: deckNames\r\n+//\r\n+\r\n function prepForSendingJSON(){\r\n     makeInstanceFlashCards();\r\n     firstIndex('history');\r\n     addQuestionAddAnswerToPushFlashCards('WWII?', 'long time ago')\r\n"
+                },
+                {
+                    "date": 1642576466414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -159,9 +159,15 @@\n     var myTagsArray = myJSONFlashCards.JSONobj.innerArray[0][0][3][0][1];\r\n \r\n }\r\n \r\n+async function pushFlashCardDataAfterEdit(){\r\n+    await pullEmailGetUID('sam@gmail.com')\r\n+    // saves title and data\r\n+    // to be pushed to Firebase\r\n+    addToFirebaseBasedOnUID(myJSONFlashCards.JSONobj.innerArray[0][0][1][1], myJSONFlashCards.stringMe())\r\n \r\n+\r\n // =============================\r\n async function pullAllDocData(emailSearch){\r\n     await searchForEmailGetUID(emailSearch);        //found local\r\n     await pullDataBasedOnUID();  \r\n"
+                },
+                {
+                    "date": 1642576494667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -163,9 +163,10 @@\n async function pushFlashCardDataAfterEdit(){\r\n     await pullEmailGetUID('sam@gmail.com')\r\n     // saves title and data\r\n     // to be pushed to Firebase\r\n-    addToFirebaseBasedOnUID(myJSONFlashCards.JSONobj.innerArray[0][0][1][1], myJSONFlashCards.stringMe())\r\n+    addToFirebaseBasedOnUID(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1], myJSONFlashCards.stringMe())\r\n+}\r\n \r\n \r\n // =============================\r\n async function pullAllDocData(emailSearch){\r\n"
+                },
+                {
+                    "date": 1642576581679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -163,8 +163,10 @@\n async function pushFlashCardDataAfterEdit(){\r\n     await pullEmailGetUID('sam@gmail.com')\r\n     // saves title and data\r\n     // to be pushed to Firebase\r\n+\r\n+    //title, JSON.stringMe() - my own JSON.stringify\r\n     addToFirebaseBasedOnUID(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1], myJSONFlashCards.stringMe())\r\n }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1642576610983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     pushFlashCardData();\r\n \r\n }\r\n \r\n-function prepForPullingJSON(emailSearch, deckName){\r\n+function prepForPullingJSON(){\r\n     emailSearch = \"sam@gmail.com\"; deckName = 'history';\r\n     getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName);\r\n \r\n         \r\n"
+                },
+                {
+                    "date": 1642576686219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -171,8 +171,10 @@\n \r\n \r\n // =============================\r\n async function pullAllDocData(emailSearch){\r\n+    //function to get ALL 'key' data from Firebase Decks\r\n+    // essentially DeckNames\r\n     await searchForEmailGetUID(emailSearch);        //found local\r\n     await pullDataBasedOnUID();  \r\n     console.log('wholeDocDataPull', wholeDocDataPull);\r\n     var keys = Object.keys(wholeDocDataPull[0]);\r\n"
+                },
+                {
+                    "date": 1642576827394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,12 +153,15 @@\n     myJSONFlashCardsPULLED.addToObj([[[0], [['question', question], ['answer', answer], ['score', -1]]]])\r\n     myJSONFlashCards.print();\r\n }\r\n \r\n-function pullFlashCardsManipulateTAGS(){\r\n+function pullFlashCardsManipulateTAGS(arrtaayMe){\r\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n     var myTagsArray = myJSONFlashCards.JSONobj.innerArray[0][0][3][0][1];\r\n \r\n+    \r\n+\r\n+    myTagsArray.push(TAGMe)\r\n }\r\n \r\n async function pushFlashCardDataAfterEdit(){\r\n     await pullEmailGetUID('sam@gmail.com')\r\n"
+                },
+                {
+                    "date": 1642576832794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,9 +153,9 @@\n     myJSONFlashCardsPULLED.addToObj([[[0], [['question', question], ['answer', answer], ['score', -1]]]])\r\n     myJSONFlashCards.print();\r\n }\r\n \r\n-function pullFlashCardsManipulateTAGS(arrtaayMe){\r\n+function pullFlashCardsManipulateTAGS(TAGMe){\r\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n     var myTagsArray = myJSONFlashCards.JSONobj.innerArray[0][0][3][0][1];\r\n \r\n     \r\n"
+                },
+                {
+                    "date": 1642576860862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -155,13 +155,12 @@\n }\r\n \r\n function pullFlashCardsManipulateTAGS(TAGMe){\r\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n-    var myTagsArray = myJSONFlashCards.JSONobj.innerArray[0][0][3][0][1];\r\n+    var myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1];\r\n+    myTagsArray.push(TAGMe)\r\n+    myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1] = myTagsArray;\r\n \r\n-    \r\n-\r\n-    myTagsArray.push(TAGMe)\r\n }\r\n \r\n async function pushFlashCardDataAfterEdit(){\r\n     await pullEmailGetUID('sam@gmail.com')\r\n"
+                },
+                {
+                    "date": 1642576897004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -158,9 +158,10 @@\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n     var myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1];\r\n     myTagsArray.push(TAGMe)\r\n     myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1] = myTagsArray;\r\n-\r\n+    \r\n+    console.log('am I updated?', myJSONFlashCardsPULLED);\r\n }\r\n \r\n async function pushFlashCardDataAfterEdit(){\r\n     await pullEmailGetUID('sam@gmail.com')\r\n"
+                },
+                {
+                    "date": 1642576955920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -156,9 +156,9 @@\n \r\n function pullFlashCardsManipulateTAGS(TAGMe){\r\n     //this is the Indexing - to get to TAGS within the first element of Flash Card data\r\n     var myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1];\r\n-    myTagsArray.push(TAGMe)\r\n+    myTagsArray+=TAGMel\r\n     myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1] = myTagsArray;\r\n     \r\n     console.log('am I updated?', myJSONFlashCardsPULLED);\r\n }\r\n"
                 }
             ],
             "date": 1642573411286,
