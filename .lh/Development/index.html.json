@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 81,
+            "activePatchIndex": 92,
             "patches": [
                 {
                     "date": 1642578608394,
@@ -332,6 +332,50 @@
                 {
                     "date": 1642665628091,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -139,9 +139,9 @@\n         </div>\r\n \r\n           <div class=\"gridAddButton\">\r\n             <div class=\"tmp\"></div>\r\n-            <div class=\"addButton rightMe\"><button id=\"add\">+</button></div>\r\n+            <div class=\"rightMe\"><button class=\"addButton\" id=\"add\">+</button></div>\r\n           </div>\r\n       </div>\r\n   </div>\r\n \r\n"
+                },
+                {
+                    "date": 1642666523664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,9 +124,9 @@\n             Deck1\r\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n-            <div class=\"boxComboDynamic  marginBottom\">\r\n+            <div class=\"marginBottom\">\r\n               <div class=\"leftDiv\"></div>\r\n               <div class=\"middleDiv flexMiddle\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n"
+                },
+                {
+                    "date": 1642666557185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,9 +124,9 @@\n             Deck1\r\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n-            <div class=\"marginBottom\">\r\n+            <div class=\"gridMe marginBottom \">\r\n               <div class=\"leftDiv\"></div>\r\n               <div class=\"middleDiv flexMiddle\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n"
+                },
+                {
+                    "date": 1642666599375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,9 +124,9 @@\n             Deck1\r\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n-            <div class=\"gridMe marginBottom \">\r\n+            <div class=\"marginBottom \">\r\n               <div class=\"leftDiv\"></div>\r\n               <div class=\"middleDiv flexMiddle\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n"
+                },
+                {
+                    "date": 1642666612644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,9 +124,9 @@\n             Deck1\r\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n-            <div class=\"marginBottom \">\r\n+            <div class=\"flexMiddl marginBottom \">\r\n               <div class=\"leftDiv\"></div>\r\n               <div class=\"middleDiv flexMiddle\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n"
+                },
+                {
+                    "date": 1642666615323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,9 +124,9 @@\n             Deck1\r\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n-            <div class=\"flexMiddl marginBottom \">\r\n+            <div class=\"flexMiddle marginBottom \">\r\n               <div class=\"leftDiv\"></div>\r\n               <div class=\"middleDiv flexMiddle\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n"
+                },
+                {
+                    "date": 1642667210250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,11 +124,11 @@\n             Deck1\r\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n-            <div class=\"flexMiddle marginBottom \">\r\n+            <div class=\"meToFlex marginBottom \">\r\n               <div class=\"leftDiv\"></div>\r\n-              <div class=\"middleDiv flexMiddle\">\r\n+              <div class=\"middleDiv\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n               </div>\r\n               <div class=\"rightDiv\">\r\n"
+                },
+                {
+                    "date": 1642667362072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,9 +126,9 @@\n         </div>\r\n         <div class=\"addingCards\">\r\n             <div class=\"meToFlex marginBottom \">\r\n               <div class=\"leftDiv\"></div>\r\n-              <div class=\"middleDiv\">\r\n+              <div class=\"middleDiv flexMiddle\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n               </div>\r\n               <div class=\"rightDiv\">\r\n"
+                },
+                {
+                    "date": 1642667377230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,9 +126,9 @@\n         </div>\r\n         <div class=\"addingCards\">\r\n             <div class=\"meToFlex marginBottom \">\r\n               <div class=\"leftDiv\"></div>\r\n-              <div class=\"middleDiv flexMiddle\">\r\n+              <div class=\"middleDiv\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n               </div>\r\n               <div class=\"rightDiv\">\r\n"
+                },
+                {
+                    "date": 1642667529354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,9 +126,9 @@\n         </div>\r\n         <div class=\"addingCards\">\r\n             <div class=\"meToFlex marginBottom \">\r\n               <div class=\"leftDiv\"></div>\r\n-              <div class=\"middleDiv\">\r\n+              <div class=\"middleDiv flexMeHere\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n               </div>\r\n               <div class=\"rightDiv\">\r\n"
+                },
+                {
+                    "date": 1642667620957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,9 +126,9 @@\n         </div>\r\n         <div class=\"addingCards\">\r\n             <div class=\"meToFlex marginBottom \">\r\n               <div class=\"leftDiv\"></div>\r\n-              <div class=\"middleDiv flexMeHere\">\r\n+              <div class=\"middleDiv flexMeHere flexMiddle2\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n               </div>\r\n               <div class=\"rightDiv\">\r\n"
+                },
+                {
+                    "date": 1642667996295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,9 +124,9 @@\n             Deck1\r\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n-            <div class=\"meToFlex marginBottom \">\r\n+            <div class=\"marginBottom \">\r\n               <div class=\"leftDiv\"></div>\r\n               <div class=\"middleDiv flexMeHere flexMiddle2\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n"
                 }
             ],
             "date": 1642578608394,

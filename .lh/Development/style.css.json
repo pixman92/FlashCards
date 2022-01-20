@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 152,
+            "activePatchIndex": 168,
             "patches": [
                 {
                     "date": 1642579062806,
@@ -616,6 +616,70 @@
                 {
                     "date": 1642665952736,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -233,9 +233,9 @@\n }\r\n .gridMeSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns:  6.5fr .2fr;\r\n+    grid-template-columns: .2fr 6.5fr .2fr;\r\n     /* justify-items: center; */\r\n     column-gap:.02em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642666564656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -171,9 +171,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 9fr 1fr;\r\n+    grid-template-columns: 9fr 1fr;\r\n     /* grid-template-columns: % 85% 15%; */\r\n     /* justify-items: center; */\r\n     column-gap:6em;\r\n }\r\n"
+                },
+                {
+                    "date": 1642666574344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -171,12 +171,12 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 9fr 1fr;\r\n+    grid-template-columns: 1fr 9fr 1fr;\r\n     /* grid-template-columns: % 85% 15%; */\r\n     /* justify-items: center; */\r\n-    column-gap:6em;\r\n+    column-gap:1em;\r\n }\r\n \r\n /* .flexText{\r\n     margin-left:auto;\r\n"
+                },
+                {
+                    "date": 1642666582026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -174,9 +174,9 @@\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: 1fr 9fr 1fr;\r\n     /* grid-template-columns: % 85% 15%; */\r\n     /* justify-items: center; */\r\n-    column-gap:1em;\r\n+    column-gap:1px;\r\n }\r\n \r\n /* .flexText{\r\n     margin-left:auto;\r\n"
+                },
+                {
+                    "date": 1642666590316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -174,9 +174,9 @@\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: 1fr 9fr 1fr;\r\n     /* grid-template-columns: % 85% 15%; */\r\n     /* justify-items: center; */\r\n-    column-gap:1px;\r\n+    /* column-gap:1px; */\r\n }\r\n \r\n /* .flexText{\r\n     margin-left:auto;\r\n"
+                },
+                {
+                    "date": 1642666635205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -168,25 +168,14 @@\n     justify-content: space-evenly;\r\n     /* column-gap: 1.3em; */\r\n }\r\n \r\n-.gridMe{\r\n+/* .gridMe{\r\n     display: grid;\r\n-    /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: 1fr 9fr 1fr;\r\n-    /* grid-template-columns: % 85% 15%; */\r\n-    /* justify-items: center; */\r\n-    /* column-gap:1px; */\r\n-}\r\n-\r\n-/* .flexText{\r\n-    margin-left:auto;\r\n-    display: flex;\r\n-    flex-direction: row;\r\n-    justify-content: space-around;\r\n-    column-gap: .8em;\r\n } */\r\n \r\n+\r\n .flexMiddle{\r\n     display: flex;\r\n     flex-direction: row;\r\n     justify-content: center;\r\n"
+                },
+                {
+                    "date": 1642666870802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -242,7 +242,9 @@\n }\r\n .notEvenSmall{\r\n     width: 42em;\r\n }\r\n-.fromRight{\r\n-    right:auto;\r\n+\r\n+.flexMiddle3{\r\n+    display: flex;\r\n+    justify-content: center;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642666932082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -246,5 +246,8 @@\n \r\n .flexMiddle3{\r\n     display: flex;\r\n     justify-content: center;\r\n+}\r\n+.meGrow{\r\n+    flex-grow: 2;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642666995902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -246,8 +246,9 @@\n \r\n .flexMiddle3{\r\n     display: flex;\r\n     justify-content: center;\r\n+    align-content: stretch;\r\n }\r\n .meGrow{\r\n     flex-grow: 2;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642667170149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -246,9 +246,10 @@\n \r\n .flexMiddle3{\r\n     display: flex;\r\n     justify-content: center;\r\n-    align-content: stretch;\r\n+    /* align-content: stretch; */\r\n+    column-gap: 0;\r\n }\r\n .meGrow{\r\n     flex-grow: 2;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642667570144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,9 +178,9 @@\n .flexMiddle{\r\n     display: flex;\r\n     flex-direction: row;\r\n     justify-content: center;\r\n-    column-gap:2em;\r\n+    /* column-gap:2em; */\r\n \r\n }\r\n /* ================= */\r\n \r\n"
+                },
+                {
+                    "date": 1642667612433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,11 +178,18 @@\n .flexMiddle{\r\n     display: flex;\r\n     flex-direction: row;\r\n     justify-content: center;\r\n-    /* column-gap:2em; */\r\n+    column-gap:2em;\r\n \r\n }\r\n+.flexMiddle2{\r\n+    display: flex;\r\n+    flex-direction: row;\r\n+    justify-content: center;\r\n+    column-gap:2em;\r\n+\r\n+}\r\n /* ================= */\r\n \r\n .rightMe{ \r\n     position: relative;\r\n"
+                },
+                {
+                    "date": 1642667650470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -184,9 +184,9 @@\n }\r\n .flexMiddle2{\r\n     display: flex;\r\n     flex-direction: row;\r\n-    justify-content: center;\r\n+    /* justify-content: center; */\r\n     column-gap:2em;\r\n \r\n }\r\n /* ================= */\r\n"
+                },
+                {
+                    "date": 1642667668908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,9 +177,9 @@\n \r\n .flexMiddle{\r\n     display: flex;\r\n     flex-direction: row;\r\n-    justify-content: center;\r\n+    justify-content: space-between;\r\n     column-gap:2em;\r\n \r\n }\r\n .flexMiddle2{\r\n"
+                },
+                {
+                    "date": 1642667700037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,8 +74,11 @@\n     margin-bottom: 2.2em;\r\n }\r\n \r\n /* ============================= */\r\n+.width300px{\r\n+    width: 300px;\r\n+}\r\n .width450px{\r\n     width: 450px;\r\n }\r\n .width500px{\r\n@@ -177,9 +180,9 @@\n \r\n .flexMiddle{\r\n     display: flex;\r\n     flex-direction: row;\r\n-    justify-content: space-between;\r\n+    /* justify-content: space-between; */\r\n     column-gap:2em;\r\n \r\n }\r\n .flexMiddle2{\r\n"
+                },
+                {
+                    "date": 1642667776921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -188,9 +188,9 @@\n .flexMiddle2{\r\n     display: flex;\r\n     flex-direction: row;\r\n     /* justify-content: center; */\r\n-    column-gap:2em;\r\n+    /* column-gap:2em; */\r\n \r\n }\r\n /* ================= */\r\n \r\n"
+                },
+                {
+                    "date": 1642667784851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -188,9 +188,9 @@\n .flexMiddle2{\r\n     display: flex;\r\n     flex-direction: row;\r\n     /* justify-content: center; */\r\n-    /* column-gap:2em; */\r\n+    column-gap:2em;\r\n \r\n }\r\n /* ================= */\r\n \r\n"
                 }
             ],
             "date": 1642579062806,
