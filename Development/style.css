@@ -84,11 +84,16 @@
     padding: .8em .8em .8em .8em ;
 }
 .paddingUp{
-    padding-top: 1.8em;
+    padding-top: 1.2em;
 }
 .paddingDown{
     padding-bottom: 1.8em;
-
+}
+.paddingRight{
+    padding-right: 1.8em;
+}
+.paddingLeftSmall{
+    padding-left:1.8em;
 }
 
 .left{
@@ -134,8 +139,39 @@
 
 .flexGridQA{
     display:flex;
-    justify-content: space-around;
-    column-gap: 2em;
+    justify-content: space-evenly;
+    /* column-gap: 1.3em; */
 }
-.flexts
-/* ================= *
+
+.gridMe{
+    display: grid;
+    grid-template-columns: 1fr .13fr;
+}
+
+.flexText{
+    margin-left:auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    column-gap: .8em;
+    /* align-content: center; */
+    /* justify-content: center; */
+}
+/* ================= */
+
+.rightMe{ 
+    position: relative;
+    right: 4em;
+}
+
+#add{
+    font-size: 3em;
+}
+
+
+.gridDeleteButton{
+    margin-top: 2.2em;
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+
+}
