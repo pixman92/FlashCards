@@ -1,0 +1,8 @@
+TODO - home button - top left
+TODO - login button - top right ( Wayyy later )
+
+TODO - Edit HTML page
+TODO - delete / add  Q/A s
+
+TODO - study Mode -> question, tap > answer > tap, back
+

@@ -15,12 +15,20 @@ function prepForSendingJSON(){
     pushFlashCardData();
 
 }
+async function tmp(){}
 
-function prepForPullingJSON(){
+async function prepForPullingJSON(){
     emailSearch = "sam@gmail.com"; deckName = 'history';
-    getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName);
+    await tmp(()=>{}).then(async()=>{
+        await getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName).then(async()=>{
+                await makeDeckNameHTML();
+        }).then(async()=>{
+                await makeTagsHTML();    
+        })
+});
 
-        
+
+
 }
 
 
@@ -81,7 +89,7 @@ async function getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName){
     // function to make a new instance OBJ, that will hold pulled JSON Data
     // pushes out JSON data (my custom) - to myJSONFlashCardsPULLED
     
-    totalEmailSearch(emailSearch, deckName);
+    await totalEmailSearch(emailSearch, deckName);
     async function totalEmailSearch(emailSearch){
         await tmp().then(async()=>{
             await searchForEmailGetUID(emailSearch);        //found local
