@@ -32,6 +32,13 @@ the magic? - the elem of DOM is held in memory!-->
 <!-- example -->
 <!-- <i class="material-icons">home</i> -->
 
+<!-- =============================-->
+<script src="https://raw.githubusercontent.com/WickyNilliams/enquire.js/master/dist/enquire.min.js"></script>
+
+<script src="screenSizingCSS.js"></script>
+
+<!-- ============================= -->
+
 
 <!-- cash script tag -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cash/8.1.0/cash.min.js"></script>
@@ -51,7 +58,9 @@ the magic? - the elem of DOM is held in memory!-->
 
 <!-- =================== -->
 <body>
-    <!-- ============================= -->
+  <div class="BIGDiv">
+
+    <!-- ============DECKS================= -->
     <div class="firstScreen">
       <div class="deckMode centerHorizontally2">
         <div class="headerDeckMode">Deck Names</div>
@@ -91,6 +100,7 @@ the magic? - the elem of DOM is held in memory!-->
 
     <!-- TODO - save button -->
 
+    <!-- ===========EDIT DECK INFO================== -->
 
     <div class="editDeck">
       <div class="name">
@@ -106,77 +116,34 @@ the magic? - the elem of DOM is held in memory!-->
         10
       </div>
 
-      
-
-      <!-- <div class="centerHorizontally2">
-
-          <div class="column">
-            <div class="centerHorizontally grid1">
-              Question:
-            </div>
-            <div class="question">
-              <div class="questionBox centerHorizontaly grid1">
-
-
-              </div>
-        
-            </div>
-        
-          </div>
-          <div class="column">
-            <div class="centerHorizontally grid1">
-              Answer:
-            </div>
-            <div class="answerBox centerHorizontaly grid1">
-
-
-            </div>
-        
-        
-          </div>
-
-          <div class="column2">
-            <div class="deleteColumn centerHorizontally">
-
-            </div>
-
-          </div>
-          
-        </div> -->
+      <!-- ==============Edit Boxes Screen=============== -->
       </div>
       <div class="comboParent">
         <div class="headerQAs">
-          <div class="headerFont paddingAllAround centerHorizontally">
+          <div class="editDecknameScreenSize paddingAllAround centerHorizontally">
             Deck1
           </div>
         </div>
         <div class="addingCards">
-          <!-- <div class="gridMe centerHorizontally3">
-            <div class="flexText centerHorizontally3">      
-              <div class="questionn ">
-                <textarea class="width20em"></textarea>
+            <div class="boxComboDynamic  marginBottom">
+              <div class="leftDiv"></div>
+              <div class="middleDiv flexMiddle">
+                <div class="questionText"><textarea class="QText"></textarea></div>
+                <div class="answerText"><textarea class="AText"></textarea></div>
               </div>
-              <div class="answer ">
-                <textarea class="width20em"></textarea>
+              <div class="rightDiv">
+                <div class="deleteButton"><button>x</button></div>
               </div>
-              
-            </div>
-            <div class="delete paddingUp paddingLeftSmall">
-              <button id="delete1">X</button>
-            </div>
-          </div> -->
-          <div class="gridMe centerHorizontally3">
-            <div class="questionText"><textarea class="widthFull"></textarea></div>
-            <div class="answerText"><textarea class="widthFull"></textarea></div>
-            <div class="deleteButton"><button>x</button></div>
+              </div>
           </div>
-          <div class="gridDeleteButton">
-            <div class="tmp"></div>
-            <div class="addButton rightMe"><button id="add">+</button></div>
-          </div>
-      </div>
+        </div>
 
+          <div class="gridAddButton">
+            <div class="tmp"></div>
+            <div class="rightMe"><button class="addButton" id="add">+</button></div>
+          </div>
       </div>
+  </div>
 
 </body>
 </html>

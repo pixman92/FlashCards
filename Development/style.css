@@ -9,6 +9,16 @@
   margin: auto;
   width: 800px;
 }
+.centerHorizontally3{
+    margin: auto;
+    width: 80%;
+}
+.centerHorizontally4{
+    /* position: relative; */
+    text-align: center;
+    margin: 0 auto;
+}
+  
 
 .displayGood{
     display: block;
@@ -57,11 +67,17 @@
     align-items: center;
 }
 
-.marginMe{
+.marginTop{
   margin-top:1.8em;
 }   
+.marginBottom{
+    margin-bottom: 2.2em;
+}
 
 /* ============================= */
+.width450px{
+    width: 450px;
+}
 .width500px{
     width: 500px;
 }
@@ -71,7 +87,12 @@
 .width70P{
     width: 70%;
 }
-
+.width50P{
+    width: 50%;
+}
+.widthAuto{
+    width: auto;
+}
 /* ============================= */
 .headerFont{
     font-size: 3em;
@@ -136,7 +157,12 @@
 .width20em{
     width: 20em;
 }
-
+.width25em{
+    width: 25em;
+}
+.width45em{
+    width: 45em;
+}
 .flexGridQA{
     display:flex;
     justify-content: space-evenly;
@@ -145,17 +171,27 @@
 
 .gridMe{
     display: grid;
-    grid-template-columns: 1fr .13fr;
+    /* grid-template-columns: 1fr 1fr .13fr; */
+    grid-template-columns: 1fr 9fr 1fr;
+    /* grid-template-columns: % 85% 15%; */
+    /* justify-items: center; */
+    column-gap:6em;
 }
 
-.flexText{
+/* .flexText{
     margin-left:auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     column-gap: .8em;
-    /* align-content: center; */
-    /* justify-content: center; */
+} */
+
+.flexMiddle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap:2em;
+
 }
 /* ================= */
 
@@ -164,14 +200,60 @@
     right: 4em;
 }
 
-#add{
+/* #add{
     font-size: 3em;
-}
+} */
 
 
-.gridDeleteButton{
+.gridAddButton{
     margin-top: 2.2em;
     display: grid;
     grid-template-columns: 10fr 1fr;
 
+}
+
+.deleteSetup{
+    position: relative;
+    right: 0;
+    width: content;
+}
+
+/* ============Small Screen width================= */
+.smallFont{
+    font-size: 2.3em;
+}
+.smallerFont{
+    font-size: .08em;
+}
+.color{
+    color:red;
+}
+.widthSmall{
+    width: 95%;
+}
+.gridMeSmall{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr .13fr; */
+    grid-template-columns: .2fr 6.5fr .2fr;
+    /* justify-items: center; */
+    column-gap:.02em;
+}
+
+.smallButWide{
+    width: 35em;
+}
+
+/* ============EVEN SMALLER================= */
+.gridMeSuperSmall{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr .13fr; */
+    grid-template-columns: .1fr 1.6fr .01fr .9fr;
+    /* justify-items: center; */
+    column-gap:3em;
+}
+.notEvenSmall{
+    width: 42em;
+}
+.fromRight{
+    right:auto;
 }

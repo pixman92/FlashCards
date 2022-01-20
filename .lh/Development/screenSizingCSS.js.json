@@ -1,0 +1,22 @@
+{
+    "sourceFile": "Development/screenSizingCSS.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1642661207614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642661406538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,4 +9,7 @@\n        document.querySelector(savedCSSArray[index][0]).style[savedCSSArray[index][1]] = savedCSSArray[index][2];\r\n       });\r\n     });\r\n }\r\n+\r\n+\r\n+// use instead $('body').width();\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1642661207614,
+            "name": "Commit-0",
+            "content": "var savedCSSArray = [];\r\nfunction makeCSS(element, style, value, minOrMax, screenSize){\r\n  savedCSSArray.push([element, style, value, minOrMax, screenSize]);\r\n}\r\n\r\nfunction applyCSS(){\r\n    savedCSSArray.forEach((item, index)=>{\r\n        enquire.register(\"screen and (\"+savedCSSArray[index][3]+\"-width: \"+savedCSSArray[index][4]+\")\", ()=>{ \r\n       document.querySelector(savedCSSArray[index][0]).style[savedCSSArray[index][1]] = savedCSSArray[index][2];\r\n      });\r\n    });\r\n}\r\n"
+        }
+    ]
+}

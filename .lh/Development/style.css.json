@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 24,
+            "activePatchIndex": 152,
             "patches": [
                 {
                     "date": 1642579062806,
@@ -104,6 +104,518 @@
                 {
                     "date": 1642582860172,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,12 +80,12 @@\n .paddingAllAround{\r\n     padding: .8em .8em .8em .8em ;\r\n }\r\n .paddingUp{\r\n-    padding-top: 1em;\r\n+    padding-top: 1.8em;\r\n }\r\n .paddingDown{\r\n-    padding-bottom: 1em;\r\n+    padding-bottom: 1.8em;\r\n \r\n }\r\n \r\n .left{\r\n"
+                },
+                {
+                    "date": 1642659406370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,13 @@\n .centerHorizontally2{\r\n   margin: auto;\r\n   width: 800px;\r\n }\r\n+.centerHorizontally3{\r\n+    margin: auto;\r\n+    width: 80%;\r\n+  }\r\n+  \r\n \r\n .displayGood{\r\n     display: block;\r\n }\r\n@@ -67,8 +72,11 @@\n }\r\n .widthFull{\r\n     width: 100%;\r\n }\r\n+.width70P{\r\n+    width: 70%;\r\n+}\r\n \r\n /* ============================= */\r\n .headerFont{\r\n     font-size: 3em;\r\n@@ -80,14 +88,19 @@\n .paddingAllAround{\r\n     padding: .8em .8em .8em .8em ;\r\n }\r\n .paddingUp{\r\n-    padding-top: 1.8em;\r\n+    padding-top: 1.2em;\r\n }\r\n .paddingDown{\r\n     padding-bottom: 1.8em;\r\n-\r\n }\r\n+.paddingRight{\r\n+    padding-right: 1.8em;\r\n+}\r\n+.paddingLeftSmall{\r\n+    padding-left:1.8em;\r\n+}\r\n \r\n .left{\r\n     position: relative;\r\n     left: .8em;\r\n@@ -107,5 +120,64 @@\n       \"title area2\"; \r\n }\r\n .title { grid-area: title; }\r\n .area1 { grid-area: area1; }\r\n-.area2 { grid-area: area2; }\n\\ No newline at end of file\n+.area2 { grid-area: area2; }\r\n+\r\n+/* ================= */\r\n+/* .comboGrid{\r\n+    \r\n+    display: grid; \r\n+    grid-template-columns: 3fr 3fr 1.3fr; \r\n+    grid-template-rows: 1fr; \r\n+    gap: 0px 0px; \r\n+    text-align: center;\r\n+    grid-template-areas: \r\n+      \"question answer delete\"; \r\n+  }\r\n+.question { grid-area: question; }\r\n+.answer { grid-area: answer; }\r\n+.delete { grid-area: delete; } */\r\n+\r\n+.width20em{\r\n+    width: 20em;\r\n+}\r\n+\r\n+.flexGridQA{\r\n+    display:flex;\r\n+    justify-content: space-evenly;\r\n+    /* column-gap: 1.3em; */\r\n+}\r\n+\r\n+.gridMe{\r\n+    display: grid;\r\n+    grid-template-columns: 1fr .13fr;\r\n+\r\n+}\r\n+\r\n+.flexText{\r\n+    margin-left:auto;\r\n+    display: flex;\r\n+    flex-direction: row;\r\n+    justify-content: space-around;\r\n+    column-gap: .8em;\r\n+    /* align-content: center; */\r\n+    /* justify-content: center; */\r\n+}\r\n+/* ================= */\r\n+\r\n+.rightMe{ \r\n+    position: relative;\r\n+    right: 4em;\r\n+}\r\n+\r\n+#add{\r\n+    font-size: 3em;\r\n+}\r\n+\r\n+\r\n+.gridDeleteButton{\r\n+    margin-top: 2.2em;\r\n+    display: grid;\r\n+    grid-template-columns: 10fr 1fr;\r\n+\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642659452396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -158,9 +158,9 @@\n     margin-left:auto;\r\n     display: flex;\r\n     flex-direction: row;\r\n     justify-content: space-around;\r\n-    column-gap: .8em;\r\n+    /* column-gap: .8em; */\r\n     /* align-content: center; */\r\n     /* justify-content: center; */\r\n }\r\n /* ================= */\r\n"
+                },
+                {
+                    "date": 1642659604029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -149,18 +149,18 @@\n }\r\n \r\n .gridMe{\r\n     display: grid;\r\n-    grid-template-columns: 1fr .13fr;\r\n+    grid-template-columns: 1fr 1fr .13fr;\r\n \r\n }\r\n \r\n .flexText{\r\n     margin-left:auto;\r\n     display: flex;\r\n     flex-direction: row;\r\n     justify-content: space-around;\r\n-    /* column-gap: .8em; */\r\n+    column-gap: .8em;\r\n     /* align-content: center; */\r\n     /* justify-content: center; */\r\n }\r\n /* ================= */\r\n"
+                },
+                {
+                    "date": 1642659727140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -149,9 +149,10 @@\n }\r\n \r\n .gridMe{\r\n     display: grid;\r\n-    grid-template-columns: 1fr 1fr .13fr;\r\n+    /* grid-template-columns: 1fr 1fr .13fr; */\r\n+    grid-template-columns: 40% 40% 20%;\r\n \r\n }\r\n \r\n .flexText{\r\n"
+                },
+                {
+                    "date": 1642659764907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -151,8 +151,9 @@\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: 40% 40% 20%;\r\n+    justify-items: center;\r\n \r\n }\r\n \r\n .flexText{\r\n"
+                },
+                {
+                    "date": 1642659884161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -151,9 +151,9 @@\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: 40% 40% 20%;\r\n-    justify-items: center;\r\n+    /* justify-items: center; */\r\n \r\n }\r\n \r\n .flexText{\r\n"
+                },
+                {
+                    "date": 1642659890253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -151,9 +151,9 @@\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: 40% 40% 20%;\r\n-    /* justify-items: center; */\r\n+    justify-items: center;\r\n \r\n }\r\n \r\n .flexText{\r\n"
+                },
+                {
+                    "date": 1642659919423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -151,9 +151,10 @@\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: 40% 40% 20%;\r\n-    justify-items: center;\r\n+    /* justify-items: center; */\r\n+    column-gap:2em;\r\n \r\n }\r\n \r\n .flexText{\r\n"
+                },
+                {
+                    "date": 1642659936982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,9 +153,9 @@\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: 40% 40% 20%;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n-\r\n+    margin:auto;\r\n }\r\n \r\n .flexText{\r\n     margin-left:auto;\r\n"
+                },
+                {
+                    "date": 1642659974090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -150,12 +150,11 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 40% 40% 20%;\r\n+    grid-template-columns: 40% 40% 2%;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n-    margin:auto;\r\n }\r\n \r\n .flexText{\r\n     margin-left:auto;\r\n"
+                },
+                {
+                    "date": 1642659983612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -150,9 +150,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 40% 40% 2%;\r\n+    grid-template-columns: 50% 50% 2%;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642659991432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -150,9 +150,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 50% 50% 2%;\r\n+    grid-template-columns: 49% 49% 2%;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642660156278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -176,9 +176,9 @@\n     font-size: 3em;\r\n }\r\n \r\n \r\n-.gridDeleteButton{\r\n+.gridAddButton{\r\n     margin-top: 2.2em;\r\n     display: grid;\r\n     grid-template-columns: 10fr 1fr;\r\n \r\n"
+                },
+                {
+                    "date": 1642660668314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n     justify-items: center;\r\n     align-items: center;\r\n }\r\n \r\n-.marginMe{\r\n+.marginTop{\r\n   margin-top:1.8em;\r\n }   \r\n \r\n /* ============================= */\r\n"
+                },
+                {
+                    "date": 1642660691925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,8 +64,11 @@\n \r\n .marginTop{\r\n   margin-top:1.8em;\r\n }   \r\n+.marginBottom{\r\n+    margin-bottom: 1.2em;\r\n+}\r\n \r\n /* ============================= */\r\n .width500px{\r\n     width: 500px;\r\n"
+                },
+                {
+                    "date": 1642660706342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n .marginTop{\r\n   margin-top:1.8em;\r\n }   \r\n .marginBottom{\r\n-    margin-bottom: 1.2em;\r\n+    margin-bottom: 2.2em;\r\n }\r\n \r\n /* ============================= */\r\n .width500px{\r\n"
+                },
+                {
+                    "date": 1642661571910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -184,5 +184,10 @@\n     margin-top: 2.2em;\r\n     display: grid;\r\n     grid-template-columns: 10fr 1fr;\r\n \r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+/* ============Small Screen width================= */\r\n+.smallFont{\r\n+    font-size: 1.3em;\r\n+}\r\n"
+                },
+                {
+                    "date": 1642661691677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -188,6 +188,6 @@\n }\r\n \r\n /* ============Small Screen width================= */\r\n .smallFont{\r\n-    font-size: 1.3em;\r\n+    font-size: .3em;\r\n }\r\n"
+                },
+                {
+                    "date": 1642661815920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -190,4 +190,7 @@\n /* ============Small Screen width================= */\r\n .smallFont{\r\n     font-size: .3em;\r\n }\r\n+.color{\r\n+    color:red;\r\n+}\r\n"
+                },
+                {
+                    "date": 1642661840548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -188,9 +188,9 @@\n }\r\n \r\n /* ============Small Screen width================= */\r\n .smallFont{\r\n-    font-size: .3em;\r\n+    font-size: 2.3em;\r\n }\r\n .color{\r\n     color:red;\r\n }\r\n"
+                },
+                {
+                    "date": 1642662056115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -188,9 +188,9 @@\n }\r\n \r\n /* ============Small Screen width================= */\r\n .smallFont{\r\n-    font-size: 2.3em;\r\n+    font-size: .3em;\r\n }\r\n .color{\r\n     color:red;\r\n }\r\n"
+                },
+                {
+                    "date": 1642662065240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -188,9 +188,9 @@\n }\r\n \r\n /* ============Small Screen width================= */\r\n .smallFont{\r\n-    font-size: .3em;\r\n+    font-size: 8.3em;\r\n }\r\n .color{\r\n     color:red;\r\n }\r\n"
+                },
+                {
+                    "date": 1642662075010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -188,9 +188,9 @@\n }\r\n \r\n /* ============Small Screen width================= */\r\n .smallFont{\r\n-    font-size: 8.3em;\r\n+    font-size: 5.3em;\r\n }\r\n .color{\r\n     color:red;\r\n }\r\n"
+                },
+                {
+                    "date": 1642662083149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -188,9 +188,9 @@\n }\r\n \r\n /* ============Small Screen width================= */\r\n .smallFont{\r\n-    font-size: 5.3em;\r\n+    font-size: 2.3em;\r\n }\r\n .color{\r\n     color:red;\r\n }\r\n"
+                },
+                {
+                    "date": 1642662198487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -193,4 +193,7 @@\n }\r\n .color{\r\n     color:red;\r\n }\r\n+.widthSmall{\r\n+    width: 12%;\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642662210291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -194,6 +194,6 @@\n .color{\r\n     color:red;\r\n }\r\n .widthSmall{\r\n-    width: 12%;\r\n+    width: 22%;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642662217537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -194,6 +194,6 @@\n .color{\r\n     color:red;\r\n }\r\n .widthSmall{\r\n-    width: 22%;\r\n+    width: 55%;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642662225678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -194,6 +194,6 @@\n .color{\r\n     color:red;\r\n }\r\n .widthSmall{\r\n-    width: 55%;\r\n+    width: 75%;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642662286439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -194,6 +194,13 @@\n .color{\r\n     color:red;\r\n }\r\n .widthSmall{\r\n-    width: 75%;\r\n+    width: 95%;\r\n+}\r\n+.gridMeSmall{\r\n+    display: grid;\r\n+    /* grid-template-columns: 1fr 1fr .13fr; */\r\n+    grid-template-columns: 49% 49% 2%;\r\n+    /* justify-items: center; */\r\n+    column-gap:2em;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642662299024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -199,8 +199,8 @@\n }\r\n .gridMeSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 49% 49% 2%;\r\n+    grid-template-columns: 10% 10% 3%;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642662581505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -199,8 +199,8 @@\n }\r\n .gridMeSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 10% 10% 3%;\r\n+    grid-template-columns: 20% 20% 3%;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642662602629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -201,6 +201,6 @@\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: 20% 20% 3%;\r\n     /* justify-items: center; */\r\n-    column-gap:2em;\r\n+    column-gap:.2em;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642662654903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,9 +153,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 49% 49% 2%;\r\n+    grid-template-columns: 49% 49% 8%;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642662675677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,9 +153,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 49% 49% 8%;\r\n+    grid-template-columns: 35% 35% 2%;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642662687822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,9 +153,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 35% 35% 2%;\r\n+    grid-template-columns: 42% 35% 1%;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642662735267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,9 +153,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 42% 35% 1%;\r\n+    grid-template-columns: 35% 35% 1%;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642662745799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,9 +153,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 35% 35% 1%;\r\n+    grid-template-columns: 35% 35% auto;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642662756371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,9 +153,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 35% 35% auto;\r\n+    grid-template-columns: 35% 35% 1fr;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642662831706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,13 @@\n }\r\n .centerHorizontally3{\r\n     margin: auto;\r\n     width: 80%;\r\n-  }\r\n+}\r\n+.centerHorizontally4{\r\n+    position: relative;\r\n+    text-align: center;\r\n+}\r\n   \r\n \r\n .displayGood{\r\n     display: block;\r\n"
+                },
+                {
+                    "date": 1642662846344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n }\r\n .centerHorizontally4{\r\n     position: relative;\r\n     text-align: center;\r\n+    margin: 0 auto;\r\n }\r\n   \r\n \r\n .displayGood{\r\n"
+                },
+                {
+                    "date": 1642662998933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -191,8 +191,13 @@\n     grid-template-columns: 10fr 1fr;\r\n \r\n }\r\n \r\n+.deleteSetup{\r\n+    position: relative;\r\n+    right: 0;\r\n+}\r\n+\r\n /* ============Small Screen width================= */\r\n .smallFont{\r\n     font-size: 2.3em;\r\n }\r\n"
+                },
+                {
+                    "date": 1642663029045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -192,9 +192,9 @@\n \r\n }\r\n \r\n .deleteSetup{\r\n-    position: relative;\r\n+    position: absolute;\r\n     right: 0;\r\n }\r\n \r\n /* ============Small Screen width================= */\r\n"
+                },
+                {
+                    "date": 1642663043497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -193,9 +193,9 @@\n }\r\n \r\n .deleteSetup{\r\n     position: absolute;\r\n-    right: 0;\r\n+    /* right: 0; */\r\n }\r\n \r\n /* ============Small Screen width================= */\r\n .smallFont{\r\n"
+                },
+                {
+                    "date": 1642663067407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -192,10 +192,10 @@\n \r\n }\r\n \r\n .deleteSetup{\r\n-    position: absolute;\r\n-    /* right: 0; */\r\n+    position: relative;\r\n+    right: 0;\r\n }\r\n \r\n /* ============Small Screen width================= */\r\n .smallFont{\r\n"
+                },
+                {
+                    "date": 1642663079779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -194,8 +194,9 @@\n \r\n .deleteSetup{\r\n     position: relative;\r\n     right: 0;\r\n+    width: auto;\r\n }\r\n \r\n /* ============Small Screen width================= */\r\n .smallFont{\r\n"
+                },
+                {
+                    "date": 1642663086361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -194,9 +194,9 @@\n \r\n .deleteSetup{\r\n     position: relative;\r\n     right: 0;\r\n-    width: auto;\r\n+    width: content;\r\n }\r\n \r\n /* ============Small Screen width================= */\r\n .smallFont{\r\n"
+                },
+                {
+                    "date": 1642663290469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -158,9 +158,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 35% 35% 1fr;\r\n+    grid-template-columns: 1fr 1fr 1fr;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642663388059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -172,8 +172,14 @@\n     column-gap: .8em;\r\n     /* align-content: center; */\r\n     /* justify-content: center; */\r\n }\r\n+\r\n+.flexMiddle{\r\n+    display: flex;\r\n+    flex-direction: row;\r\n+    justify-content: space-around;\r\n+}\r\n /* ================= */\r\n \r\n .rightMe{ \r\n     position: relative;\r\n"
+                },
+                {
+                    "date": 1642663446769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -216,8 +216,8 @@\n }\r\n .gridMeSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 20% 20% 3%;\r\n+    grid-template-columns: 1fr 1fr 1fr;\r\n     /* justify-items: center; */\r\n     column-gap:.2em;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642663456608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,8 +177,10 @@\n .flexMiddle{\r\n     display: flex;\r\n     flex-direction: row;\r\n     justify-content: space-around;\r\n+    column-gap:2em;\r\n+\r\n }\r\n /* ================= */\r\n \r\n .rightMe{ \r\n"
+                },
+                {
+                    "date": 1642663485019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -158,9 +158,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 1fr 1fr;\r\n+    grid-template-columns: 1fr 4fr 1fr;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642663491763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -158,9 +158,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 4fr 1fr;\r\n+    grid-template-columns: 1fr 8fr 1fr;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642663565961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -158,9 +158,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 8fr 1fr;\r\n+    grid-template-columns: 1fr 9fr 1fr;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642663579348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,8 +148,11 @@\n \r\n .width20em{\r\n     width: 20em;\r\n }\r\n+.width25em{\r\n+    width: 25em;\r\n+}\r\n \r\n .flexGridQA{\r\n     display:flex;\r\n     justify-content: space-evenly;\r\n"
+                },
+                {
+                    "date": 1642663604693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -221,8 +221,8 @@\n }\r\n .gridMeSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 1fr 1fr;\r\n+    grid-template-columns: 1fr 8fr 1fr;\r\n     /* justify-items: center; */\r\n     column-gap:.2em;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642663610387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -221,8 +221,8 @@\n }\r\n .gridMeSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 8fr 1fr;\r\n+    grid-template-columns: 1fr 12fr 1fr;\r\n     /* justify-items: center; */\r\n     column-gap:.2em;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642663679721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -224,5 +224,9 @@\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: 1fr 12fr 1fr;\r\n     /* justify-items: center; */\r\n     column-gap:.2em;\r\n+}\r\n+\r\n+.smallButWide{\r\n+    width: 8vw;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642663691162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -227,6 +227,6 @@\n     column-gap:.2em;\r\n }\r\n \r\n .smallButWide{\r\n-    width: 8vw;\r\n+    width: 55vw;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642663696774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -227,6 +227,6 @@\n     column-gap:.2em;\r\n }\r\n \r\n .smallButWide{\r\n-    width: 55vw;\r\n+    width: 100e,;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642663705587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -227,6 +227,6 @@\n     column-gap:.2em;\r\n }\r\n \r\n .smallButWide{\r\n-    width: 100e,;\r\n+    width: 210;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642663712426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -227,6 +227,6 @@\n     column-gap:.2em;\r\n }\r\n \r\n .smallButWide{\r\n-    width: 210;\r\n+    width: 44em;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642663720736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -223,9 +223,9 @@\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: 1fr 12fr 1fr;\r\n     /* justify-items: center; */\r\n-    column-gap:.2em;\r\n+    /* column-gap:.2em; */\r\n }\r\n \r\n .smallButWide{\r\n     width: 44em;\r\n"
+                },
+                {
+                    "date": 1642663726458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -221,9 +221,9 @@\n }\r\n .gridMeSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 12fr 1fr;\r\n+    grid-template-columns: 1fr 6fr 1fr;\r\n     /* justify-items: center; */\r\n     /* column-gap:.2em; */\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642663735988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -221,9 +221,9 @@\n }\r\n .gridMeSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 6fr 1fr;\r\n+    grid-template-columns: 1fr 84r 1fr;\r\n     /* justify-items: center; */\r\n     /* column-gap:.2em; */\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642663742565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -221,9 +221,9 @@\n }\r\n .gridMeSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 84r 1fr;\r\n+    grid-template-columns: 1fr 12fr 1fr;\r\n     /* justify-items: center; */\r\n     /* column-gap:.2em; */\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642663753383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -221,12 +221,12 @@\n }\r\n .gridMeSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 12fr 1fr;\r\n+    grid-template-columns: 1fr 8fr 1fr;\r\n     /* justify-items: center; */\r\n     /* column-gap:.2em; */\r\n }\r\n \r\n .smallButWide{\r\n-    width: 44em;\r\n+    width: 12em;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642663760967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -227,6 +227,6 @@\n     /* column-gap:.2em; */\r\n }\r\n \r\n .smallButWide{\r\n-    width: 12em;\r\n+    width: 36em;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642663774848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -227,6 +227,6 @@\n     /* column-gap:.2em; */\r\n }\r\n \r\n .smallButWide{\r\n-    width: 36em;\r\n+    width: 44em;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642663799223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -221,9 +221,9 @@\n }\r\n .gridMeSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 8fr 1fr;\r\n+    grid-template-columns: 1fr 6.5fr 1fr;\r\n     /* justify-items: center; */\r\n     /* column-gap:.2em; */\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642663811936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -221,9 +221,9 @@\n }\r\n .gridMeSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 6.5fr 1fr;\r\n+    grid-template-columns: .2fr 6.5fr .2fr;\r\n     /* justify-items: center; */\r\n     /* column-gap:.2em; */\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642663823825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -223,9 +223,9 @@\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: .2fr 6.5fr .2fr;\r\n     /* justify-items: center; */\r\n-    /* column-gap:.2em; */\r\n+    column-gap:-.2em;\r\n }\r\n \r\n .smallButWide{\r\n     width: 44em;\r\n"
+                },
+                {
+                    "date": 1642663830605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -223,9 +223,9 @@\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: .2fr 6.5fr .2fr;\r\n     /* justify-items: center; */\r\n-    column-gap:-.2em;\r\n+    column-gap:.02em;\r\n }\r\n \r\n .smallButWide{\r\n     width: 44em;\r\n"
+                },
+                {
+                    "date": 1642663854892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -180,9 +180,9 @@\n .flexMiddle{\r\n     display: flex;\r\n     flex-direction: row;\r\n     justify-content: space-around;\r\n-    column-gap:2em;\r\n+    /* column-gap:2em; */\r\n \r\n }\r\n /* ================= */\r\n \r\n"
+                },
+                {
+                    "date": 1642663891000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n \r\n .flexMiddle{\r\n     display: flex;\r\n     flex-direction: row;\r\n-    justify-content: space-around;\r\n+    justify-content: center;\r\n     /* column-gap:2em; */\r\n \r\n }\r\n /* ================= */\r\n"
+                },
+                {
+                    "date": 1642663920424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -161,9 +161,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 9fr 1fr;\r\n+    grid-template-columns: 1fr 9fr .1fr;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642663967671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -166,17 +166,15 @@\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\r\n \r\n-.flexText{\r\n+/* .flexText{\r\n     margin-left:auto;\r\n     display: flex;\r\n     flex-direction: row;\r\n     justify-content: space-around;\r\n     column-gap: .8em;\r\n-    /* align-content: center; */\r\n-    /* justify-content: center; */\r\n-}\r\n+} */\r\n \r\n .flexMiddle{\r\n     display: flex;\r\n     flex-direction: row;\r\n"
+                },
+                {
+                    "date": 1642663975524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,9 +178,9 @@\n .flexMiddle{\r\n     display: flex;\r\n     flex-direction: row;\r\n     justify-content: center;\r\n-    /* column-gap:2em; */\r\n+    column-gap:2em;\r\n \r\n }\r\n /* ================= */\r\n \r\n"
+                },
+                {
+                    "date": 1642663990723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -161,9 +161,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 9fr .1fr;\r\n+    grid-template-columns: 1fr 9fr 1fr;\r\n     /* justify-items: center; */\r\n     column-gap:2em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642663998149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -163,9 +163,9 @@\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: 1fr 9fr 1fr;\r\n     /* justify-items: center; */\r\n-    column-gap:2em;\r\n+    column-gap:4em;\r\n }\r\n \r\n /* .flexText{\r\n     margin-left:auto;\r\n"
+                },
+                {
+                    "date": 1642664006110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -163,9 +163,9 @@\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: 1fr 9fr 1fr;\r\n     /* justify-items: center; */\r\n-    column-gap:4em;\r\n+    column-gap:16em;\r\n }\r\n \r\n /* .flexText{\r\n     margin-left:auto;\r\n"
+                },
+                {
+                    "date": 1642664065250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -163,9 +163,9 @@\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: 1fr 9fr 1fr;\r\n     /* justify-items: center; */\r\n-    column-gap:16em;\r\n+    column-gap:6em;\r\n }\r\n \r\n /* .flexText{\r\n     margin-left:auto;\r\n@@ -225,6 +225,6 @@\n     column-gap:.02em;\r\n }\r\n \r\n .smallButWide{\r\n-    width: 44em;\r\n+    width: 2em;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642664080301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -225,6 +225,6 @@\n     column-gap:.02em;\r\n }\r\n \r\n .smallButWide{\r\n-    width: 2em;\r\n+    width: 35em;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642664186185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -226,5 +226,17 @@\n }\r\n \r\n .smallButWide{\r\n     width: 35em;\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+/* ============EVEN SMALLER================= */\r\n+.gridMeSuperSmall{\r\n+    display: grid;\r\n+    /* grid-template-columns: 1fr 1fr .13fr; */\r\n+    grid-template-columns: .2fr 3fr .2fr;\r\n+    /* justify-items: center; */\r\n+    column-gap:.02em;\r\n+}\r\n+.notEvenSmall{\r\n+    width: 22em;\r\n+}\r\n"
+                },
+                {
+                    "date": 1642664200212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .2fr 3fr .2fr;\r\n+    grid-template-columns: .2fr 1fr .2fr;\r\n     /* justify-items: center; */\r\n     column-gap:.02em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664206776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -237,6 +237,6 @@\n     /* justify-items: center; */\r\n     column-gap:.02em;\r\n }\r\n .notEvenSmall{\r\n-    width: 22em;\r\n+    width: 3e,;\r\n }\r\n"
+                },
+                {
+                    "date": 1642664214851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -234,9 +234,9 @@\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: .2fr 1fr .2fr;\r\n     /* justify-items: center; */\r\n-    column-gap:.02em;\r\n+    /* column-gap:.02em; */\r\n }\r\n .notEvenSmall{\r\n-    width: 3e,;\r\n+    width: 3em;\r\n }\r\n"
+                },
+                {
+                    "date": 1642664240650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -237,6 +237,6 @@\n     /* justify-items: center; */\r\n     /* column-gap:.02em; */\r\n }\r\n .notEvenSmall{\r\n-    width: 3em;\r\n+    width: 13em;\r\n }\r\n"
+                },
+                {
+                    "date": 1642664250377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .2fr 1fr .2fr;\r\n+    grid-template-columns: .2fr 8fr .2fr;\r\n     /* justify-items: center; */\r\n     /* column-gap:.02em; */\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664257589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .2fr 8fr .2fr;\r\n+    grid-template-columns: .2fr 18fr 1.2fr;\r\n     /* justify-items: center; */\r\n     /* column-gap:.02em; */\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664265657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -234,9 +234,9 @@\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: .2fr 18fr 1.2fr;\r\n     /* justify-items: center; */\r\n-    /* column-gap:.02em; */\r\n+    column-gap:2em;\r\n }\r\n .notEvenSmall{\r\n     width: 13em;\r\n }\r\n"
+                },
+                {
+                    "date": 1642664273160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -234,9 +234,9 @@\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: .2fr 18fr 1.2fr;\r\n     /* justify-items: center; */\r\n-    column-gap:2em;\r\n+    column-gap:12em;\r\n }\r\n .notEvenSmall{\r\n-    width: 13em;\r\n+    width: 22em;\r\n }\r\n"
+                },
+                {
+                    "date": 1642664286020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -234,9 +234,9 @@\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     grid-template-columns: .2fr 18fr 1.2fr;\r\n     /* justify-items: center; */\r\n-    column-gap:12em;\r\n+    column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n-    width: 22em;\r\n+    width: 2em;\r\n }\r\n"
+                },
+                {
+                    "date": 1642664304892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .2fr 18fr 1.2fr;\r\n+    grid-template-columns: 10% 40% 1.2fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664313919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -237,6 +237,6 @@\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n-    width: 2em;\r\n+    width: 12em;\r\n }\r\n"
+                },
+                {
+                    "date": 1642664324685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,11 +232,11 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 10% 40% 1.2fr;\r\n+    grid-template-columns: 1fr 40% 1.2fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n-    width: 12em;\r\n+    width: 42em;\r\n }\r\n"
+                },
+                {
+                    "date": 1642664331069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 40% 1.2fr;\r\n+    grid-template-columns: 1fr 2fr 1.2fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664342921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 2fr 1.2fr;\r\n+    grid-template-columns: .1fr 2fr 1.2fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664350506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .1fr 2fr 1.2fr;\r\n+    grid-template-columns: .01fr 2fr 1.2fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664356706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .01fr 2fr 1.2fr;\r\n+    grid-template-columns: .0001fr 2fr 1.2fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664364040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .0001fr 2fr 1.2fr;\r\n+    grid-template-columns: .0001fr .8fr 1.2fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664370316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .0001fr .8fr 1.2fr;\r\n+    grid-template-columns: .0001fr 1fr 1.2fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664377313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .0001fr 1fr 1.2fr;\r\n+    grid-template-columns: .0001fr 1fr 3.2fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664454426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .0001fr 1fr 3.2fr;\r\n+    grid-template-columns: .0001fr 1fr .8fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664472793,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -239,4 +239,7 @@\n }\r\n .notEvenSmall{\r\n     width: 42em;\r\n }\r\n+.fronRight{\r\n+    right:auto;\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642664486211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -239,7 +239,7 @@\n }\r\n .notEvenSmall{\r\n     width: 42em;\r\n }\r\n-.fronRight{\r\n+.fromRight{\r\n     right:auto;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642664502634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .0001fr 1fr .8fr;\r\n+    grid-template-columns: .0001fr 1fr .08fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664511595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .0001fr 1fr .08fr;\r\n+    grid-template-columns: .0001fr 1fr .8fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664517525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .0001fr 1fr .8fr;\r\n+    grid-template-columns: .0001fr 1fr .8fr 1fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664527283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .0001fr 1fr .8fr 1fr;\r\n+    grid-template-columns: .0001fr 1fr .8fr .81fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664545778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,10 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .0001fr 1fr .8fr .81fr;\r\n-    /* justify-items: center; */\r\n+    grid-template-columns: .20001fr 1fr .01fr .81fr;    /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n     width: 42em;\r\n"
+                },
+                {
+                    "date": 1642664556992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,10 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .20001fr 1fr .01fr .81fr;    /* justify-items: center; */\r\n+    grid-template-columns: .1fr 1fr .01fr .81fr;\r\n+    /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n     width: 42em;\r\n"
+                },
+                {
+                    "date": 1642664565618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .1fr 1fr .01fr .81fr;\r\n+    grid-template-columns: .1fr 1.6fr .01fr .81fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664572226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -232,9 +232,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .1fr 1.6fr .01fr .81fr;\r\n+    grid-template-columns: .1fr 1.6fr .01fr .91fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664642140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -151,9 +151,11 @@\n }\r\n .width25em{\r\n     width: 25em;\r\n }\r\n-\r\n+.width45em{\r\n+    width: 45em;\r\n+}\r\n .flexGridQA{\r\n     display:flex;\r\n     justify-content: space-evenly;\r\n     /* column-gap: 1.3em; */\r\n@@ -232,9 +234,9 @@\n /* ============EVEN SMALLER================= */\r\n .gridMeSuperSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .1fr 1.6fr .01fr .91fr;\r\n+    grid-template-columns: .1fr 1.6fr .01fr .9fr;\r\n     /* justify-items: center; */\r\n     column-gap:3em;\r\n }\r\n .notEvenSmall{\r\n"
+                },
+                {
+                    "date": 1642664663263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -163,9 +163,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 9fr 1fr;\r\n+    grid-template-columns: .1fr 9fr 1fr;\r\n     /* justify-items: center; */\r\n     column-gap:6em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642664669119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -163,9 +163,9 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .1fr 9fr 1fr;\r\n+    grid-template-columns: 1fr 9fr 1fr;\r\n     /* justify-items: center; */\r\n     column-gap:6em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642664689343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -163,9 +163,10 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: 1fr 9fr 1fr;\r\n+    /* grid-template-columns: 1fr 9fr 1fr; */\r\n+    grid-template-columns: 10% 80% 15%;\r\n     /* justify-items: center; */\r\n     column-gap:6em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642664699577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,9 +164,9 @@\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n     /* grid-template-columns: 1fr 9fr 1fr; */\r\n-    grid-template-columns: 10% 80% 15%;\r\n+    grid-template-columns: 19% 85% 15%;\r\n     /* justify-items: center; */\r\n     column-gap:6em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642664711487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -163,10 +163,10 @@\n \r\n .gridMe{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    /* grid-template-columns: 1fr 9fr 1fr; */\r\n-    grid-template-columns: 19% 85% 15%;\r\n+    grid-template-columns: 1fr 9fr 1fr;\r\n+    /* grid-template-columns: % 85% 15%; */\r\n     /* justify-items: center; */\r\n     column-gap:6em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642664761765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     margin: auto;\r\n     width: 80%;\r\n }\r\n .centerHorizontally4{\r\n-    position: relative;\r\n+    /* position: relative; */\r\n     text-align: center;\r\n     margin: 0 auto;\r\n }\r\n   \r\n"
+                },
+                {
+                    "date": 1642665065482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,9 +83,11 @@\n }\r\n .width70P{\r\n     width: 70%;\r\n }\r\n-\r\n+.width50P{\r\n+    width: 50%;\r\n+}\r\n /* ============================= */\r\n .headerFont{\r\n     font-size: 3em;\r\n }\r\n"
+                },
+                {
+                    "date": 1642665103696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,17 +77,20 @@\n /* ============================= */\r\n .width500px{\r\n     width: 500px;\r\n }\r\n-.widthFull{\r\n+.{\r\n     width: 100%;\r\n }\r\n .width70P{\r\n     width: 70%;\r\n }\r\n .width50P{\r\n     width: 50%;\r\n }\r\n+.widthAuto{\r\n+    width: auto;\r\n+}\r\n /* ============================= */\r\n .headerFont{\r\n     font-size: 3em;\r\n }\r\n"
+                },
+                {
+                    "date": 1642665203789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,12 +74,15 @@\n     margin-bottom: 2.2em;\r\n }\r\n \r\n /* ============================= */\r\n+.width450px{\r\n+    width: 450px;\r\n+}\r\n .width500px{\r\n     width: 500px;\r\n }\r\n-.{\r\n+.widthFull{\r\n     width: 100%;\r\n }\r\n .width70P{\r\n     width: 70%;\r\n"
+                },
+                {
+                    "date": 1642665731955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -221,8 +221,11 @@\n /* ============Small Screen width================= */\r\n .smallFont{\r\n     font-size: 2.3em;\r\n }\r\n+.smallerFont{\r\n+    font-size: .8em;\r\n+}\r\n .color{\r\n     color:red;\r\n }\r\n .widthSmall{\r\n"
+                },
+                {
+                    "date": 1642665760876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -222,9 +222,9 @@\n .smallFont{\r\n     font-size: 2.3em;\r\n }\r\n .smallerFont{\r\n-    font-size: .8em;\r\n+    font-size: .08em;\r\n }\r\n .color{\r\n     color:red;\r\n }\r\n"
+                },
+                {
+                    "date": 1642665784501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -199,11 +199,11 @@\n     position: relative;\r\n     right: 4em;\r\n }\r\n \r\n-#add{\r\n+/* #add{\r\n     font-size: 3em;\r\n-}\r\n+} */\r\n \r\n \r\n .gridAddButton{\r\n     margin-top: 2.2em;\r\n"
+                },
+                {
+                    "date": 1642665944861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -233,9 +233,9 @@\n }\r\n .gridMeSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns: .2fr 6.5fr .2fr;\r\n+    grid-template-columns:  6.5fr .2fr;\r\n     /* justify-items: center; */\r\n     column-gap:.02em;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642665952736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -233,9 +233,9 @@\n }\r\n .gridMeSmall{\r\n     display: grid;\r\n     /* grid-template-columns: 1fr 1fr .13fr; */\r\n-    grid-template-columns:  6.5fr .2fr;\r\n+    grid-template-columns: .2fr 6.5fr .2fr;\r\n     /* justify-items: center; */\r\n     column-gap:.02em;\r\n }\r\n \r\n"
                 }
             ],
             "date": 1642579062806,

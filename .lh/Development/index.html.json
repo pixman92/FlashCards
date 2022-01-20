@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 49,
+            "activePatchIndex": 81,
             "patches": [
                 {
                     "date": 1642578608394,
@@ -204,6 +204,134 @@
                 {
                     "date": 1642582887850,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n         <div class=\"boxMeCards\">\r\n           <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n               <div class=\"cardGrid\">\r\n-                <div class=\"title w3-padding-16\">\r\n+                <div class=\"title paddingUp paddingDown\">\r\n                   <div class=\"deckNameText\">\r\n                     Spanish\r\n                   </div>\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1642659386621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,11 +91,26 @@\n \r\n     <!-- TODO - save button -->\r\n \r\n \r\n-    <div class=\"box\">\r\n-      <div class=\"centerHorizontally2\">\r\n+    <div class=\"editDeck\">\r\n+      <div class=\"name\">\r\n+        <div class=\"deckHeadderEditScreen\">Deck 1</div>\r\n+      </div>\r\n+      <div class=\"tagsEditScreen\"></div>\r\n \r\n+      <div class=\"sharedEmailsEditScreen\">\r\n+        <div class=\"emailListEditScreen\"></div>\r\n+      </div>\r\n+\r\n+      <div class=\"score\">\r\n+        10\r\n+      </div>\r\n+\r\n+      \r\n+\r\n+      <!-- <div class=\"centerHorizontally2\">\r\n+\r\n           <div class=\"column\">\r\n             <div class=\"centerHorizontally grid1\">\r\n               Question:\r\n             </div>\r\n@@ -107,9 +122,8 @@\n         \r\n             </div>\r\n         \r\n           </div>\r\n-          <!-- ================= -->\r\n           <div class=\"column\">\r\n             <div class=\"centerHorizontally grid1\">\r\n               Answer:\r\n             </div>\r\n@@ -122,17 +136,45 @@\n           </div>\r\n \r\n           <div class=\"column2\">\r\n             <div class=\"deleteColumn centerHorizontally\">\r\n-              <!-- <button>X</button> -->\r\n \r\n             </div>\r\n \r\n           </div>\r\n           \r\n+        </div> -->\r\n+      </div>\r\n+      <div class=\"comboParent\">\r\n+        <div class=\"headerQAs\">\r\n+          <div class=\"headerFont paddingAllAround centerHorizontally\">\r\n+            Deck1\r\n+          </div>\r\n         </div>\r\n+        <div class=\"addingCards width50px\">\r\n+          <div class=\"gridMe centerHorizontally\">\r\n+          <!-- make textareas centered -->\r\n+            <div class=\"flexText \">      \r\n+              <div class=\"questionn \">\r\n+                <textarea class=\"width20em\"></textarea>\r\n+              </div>\r\n+              <div class=\"answer \">\r\n+                <textarea class=\"width20em\"></textarea>\r\n+              </div>\r\n+              \r\n+            </div>\r\n+            <div class=\"delete paddingUp paddingLeftSmall\">\r\n+              <button id=\"delete1\">X</button>\r\n+            </div>\r\n+          </div>\r\n+          <div class=\"gridDeleteButton\">\r\n+            <div class=\"tmp\"></div>\r\n+            <div class=\"addButton rightMe\"><button id=\"add\">+</button></div>\r\n+          </div>\r\n       </div>\r\n \r\n+      </div>\r\n+\r\n </body>\r\n </html>\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1642659409880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -150,9 +150,9 @@\n             Deck1\r\n           </div>\r\n         </div>\r\n         <div class=\"addingCards width50px\">\r\n-          <div class=\"gridMe centerHorizontally\">\r\n+          <div class=\"gridMe centerHorizontally3\">\r\n           <!-- make textareas centered -->\r\n             <div class=\"flexText \">      \r\n               <div class=\"questionn \">\r\n                 <textarea class=\"width20em\"></textarea>\r\n"
+                },
+                {
+                    "date": 1642659503751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -152,9 +152,9 @@\n         </div>\r\n         <div class=\"addingCards width50px\">\r\n           <div class=\"gridMe centerHorizontally3\">\r\n           <!-- make textareas centered -->\r\n-            <div class=\"flexText \">      \r\n+            <div class=\"flexText centerHorizontally3\">      \r\n               <div class=\"questionn \">\r\n                 <textarea class=\"width20em\"></textarea>\r\n               </div>\r\n               <div class=\"answer \">\r\n"
+                },
+                {
+                    "date": 1642659561137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -149,9 +149,9 @@\n           <div class=\"headerFont paddingAllAround centerHorizontally\">\r\n             Deck1\r\n           </div>\r\n         </div>\r\n-        <div class=\"addingCards width50px\">\r\n+        <div class=\"addingCards\">\r\n           <div class=\"gridMe centerHorizontally3\">\r\n           <!-- make textareas centered -->\r\n             <div class=\"flexText centerHorizontally3\">      \r\n               <div class=\"questionn \">\r\n"
+                },
+                {
+                    "date": 1642659590162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -150,10 +150,9 @@\n             Deck1\r\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n-          <div class=\"gridMe centerHorizontally3\">\r\n-          <!-- make textareas centered -->\r\n+          <!-- <div class=\"gridMe centerHorizontally3\">\r\n             <div class=\"flexText centerHorizontally3\">      \r\n               <div class=\"questionn \">\r\n                 <textarea class=\"width20em\"></textarea>\r\n               </div>\r\n@@ -164,8 +163,11 @@\n             </div>\r\n             <div class=\"delete paddingUp paddingLeftSmall\">\r\n               <button id=\"delete1\">X</button>\r\n             </div>\r\n+          </div> -->\r\n+          <div class=\"gridMe\">\r\n+            \r\n           </div>\r\n           <div class=\"gridDeleteButton\">\r\n             <div class=\"tmp\"></div>\r\n             <div class=\"addButton rightMe\"><button id=\"add\">+</button></div>\r\n"
+                },
+                {
+                    "date": 1642659646179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -165,9 +165,10 @@\n               <button id=\"delete1\">X</button>\r\n             </div>\r\n           </div> -->\r\n           <div class=\"gridMe\">\r\n-            \r\n+            <div class=\"questionText\"><textarea></textarea></div>\r\n+            <div class=\"answerText\"><textarea></textarea></div>\r\n           </div>\r\n           <div class=\"gridDeleteButton\">\r\n             <div class=\"tmp\"></div>\r\n             <div class=\"addButton rightMe\"><button id=\"add\">+</button></div>\r\n"
+                },
+                {
+                    "date": 1642659662571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -167,8 +167,9 @@\n           </div> -->\r\n           <div class=\"gridMe\">\r\n             <div class=\"questionText\"><textarea></textarea></div>\r\n             <div class=\"answerText\"><textarea></textarea></div>\r\n+            <div class=\"deleteButton\"><button>delete</button></div>\r\n           </div>\r\n           <div class=\"gridDeleteButton\">\r\n             <div class=\"tmp\"></div>\r\n             <div class=\"addButton rightMe\"><button id=\"add\">+</button></div>\r\n"
+                },
+                {
+                    "date": 1642659848322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -165,11 +165,11 @@\n               <button id=\"delete1\">X</button>\r\n             </div>\r\n           </div> -->\r\n           <div class=\"gridMe\">\r\n-            <div class=\"questionText\"><textarea></textarea></div>\r\n-            <div class=\"answerText\"><textarea></textarea></div>\r\n-            <div class=\"deleteButton\"><button>delete</button></div>\r\n+            <div class=\"questionText\"><textarea class=\"widthFull\"></textarea></div>\r\n+            <div class=\"answerText\"><textarea class=\"widthFull\"></textarea></div>\r\n+            <div class=\"deleteButton\"><button>x</button></div>\r\n           </div>\r\n           <div class=\"gridDeleteButton\">\r\n             <div class=\"tmp\"></div>\r\n             <div class=\"addButton rightMe\"><button id=\"add\">+</button></div>\r\n"
+                },
+                {
+                    "date": 1642659951805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,9 +164,9 @@\n             <div class=\"delete paddingUp paddingLeftSmall\">\r\n               <button id=\"delete1\">X</button>\r\n             </div>\r\n           </div> -->\r\n-          <div class=\"gridMe\">\r\n+          <div class=\"gridMe centerHorizontally3\">\r\n             <div class=\"questionText\"><textarea class=\"widthFull\"></textarea></div>\r\n             <div class=\"answerText\"><textarea class=\"widthFull\"></textarea></div>\r\n             <div class=\"deleteButton\"><button>x</button></div>\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1642660161221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -169,9 +169,9 @@\n             <div class=\"questionText\"><textarea class=\"widthFull\"></textarea></div>\r\n             <div class=\"answerText\"><textarea class=\"widthFull\"></textarea></div>\r\n             <div class=\"deleteButton\"><button>x</button></div>\r\n           </div>\r\n-          <div class=\"gridDeleteButton\">\r\n+          <div class=\"gridAddButton\">\r\n             <div class=\"tmp\"></div>\r\n             <div class=\"addButton rightMe\"><button id=\"add\">+</button></div>\r\n           </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1642660498576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,21 +164,21 @@\n             <div class=\"delete paddingUp paddingLeftSmall\">\r\n               <button id=\"delete1\">X</button>\r\n             </div>\r\n           </div> -->\r\n-          <div class=\"gridMe centerHorizontally3\">\r\n-            <div class=\"questionText\"><textarea class=\"widthFull\"></textarea></div>\r\n-            <div class=\"answerText\"><textarea class=\"widthFull\"></textarea></div>\r\n-            <div class=\"deleteButton\"><button>x</button></div>\r\n+            <div class=\"gridMe centerHorizontally3\">\r\n+              <div class=\"questionText\"><textarea class=\"widthFull\"></textarea></div>\r\n+              <div class=\"answerText\"><textarea class=\"widthFull\"></textarea></div>\r\n+              <div class=\"deleteButton\"><button>x</button></div>\r\n+            </div>\r\n           </div>\r\n+\r\n           <div class=\"gridAddButton\">\r\n             <div class=\"tmp\"></div>\r\n             <div class=\"addButton rightMe\"><button id=\"add\">+</button></div>\r\n           </div>\r\n       </div>\r\n \r\n-      </div>\r\n-\r\n </body>\r\n </html>\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1642660522311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,9 +164,9 @@\n             <div class=\"delete paddingUp paddingLeftSmall\">\r\n               <button id=\"delete1\">X</button>\r\n             </div>\r\n           </div> -->\r\n-            <div class=\"gridMe centerHorizontally3\">\r\n+            <div class=\"gridMe centerHorizontally3 w3-margin-bottom\">\r\n               <div class=\"questionText\"><textarea class=\"widthFull\"></textarea></div>\r\n               <div class=\"answerText\"><textarea class=\"widthFull\"></textarea></div>\r\n               <div class=\"deleteButton\"><button>x</button></div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1642660694320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,9 +164,9 @@\n             <div class=\"delete paddingUp paddingLeftSmall\">\r\n               <button id=\"delete1\">X</button>\r\n             </div>\r\n           </div> -->\r\n-            <div class=\"gridMe centerHorizontally3 w3-margin-bottom\">\r\n+            <div class=\"gridMe centerHorizontally3 marginBottom\">\r\n               <div class=\"questionText\"><textarea class=\"widthFull\"></textarea></div>\r\n               <div class=\"answerText\"><textarea class=\"widthFull\"></textarea></div>\r\n               <div class=\"deleteButton\"><button>x</button></div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1642661176111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,14 @@\n <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\">\r\n <!-- example -->\r\n <!-- <i class=\"material-icons\">home</i> -->\r\n \r\n+<!-- =============================-->\r\n \r\n+\r\n+<!-- ============================= -->\r\n+\r\n+\r\n <!-- cash script tag -->\r\n <script src=\"https://cdnjs.cloudflare.com/ajax/libs/cash/8.1.0/cash.min.js\"></script>\r\n \r\n <!-- ================= -->\r\n"
+                },
+                {
+                    "date": 1642661184148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,9 @@\n <!-- example -->\r\n <!-- <i class=\"material-icons\">home</i> -->\r\n \r\n <!-- =============================-->\r\n+<script src=\"https://raw.githubusercontent.com/WickyNilliams/enquire.js/master/dist/enquire.min.js\"></script>\r\n \r\n \r\n <!-- ============================= -->\r\n \r\n"
+                },
+                {
+                    "date": 1642661232531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,9 @@\n \r\n <!-- =============================-->\r\n <script src=\"https://raw.githubusercontent.com/WickyNilliams/enquire.js/master/dist/enquire.min.js\"></script>\r\n \r\n+<script src=\"screenSizingCSS.js\"></script>\r\n \r\n <!-- ============================= -->\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1642661782226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -152,9 +152,9 @@\n         </div> -->\r\n       </div>\r\n       <div class=\"comboParent\">\r\n         <div class=\"headerQAs\">\r\n-          <div class=\"headerFont paddingAllAround centerHorizontally\">\r\n+          <div class=\"editDecknameScreenSize paddingAllAround centerHorizontally\">\r\n             Deck1\r\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n"
+                },
+                {
+                    "date": 1642662167522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -172,10 +172,10 @@\n               <button id=\"delete1\">X</button>\r\n             </div>\r\n           </div> -->\r\n             <div class=\"gridMe centerHorizontally3 marginBottom\">\r\n-              <div class=\"questionText\"><textarea class=\"widthFull\"></textarea></div>\r\n-              <div class=\"answerText\"><textarea class=\"widthFull\"></textarea></div>\r\n+              <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n+              <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n               <div class=\"deleteButton\"><button>x</button></div>\r\n             </div>\r\n           </div>\r\n \r\n"
+                },
+                {
+                    "date": 1642662319217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -171,9 +171,9 @@\n             <div class=\"delete paddingUp paddingLeftSmall\">\r\n               <button id=\"delete1\">X</button>\r\n             </div>\r\n           </div> -->\r\n-            <div class=\"gridMe centerHorizontally3 marginBottom\">\r\n+            <div class=\"boxComboDynamic gridMe centerHorizontally3 marginBottom\">\r\n               <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n               <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n               <div class=\"deleteButton\"><button>x</button></div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1642662445510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -112,45 +112,9 @@\n       <div class=\"score\">\r\n         10\r\n       </div>\r\n \r\n-      \r\n-\r\n-      <!-- <div class=\"centerHorizontally2\">\r\n-\r\n-          <div class=\"column\">\r\n-            <div class=\"centerHorizontally grid1\">\r\n-              Question:\r\n-            </div>\r\n-            <div class=\"question\">\r\n-              <div class=\"questionBox centerHorizontaly grid1\">\r\n-\r\n-\r\n-              </div>\r\n-        \r\n-            </div>\r\n-        \r\n-          </div>\r\n-          <div class=\"column\">\r\n-            <div class=\"centerHorizontally grid1\">\r\n-              Answer:\r\n-            </div>\r\n-            <div class=\"answerBox centerHorizontaly grid1\">\r\n-\r\n-\r\n-            </div>\r\n-        \r\n-        \r\n-          </div>\r\n-\r\n-          <div class=\"column2\">\r\n-            <div class=\"deleteColumn centerHorizontally\">\r\n-\r\n-            </div>\r\n-\r\n-          </div>\r\n-          \r\n-        </div> -->\r\n+      <!-- ==============Edit Boxes Screen=============== -->\r\n       </div>\r\n       <div class=\"comboParent\">\r\n         <div class=\"headerQAs\">\r\n           <div class=\"editDecknameScreenSize paddingAllAround centerHorizontally\">\r\n"
+                },
+                {
+                    "date": 1642662463900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -97,8 +97,9 @@\n     <!-- TODO - add a box - if previous box is NOT empty -->\r\n \r\n     <!-- TODO - save button -->\r\n \r\n+    <!-- ===========EDIT DECK INFO================== -->\r\n \r\n     <div class=\"editDeck\">\r\n       <div class=\"name\">\r\n         <div class=\"deckHeadderEditScreen\">Deck 1</div>\r\n"
+                },
+                {
+                    "date": 1642662474679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n \r\n \r\n <!-- =================== -->\r\n <body>\r\n-    <!-- ============================= -->\r\n+    <!-- ============DECKS================= -->\r\n     <div class=\"firstScreen\">\r\n       <div class=\"deckMode centerHorizontally2\">\r\n         <div class=\"headerDeckMode\">Deck Names</div>\r\n   \r\n"
+                },
+                {
+                    "date": 1642662519429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,22 +122,8 @@\n             Deck1\r\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n-          <!-- <div class=\"gridMe centerHorizontally3\">\r\n-            <div class=\"flexText centerHorizontally3\">      \r\n-              <div class=\"questionn \">\r\n-                <textarea class=\"width20em\"></textarea>\r\n-              </div>\r\n-              <div class=\"answer \">\r\n-                <textarea class=\"width20em\"></textarea>\r\n-              </div>\r\n-              \r\n-            </div>\r\n-            <div class=\"delete paddingUp paddingLeftSmall\">\r\n-              <button id=\"delete1\">X</button>\r\n-            </div>\r\n-          </div> -->\r\n             <div class=\"boxComboDynamic gridMe centerHorizontally3 marginBottom\">\r\n               <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n               <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n               <div class=\"deleteButton\"><button>x</button></div>\r\n"
+                },
+                {
+                    "date": 1642662539483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n             Deck1\r\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n-            <div class=\"boxComboDynamic gridMe centerHorizontally3 marginBottom\">\r\n+            <div class=\"boxComboDynamic centerHorizontally3 marginBottom\">\r\n               <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n               <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n               <div class=\"deleteButton\"><button>x</button></div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1642662702971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n             Deck1\r\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n-            <div class=\"boxComboDynamic centerHorizontally3 marginBottom\">\r\n+            <div class=\"boxComboDynamic  marginBottom\">\r\n               <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n               <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n               <div class=\"deleteButton\"><button>x</button></div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1642663134106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -123,10 +123,13 @@\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n             <div class=\"boxComboDynamic  marginBottom\">\r\n-              <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n-              <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n+              <div class=\"centeringTheTwo\">\r\n+                <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n+                <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n+\r\n+              </div>\r\n               <div class=\"deleteButton\"><button>x</button></div>\r\n             </div>\r\n           </div>\r\n \r\n"
+                },
+                {
+                    "date": 1642663253193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -123,9 +123,8 @@\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n             <div class=\"boxComboDynamic  marginBottom\">\r\n-              <div class=\"centeringTheTwo\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n \r\n               </div>\r\n"
+                },
+                {
+                    "date": 1642663264677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,12 +126,12 @@\n             <div class=\"boxComboDynamic  marginBottom\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n \r\n+                <div class=\"deleteButton\"><button>x</button></div>\r\n               </div>\r\n-              <div class=\"deleteButton\"><button>x</button></div>\r\n-            </div>\r\n           </div>\r\n+        </div>\r\n \r\n           <div class=\"gridAddButton\">\r\n             <div class=\"tmp\"></div>\r\n             <div class=\"addButton rightMe\"><button id=\"add\">+</button></div>\r\n"
+                },
+                {
+                    "date": 1642663342928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -123,13 +123,17 @@\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n             <div class=\"boxComboDynamic  marginBottom\">\r\n+              <div class=\"leftDiv\"></div>\r\n+              <div class=\"middleDiv\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n-\r\n+              </div>\r\n+              <div class=\"rightDiv\">\r\n                 <div class=\"deleteButton\"><button>x</button></div>\r\n               </div>\r\n+              </div>\r\n           </div>\r\n         </div>\r\n \r\n           <div class=\"gridAddButton\">\r\n"
+                },
+                {
+                    "date": 1642663369185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,9 +124,9 @@\n         </div>\r\n         <div class=\"addingCards\">\r\n             <div class=\"boxComboDynamic  marginBottom\">\r\n               <div class=\"leftDiv\"></div>\r\n-              <div class=\"middleDiv\">\r\n+              <div class=\"middleDiv flexMiddle\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n               </div>\r\n               <div class=\"rightDiv\">\r\n"
+                },
+                {
+                    "date": 1642665156574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,8 +57,10 @@\n \r\n \r\n <!-- =================== -->\r\n <body>\r\n+  <div class=\"BIGDiv\">\r\n+\r\n     <!-- ============DECKS================= -->\r\n     <div class=\"firstScreen\">\r\n       <div class=\"deckMode centerHorizontally2\">\r\n         <div class=\"headerDeckMode\">Deck Names</div>\r\n@@ -140,8 +142,9 @@\n             <div class=\"tmp\"></div>\r\n             <div class=\"addButton rightMe\"><button id=\"add\">+</button></div>\r\n           </div>\r\n       </div>\r\n+  </div>\r\n \r\n </body>\r\n </html>\r\n \r\n"
+                },
+                {
+                    "date": 1642665628091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -139,9 +139,9 @@\n         </div>\r\n \r\n           <div class=\"gridAddButton\">\r\n             <div class=\"tmp\"></div>\r\n-            <div class=\"addButton rightMe\"><button id=\"add\">+</button></div>\r\n+            <div class=\"rightMe\"><button class=\"addButton\" id=\"add\">+</button></div>\r\n           </div>\r\n       </div>\r\n   </div>\r\n \r\n"
                 }
             ],
             "date": 1642578608394,

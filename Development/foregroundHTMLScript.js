@@ -29,3 +29,11 @@ async function makeTagsHTML(){
 function makeEditMode(){
 
 }
+
+//=============================
+var indexOfBoxes;
+function addBoxesToHTML(indexOfBoxes, questionText, answerText){
+    $('.addingCards').html($('.addingCards').html()+['<div class="gridMe centerHorizontally3 marginBottom">','<div class="questionText"><textarea class="widthFull ',indexOfBoxes,'">', questionText, '</textarea></div>','<div class="answerText"><textarea class="widthFull">', answerText, '</textarea></div>','<div class="deleteButton ', indexOfBoxes,'"><button>x</button></div></div>'].join(''));
+}
+
+

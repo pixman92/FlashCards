@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 43,
+            "activePatchIndex": 107,
             "patches": [
                 {
                     "date": 1642578985874,
@@ -180,6 +180,262 @@
                 {
                     "date": 1642582523147,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n     //boxes for deckNames\r\n     changeCSS('boxMeCards', ['marginMe']);\r\n \r\n     changeCSS('cardExample', ['marginAllAround', 'greyBorder']);\r\n-    changeCSS('deckNameText', ['headerFont', 'title'])\r\n+    changeCSS('deckNameText', ['headerFont'])\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642659795915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,10 @@\n     //boxes for deckNames\r\n     changeCSS('boxMeCards', ['marginMe']);\r\n \r\n     changeCSS('cardExample', ['marginAllAround', 'greyBorder']);\r\n-    changeCSS('deckNameText', ['headerFont'])\r\n+    changeCSS('deckNameText', ['headerFont']);\r\n+\r\n+    changeCSS('questionText', ['paddingRight']);\r\n+    changeCSS('anwserText', ['paddingLeft']);\r\n+    \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642659811807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n \r\n     changeCSS('cardExample', ['marginAllAround', 'greyBorder']);\r\n     changeCSS('deckNameText', ['headerFont']);\r\n \r\n-    changeCSS('questionText', ['paddingRight']);\r\n-    changeCSS('anwserText', ['paddingLeft']);\r\n+    changeCSS('questionText', ['widthFull']);\r\n+    changeCSS('anwserText', ['widthFull']);\r\n     \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642660027734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n \r\n     changeCSS('cardExample', ['marginAllAround', 'greyBorder']);\r\n     changeCSS('deckNameText', ['headerFont']);\r\n \r\n-    changeCSS('questionText', ['widthFull']);\r\n-    changeCSS('anwserText', ['widthFull']);\r\n+    // changeCSS('questionText', ['widthFull']);\r\n+    // changeCSS('anwserText', ['widthFull']);\r\n     \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642660661330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     //header\r\n     changeCSS('headerDeckMode', ['headerFont']);\r\n \r\n     //boxes for deckNames\r\n-    changeCSS('boxMeCards', ['marginMe']);\r\n+    changeCSS('boxMeCards', ['marginTop']);\r\n \r\n     changeCSS('cardExample', ['marginAllAround', 'greyBorder']);\r\n     changeCSS('deckNameText', ['headerFont']);\r\n \r\n"
+                },
+                {
+                    "date": 1642661473991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,26 @@\n function runMyCSS(){\r\n \r\n     changeCSS('box', ['none'])\r\n+    \r\n+    \r\n+    if($('body').width()>=760){\r\n+        changeCSS('firstScreen', ['centerHorizontally']);\r\n+        // changeCSS('deckMode', ['centerHorizontally']);\r\n+    \r\n+        //header\r\n+        changeCSS('headerDeckMode', ['headerFont']);\r\n+    \r\n+        //boxes for deckNames\r\n+        changeCSS('boxMeCards', ['marginTop']);\r\n+    \r\n+        changeCSS('cardExample', ['marginAllAround', 'greyBorder']);\r\n+        changeCSS('deckNameText', ['headerFont']);\r\n+    \r\n+        // changeCSS('questionText', ['widthFull']);\r\n+        // changeCSS('anwserText', ['widthFull']);\r\n+    }\r\n \r\n-    changeCSS('firstScreen', ['centerHorizontally']);\r\n-    // changeCSS('deckMode', ['centerHorizontally']);\r\n-\r\n-    //header\r\n-    changeCSS('headerDeckMode', ['headerFont']);\r\n-\r\n-    //boxes for deckNames\r\n-    changeCSS('boxMeCards', ['marginTop']);\r\n-\r\n-    changeCSS('cardExample', ['marginAllAround', 'greyBorder']);\r\n-    changeCSS('deckNameText', ['headerFont']);\r\n-\r\n-    // changeCSS('questionText', ['widthFull']);\r\n-    // changeCSS('anwserText', ['widthFull']);\r\n-    \r\n+    if($('body').width()<=760){\r\n+        \r\n+    }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642661643384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,7 +20,11 @@\n         // changeCSS('anwserText', ['widthFull']);\r\n     }\r\n \r\n     if($('body').width()<=760){\r\n-        \r\n+        changeCSS('editDecknameScreenSize', [])\r\n     }\r\n\\ No newline at end of file\n-}\n+}\r\n+\r\n+window.addEventListener('resize', function(event){\r\n+    runMyCSS();\r\n+});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642661667597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         // changeCSS('anwserText', ['widthFull']);\r\n     }\r\n \r\n     if($('body').width()<=760){\r\n-        changeCSS('editDecknameScreenSize', [])\r\n+        changeCSS('editDecknameScreenSize', ['smallFont'])\r\n     }\r\n }\r\n \r\n window.addEventListener('resize', function(event){\r\n"
+                },
+                {
+                    "date": 1642661710503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,10 @@\n         // changeCSS('anwserText', ['widthFull']);\r\n     }\r\n \r\n     if($('body').width()<=760){\r\n-        changeCSS('editDecknameScreenSize', ['smallFont'])\r\n+        changeCSS('editDecknameScreenSize', ['smallFont']);\r\n+        console.log('i ran');\r\n     }\r\n }\r\n \r\n window.addEventListener('resize', function(event){\r\n"
+                },
+                {
+                    "date": 1642661763677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n         changeCSS('firstScreen', ['centerHorizontally']);\r\n         // changeCSS('deckMode', ['centerHorizontally']);\r\n     \r\n         //header\r\n-        changeCSS('headerDeckMode', ['headerFont']);\r\n+        changeCSS('editDecknameScreenSize', ['headerFont']);\r\n     \r\n         //boxes for deckNames\r\n         changeCSS('boxMeCards', ['marginTop']);\r\n     \r\n"
+                },
+                {
+                    "date": 1642661823812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         // changeCSS('anwserText', ['widthFull']);\r\n     }\r\n \r\n     if($('body').width()<=760){\r\n-        changeCSS('editDecknameScreenSize', ['smallFont']);\r\n+        changeCSS('editDecknameScreenSize', ['smallFont', 'color']);\r\n         console.log('i ran');\r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642661886199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n         changeCSS('firstScreen', ['centerHorizontally']);\r\n         // changeCSS('deckMode', ['centerHorizontally']);\r\n     \r\n         //header\r\n-        changeCSS('editDecknameScreenSize', ['headerFont']);\r\n+        changeCSS('editDecknameScreenSize', ['headerFont', 'centerHorizontally']);\r\n     \r\n         //boxes for deckNames\r\n         changeCSS('boxMeCards', ['marginTop']);\r\n     \r\n@@ -20,9 +20,9 @@\n         // changeCSS('anwserText', ['widthFull']);\r\n     }\r\n \r\n     if($('body').width()<=760){\r\n-        changeCSS('editDecknameScreenSize', ['smallFont', 'color']);\r\n+        changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally');\r\n         console.log('i ran');\r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642662001977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         // changeCSS('anwserText', ['widthFull']);\r\n     }\r\n \r\n     if($('body').width()<=760){\r\n-        changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally');\r\n+        changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n         console.log('i ran');\r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642662204345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,13 +17,16 @@\n         changeCSS('deckNameText', ['headerFont']);\r\n     \r\n         // changeCSS('questionText', ['widthFull']);\r\n         // changeCSS('anwserText', ['widthFull']);\r\n+        changeCSS('QText', ['widthFull']);\r\n+        changeCSS('AText', ['widthFull']);\r\n     }\r\n \r\n     if($('body').width()<=760){\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n-        console.log('i ran');\r\n+        changeCSS('QText', ['widthSmall']);\r\n+        changeCSS('AText', ['widthSmall']);\r\n     }\r\n }\r\n \r\n window.addEventListener('resize', function(event){\r\n"
+                },
+                {
+                    "date": 1642662339574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n         changeCSS('deckNameText', ['headerFont']);\r\n     \r\n         // changeCSS('questionText', ['widthFull']);\r\n         // changeCSS('anwserText', ['widthFull']);\r\n-        changeCSS('QText', ['widthFull']);\r\n-        changeCSS('AText', ['widthFull']);\r\n+        changeCSS('QText', ['widthFull']);  //Question textbox\r\n+        changeCSS('AText', ['widthFull']);  //Answer textbox\r\n     }\r\n \r\n     if($('body').width()<=760){\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n"
+                },
+                {
+                    "date": 1642662368004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,13 +12,12 @@\n     \r\n         //boxes for deckNames\r\n         changeCSS('boxMeCards', ['marginTop']);\r\n     \r\n-        changeCSS('cardExample', ['marginAllAround', 'greyBorder']);\r\n-        changeCSS('deckNameText', ['headerFont']);\r\n+        changeCSS('cardExample', ['marginAllAround', 'greyBorder']);    //card on Home Screen\r\n+        changeCSS('deckNameText', ['headerFont']);      //header Naem size\r\n     \r\n-        // changeCSS('questionText', ['widthFull']);\r\n-        // changeCSS('anwserText', ['widthFull']);\r\n+\r\n         changeCSS('QText', ['widthFull']);  //Question textbox\r\n         changeCSS('AText', ['widthFull']);  //Answer textbox\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1642662387055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n         //header\r\n         changeCSS('editDecknameScreenSize', ['headerFont', 'centerHorizontally']);\r\n     \r\n         //boxes for deckNames\r\n-        changeCSS('boxMeCards', ['marginTop']);\r\n+        changeCSS('boxMeCards', ['marginTop']); //big outer DIV to box car\r\n     \r\n         changeCSS('cardExample', ['marginAllAround', 'greyBorder']);    //card on Home Screen\r\n         changeCSS('deckNameText', ['headerFont']);      //header Naem size\r\n     \r\n"
+                },
+                {
+                    "date": 1642662405659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n         changeCSS('firstScreen', ['centerHorizontally']);\r\n         // changeCSS('deckMode', ['centerHorizontally']);\r\n     \r\n         //header\r\n-        changeCSS('editDecknameScreenSize', ['headerFont', 'centerHorizontally']);\r\n+        changeCSS('editDecknameScreenSize', ['headerFont', 'centerHorizontally']); // deckName on editScreen - size\r\n     \r\n         //boxes for deckNames\r\n         changeCSS('boxMeCards', ['marginTop']); //big outer DIV to box car\r\n     \r\n"
+                },
+                {
+                    "date": 1642662534710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n     \r\n     \r\n     if($('body').width()>=760){\r\n         changeCSS('firstScreen', ['centerHorizontally']);\r\n-        // changeCSS('deckMode', ['centerHorizontally']);\r\n     \r\n         //header\r\n         changeCSS('editDecknameScreenSize', ['headerFont', 'centerHorizontally']); // deckName on editScreen - size\r\n     \r\n@@ -18,8 +17,10 @@\n     \r\n \r\n         changeCSS('QText', ['widthFull']);  //Question textbox\r\n         changeCSS('AText', ['widthFull']);  //Answer textbox\r\n+\r\n+        changeCSS('boxComboDynamic', ['gridMe'])\r\n     }\r\n \r\n     if($('body').width()<=760){\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n"
+                },
+                {
+                    "date": 1642662567703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,11 @@\n     if($('body').width()<=760){\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n         changeCSS('QText', ['widthSmall']);\r\n         changeCSS('AText', ['widthSmall']);\r\n+\r\n+        changeCSS('boxComboDynamic', ['gridMeSmall'])\r\n+\r\n     }\r\n }\r\n \r\n window.addEventListener('resize', function(event){\r\n"
+                },
+                {
+                    "date": 1642662592236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n         changeCSS('QText', ['widthSmall']);\r\n         changeCSS('AText', ['widthSmall']);\r\n \r\n-        changeCSS('boxComboDynamic', ['gridMeSmall'])\r\n+        changeCSS('boxComboDynamic', ['gridMeSmall', 'centerHorizontally3'])\r\n \r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642662724749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \r\n         changeCSS('QText', ['widthFull']);  //Question textbox\r\n         changeCSS('AText', ['widthFull']);  //Answer textbox\r\n \r\n-        changeCSS('boxComboDynamic', ['gridMe'])\r\n+        changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally3'])\r\n     }\r\n \r\n     if($('body').width()<=760){\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n"
+                },
+                {
+                    "date": 1642662767381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \r\n         changeCSS('QText', ['widthFull']);  //Question textbox\r\n         changeCSS('AText', ['widthFull']);  //Answer textbox\r\n \r\n-        changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally3'])\r\n+        changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally2'])\r\n     }\r\n \r\n     if($('body').width()<=760){\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n"
+                },
+                {
+                    "date": 1642662835845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \r\n         changeCSS('QText', ['widthFull']);  //Question textbox\r\n         changeCSS('AText', ['widthFull']);  //Answer textbox\r\n \r\n-        changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally2'])\r\n+        changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4'])\r\n     }\r\n \r\n     if($('body').width()<=760){\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n"
+                },
+                {
+                    "date": 1642663006333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,11 @@\n         changeCSS('QText', ['widthFull']);  //Question textbox\r\n         changeCSS('AText', ['widthFull']);  //Answer textbox\r\n \r\n         changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4'])\r\n+\r\n+        changeCSS('deleteButton', ['deleteSetup']\r\n+\r\n     }\r\n \r\n     if($('body').width()<=760){\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n"
+                },
+                {
+                    "date": 1642663056680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         changeCSS('AText', ['widthFull']);  //Answer textbox\r\n \r\n         changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4'])\r\n \r\n-        changeCSS('deleteButton', ['deleteSetup']\r\n+        changeCSS('deleteButton', ['deleteSetup']);\r\n \r\n     }\r\n \r\n     if($('body').width()<=760){\r\n"
+                },
+                {
+                    "date": 1642663155164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n \r\n         changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4'])\r\n \r\n         changeCSS('deleteButton', ['deleteSetup']);\r\n+        changeCSS('centeringTheTwo', ['']);\r\n \r\n     }\r\n \r\n     if($('body').width()<=760){\r\n"
+                },
+                {
+                    "date": 1642663177922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \r\n         changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4'])\r\n \r\n         changeCSS('deleteButton', ['deleteSetup']);\r\n-        changeCSS('centeringTheTwo', ['']);\r\n+        changeCSS('centeringTheTwo', ['flexGridQA']);\r\n \r\n     }\r\n \r\n     if($('body').width()<=760){\r\n"
+                },
+                {
+                    "date": 1642663277440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,8 @@\n \r\n         changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4'])\r\n \r\n         changeCSS('deleteButton', ['deleteSetup']);\r\n-        changeCSS('centeringTheTwo', ['flexGridQA']);\r\n \r\n     }\r\n \r\n     if($('body').width()<=760){\r\n"
+                },
+                {
+                    "date": 1642663410717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         changeCSS('AText', ['widthFull']);  //Answer textbox\r\n \r\n         changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4'])\r\n \r\n-        changeCSS('deleteButton', ['deleteSetup']);\r\n+        // changeCSS('deleteButton', ['deleteSetup']);\r\n \r\n     }\r\n \r\n     if($('body').width()<=760){\r\n"
+                },
+                {
+                    "date": 1642663511918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \r\n         changeCSS('QText', ['widthFull']);  //Question textbox\r\n         changeCSS('AText', ['widthFull']);  //Answer textbox\r\n \r\n-        changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4'])\r\n+        changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4', 'widthFull'])\r\n \r\n         // changeCSS('deleteButton', ['deleteSetup']);\r\n \r\n     }\r\n"
+                },
+                {
+                    "date": 1642663557885,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,10 @@\n         changeCSS('cardExample', ['marginAllAround', 'greyBorder']);    //card on Home Screen\r\n         changeCSS('deckNameText', ['headerFont']);      //header Naem size\r\n     \r\n \r\n-        changeCSS('QText', ['widthFull']);  //Question textbox\r\n-        changeCSS('AText', ['widthFull']);  //Answer textbox\r\n+        changeCSS('QText', ['width20em']);  //Question textbox\r\n+        changeCSS('AText', ['width20em']);  //Answer textbox\r\n \r\n         changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4', 'widthFull'])\r\n \r\n         // changeCSS('deleteButton', ['deleteSetup']);\r\n"
+                },
+                {
+                    "date": 1642663634138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n         changeCSS('QText', ['widthSmall']);\r\n         changeCSS('AText', ['widthSmall']);\r\n \r\n-        changeCSS('boxComboDynamic', ['gridMeSmall', 'centerHorizontally3'])\r\n+        changeCSS('boxComboDynamic', ['gridMeSmall', 'centerHorizontally3'. 'width25em'])\r\n \r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642663683684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n         changeCSS('QText', ['widthSmall']);\r\n         changeCSS('AText', ['widthSmall']);\r\n \r\n-        changeCSS('boxComboDynamic', ['gridMeSmall', 'centerHorizontally3'. 'width25em'])\r\n+        changeCSS('boxComboDynamic', ['gridMeSmall', 'centerHorizontally3', 'smallButWide'])\r\n \r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642663785066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n         changeCSS('QText', ['widthSmall']);\r\n         changeCSS('AText', ['widthSmall']);\r\n \r\n-        changeCSS('boxComboDynamic', ['gridMeSmall', 'centerHorizontally3', 'smallButWide'])\r\n+        changeCSS('boxComboDynamic', ['gridMeSmall', 'centerHorizontally4', 'smallButWide'])\r\n \r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642664230775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,12 @@\n \r\n         changeCSS('boxComboDynamic', ['gridMeSmall', 'centerHorizontally4', 'smallButWide'])\r\n \r\n     }\r\n+    if($('body').width()<=500){\r\n+        changeCSS('boxComboDynamic', ['gridMeSuperSmall', 'centerHorizontally4', 'notEvenSmall'])\r\n+    }\r\n+\r\n }\r\n \r\n window.addEventListener('resize', function(event){\r\n     runMyCSS();\r\n"
+                },
+                {
+                    "date": 1642664433008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,9 @@\n \r\n     }\r\n     if($('body').width()<=500){\r\n         changeCSS('boxComboDynamic', ['gridMeSuperSmall', 'centerHorizontally4', 'notEvenSmall'])\r\n+        changeCSS('rightDiv', ['notEvenSmall']);\r\n     }\r\n \r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642664444169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,10 +33,10 @@\n         changeCSS('boxComboDynamic', ['gridMeSmall', 'centerHorizontally4', 'smallButWide'])\r\n \r\n     }\r\n     if($('body').width()<=500){\r\n-        changeCSS('boxComboDynamic', ['gridMeSuperSmall', 'centerHorizontally4', 'notEvenSmall'])\r\n-        changeCSS('rightDiv', ['notEvenSmall']);\r\n+        changeCSS('boxComboDynamic', ['gridMeSuperSmall', 'centerHorizontally4', 'notEvenSmall']);\r\n+        changeCSS('rightDiv', ['widthFull']);\r\n     }\r\n \r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642664482240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n \r\n     }\r\n     if($('body').width()<=500){\r\n         changeCSS('boxComboDynamic', ['gridMeSuperSmall', 'centerHorizontally4', 'notEvenSmall']);\r\n-        changeCSS('rightDiv', ['widthFull']);\r\n+        changeCSS('rightDiv', ['fromRight']);\r\n     }\r\n \r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642664630680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \r\n         changeCSS('QText', ['width20em']);  //Question textbox\r\n         changeCSS('AText', ['width20em']);  //Answer textbox\r\n \r\n-        changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4', 'widthFull'])\r\n+        changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4', 'widtth25em'])\r\n \r\n         // changeCSS('deleteButton', ['deleteSetup']);\r\n \r\n     }\r\n"
+                },
+                {
+                    "date": 1642664644875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n \r\n         changeCSS('QText', ['width20em']);  //Question textbox\r\n         changeCSS('AText', ['width20em']);  //Answer textbox\r\n \r\n-        changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4', 'widtth25em'])\r\n+        changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4', 'widtth245em'])\r\n \r\n         // changeCSS('deleteButton', ['deleteSetup']);\r\n \r\n     }\r\n"
+                },
+                {
+                    "date": 1642664880078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,12 @@\n     changeCSS('box', ['none'])\r\n     \r\n     \r\n     if($('body').width()>=760){\r\n+\r\n+        changeCSS('comboParent', ['width70P'])\r\n+        // =============================\r\n+\r\n         changeCSS('firstScreen', ['centerHorizontally']);\r\n     \r\n         //header\r\n         changeCSS('editDecknameScreenSize', ['headerFont', 'centerHorizontally']); // deckName on editScreen - size\r\n@@ -18,9 +22,9 @@\n \r\n         changeCSS('QText', ['width20em']);  //Question textbox\r\n         changeCSS('AText', ['width20em']);  //Answer textbox\r\n \r\n-        changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4', 'widtth245em'])\r\n+        changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4', 'widtth45em'])\r\n \r\n         // changeCSS('deleteButton', ['deleteSetup']);\r\n \r\n     }\r\n"
+                },
+                {
+                    "date": 1642664958820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n     \r\n     if($('body').width()>=760){\r\n \r\n         changeCSS('comboParent', ['width70P'])\r\n+        changeCSS('headerQAs', ['width70P'])\r\n         // =============================\r\n \r\n         changeCSS('firstScreen', ['centerHorizontally']);\r\n     \r\n"
+                },
+                {
+                    "date": 1642664994202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n     \r\n     \r\n     if($('body').width()>=760){\r\n \r\n-        changeCSS('comboParent', ['width70P'])\r\n-        changeCSS('headerQAs', ['width70P'])\r\n+        changeCSS('comboParent', ['width500px'])\r\n+        changeCSS('headerQAs', ['width500px'])\r\n         // =============================\r\n \r\n         changeCSS('firstScreen', ['centerHorizontally']);\r\n     \r\n"
+                },
+                {
+                    "date": 1642665034783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,11 @@\n     \r\n     \r\n     if($('body').width()>=760){\r\n \r\n-        changeCSS('comboParent', ['width500px'])\r\n-        changeCSS('headerQAs', ['width500px'])\r\n+        changeCSS('comboParent', ['width500px']);\r\n+        changeCSS('headerQAs', ['width500px']);\r\n+        changeCSS('addingCards', ['width70P'])\r\n         // =============================\r\n \r\n         changeCSS('firstScreen', ['centerHorizontally']);\r\n     \r\n"
+                },
+                {
+                    "date": 1642665069088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     if($('body').width()>=760){\r\n \r\n         changeCSS('comboParent', ['width500px']);\r\n         changeCSS('headerQAs', ['width500px']);\r\n-        changeCSS('addingCards', ['width70P'])\r\n+        changeCSS('addingCards', ['width50P'])\r\n         // =============================\r\n \r\n         changeCSS('firstScreen', ['centerHorizontally']);\r\n     \r\n"
+                },
+                {
+                    "date": 1642665090032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n     \r\n     \r\n     if($('body').width()>=760){\r\n \r\n-        changeCSS('comboParent', ['width500px']);\r\n-        changeCSS('headerQAs', ['width500px']);\r\n-        changeCSS('addingCards', ['width50P'])\r\n+        changeCSS('comboParent', ['widthFull']);\r\n+        changeCSS('headerQAs', ['widthFull']);\r\n+        changeCSS('addingCards', ['widthFull'])\r\n         // =============================\r\n \r\n         changeCSS('firstScreen', ['centerHorizontally']);\r\n     \r\n"
+                },
+                {
+                    "date": 1642665109887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n     \r\n     \r\n     if($('body').width()>=760){\r\n \r\n-        changeCSS('comboParent', ['widthFull']);\r\n-        changeCSS('headerQAs', ['widthFull']);\r\n-        changeCSS('addingCards', ['widthFull'])\r\n+        changeCSS('comboParent', ['widthAuto']);\r\n+        changeCSS('headerQAs', ['widthAuto']);\r\n+        changeCSS('addingCards', ['widthAuto'])\r\n         // =============================\r\n \r\n         changeCSS('firstScreen', ['centerHorizontally']);\r\n     \r\n"
+                },
+                {
+                    "date": 1642665172838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,12 @@\n     \r\n     \r\n     if($('body').width()>=760){\r\n \r\n-        changeCSS('comboParent', ['widthAuto']);\r\n-        changeCSS('headerQAs', ['widthAuto']);\r\n-        changeCSS('addingCards', ['widthAuto'])\r\n+        // changeCSS('comboParent', ['widthAuto']);\r\n+        // changeCSS('headerQAs', ['widthAuto']);\r\n+        // changeCSS('addingCards', ['widthAuto'])\r\n+        changeCSS('BIGDiv', ['width70P'])\r\n         // =============================\r\n \r\n         changeCSS('firstScreen', ['centerHorizontally']);\r\n     \r\n"
+                },
+                {
+                    "date": 1642665206544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,10 @@\n \r\n         // changeCSS('comboParent', ['widthAuto']);\r\n         // changeCSS('headerQAs', ['widthAuto']);\r\n         // changeCSS('addingCards', ['widthAuto'])\r\n-        changeCSS('BIGDiv', ['width70P'])\r\n+        changeCSS('BIGDiv', ['.width450px{\r\n+            '])\r\n         // =============================\r\n \r\n         changeCSS('firstScreen', ['centerHorizontally']);\r\n     \r\n"
+                },
+                {
+                    "date": 1642665222424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,9 @@\n \r\n         // changeCSS('comboParent', ['widthAuto']);\r\n         // changeCSS('headerQAs', ['widthAuto']);\r\n         // changeCSS('addingCards', ['widthAuto'])\r\n-        changeCSS('BIGDiv', ['.width450px{\r\n-            '])\r\n+        changeCSS('BIGDiv', ['width450px']);\r\n         // =============================\r\n \r\n         changeCSS('firstScreen', ['centerHorizontally']);\r\n     \r\n"
+                },
+                {
+                    "date": 1642665257557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,11 @@\n \r\n     }\r\n \r\n     if($('body').width()<=760){\r\n+        changeCSS('BIGDiv', ['width450px']);\r\n+        // =============================\r\n+\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n         changeCSS('QText', ['widthSmall']);\r\n         changeCSS('AText', ['widthSmall']);\r\n \r\n"
+                },
+                {
+                    "date": 1642665310888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,10 @@\n     }\r\n \r\n     if($('body').width()<=760){\r\n         changeCSS('BIGDiv', ['width450px']);\r\n+        changeCSS('comboParent', ['width450px']);\r\n+        changeCSS('headerQAs', ['width450px']);\r\n         // =============================\r\n \r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n         changeCSS('QText', ['widthSmall']);\r\n"
+                },
+                {
+                    "date": 1642665355121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n \r\n     }\r\n \r\n     if($('body').width()<=760){\r\n-        changeCSS('BIGDiv', ['width450px']);\r\n+        changeCSS('BIGDiv', ['width450px', 'centerHorizontally4']);\r\n         changeCSS('comboParent', ['width450px']);\r\n         changeCSS('headerQAs', ['width450px']);\r\n         // =============================\r\n \r\n"
+                },
+                {
+                    "date": 1642665509646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,12 @@\n         changeCSS('BIGDiv', ['width450px', 'centerHorizontally4']);\r\n         changeCSS('comboParent', ['width450px']);\r\n         changeCSS('headerQAs', ['width450px']);\r\n         // =============================\r\n+        changeCSS('addingCards', ['width450px']);\r\n+        \r\n \r\n+        // =============================\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n         changeCSS('QText', ['widthSmall']);\r\n         changeCSS('AText', ['widthSmall']);\r\n \r\n"
+                },
+                {
+                    "date": 1642665532658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,10 +37,11 @@\n         changeCSS('comboParent', ['width450px']);\r\n         changeCSS('headerQAs', ['width450px']);\r\n         // =============================\r\n         changeCSS('addingCards', ['width450px']);\r\n+        changeCss('gridAddButton', ['width450px']);\r\n+\r\n         \r\n-\r\n         // =============================\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n         changeCSS('QText', ['widthSmall']);\r\n         changeCSS('AText', ['widthSmall']);\r\n"
+                },
+                {
+                    "date": 1642665560903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,11 +37,11 @@\n         changeCSS('comboParent', ['width450px']);\r\n         changeCSS('headerQAs', ['width450px']);\r\n         // =============================\r\n         changeCSS('addingCards', ['width450px']);\r\n-        changeCss('gridAddButton', ['width450px']);\r\n+        // changeCss('gridAddButton', ['width450px']);\r\n \r\n-        \r\n+\r\n         // =============================\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n         changeCSS('QText', ['widthSmall']);\r\n         changeCSS('AText', ['widthSmall']);\r\n"
+                },
+                {
+                    "date": 1642665602544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n         changeCSS('comboParent', ['width450px']);\r\n         changeCSS('headerQAs', ['width450px']);\r\n         // =============================\r\n         changeCSS('addingCards', ['width450px']);\r\n-        // changeCss('gridAddButton', ['width450px']);\r\n+        changeCss('addButton', ['smallFont']);\r\n \r\n \r\n         // =============================\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n"
+                },
+                {
+                    "date": 1642665680669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n         changeCSS('comboParent', ['width450px']);\r\n         changeCSS('headerQAs', ['width450px']);\r\n         // =============================\r\n         changeCSS('addingCards', ['width450px']);\r\n-        changeCss('addButton', ['smallFont']);\r\n+        changeCSS('addButton', ['smallFont']);\r\n \r\n \r\n         // =============================\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n"
+                },
+                {
+                    "date": 1642665737169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n         changeCSS('comboParent', ['width450px']);\r\n         changeCSS('headerQAs', ['width450px']);\r\n         // =============================\r\n         changeCSS('addingCards', ['width450px']);\r\n-        changeCSS('addButton', ['smallFont']);\r\n+        changeCSS('addButton', ['smallerFont']);\r\n \r\n \r\n         // =============================\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n"
+                },
+                {
+                    "date": 1642665796258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n         changeCSS('comboParent', ['width450px']);\r\n         changeCSS('headerQAs', ['width450px']);\r\n         // =============================\r\n         changeCSS('addingCards', ['width450px']);\r\n-        changeCSS('addButton', ['smallerFont']);\r\n+        changeCSS('addButton', ['smallFont']);\r\n \r\n \r\n         // =============================\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n"
+                },
+                {
+                    "date": 1642665816184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n \r\n \r\n         // =============================\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n-        changeCSS('QText', ['widthSmall']);\r\n+        changeCSS('QText', ['widthFull']);\r\n         changeCSS('AText', ['widthSmall']);\r\n \r\n         changeCSS('boxComboDynamic', ['gridMeSmall', 'centerHorizontally4', 'smallButWide'])\r\n \r\n"
+                },
+                {
+                    "date": 1642665822627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n \r\n         // =============================\r\n         changeCSS('editDecknameScreenSize', ['smallFont', 'centerHorizontally']);\r\n         changeCSS('QText', ['widthFull']);\r\n-        changeCSS('AText', ['widthSmall']);\r\n+        changeCSS('AText', ['widthFull']);\r\n \r\n         changeCSS('boxComboDynamic', ['gridMeSmall', 'centerHorizontally4', 'smallButWide'])\r\n \r\n     }\r\n"
+                },
+                {
+                    "date": 1642665852366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \r\n         // changeCSS('comboParent', ['widthAuto']);\r\n         // changeCSS('headerQAs', ['widthAuto']);\r\n         // changeCSS('addingCards', ['widthAuto'])\r\n-        changeCSS('BIGDiv', ['width450px']);\r\n+        changeCSS('BIGDiv', ['width450px', 'centerHorizontally4']);\r\n         // =============================\r\n \r\n         changeCSS('firstScreen', ['centerHorizontally']);\r\n     \r\n"
+                },
+                {
+                    "date": 1642665883571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,9 @@\n         changeCSS('boxComboDynamic', ['gridMeSmall', 'centerHorizontally4', 'smallButWide'])\r\n \r\n     }\r\n     if($('body').width()<=500){\r\n+        changeCSS('BIGDiv', ['width450px', 'centerHorizontally4']);\r\n         changeCSS('boxComboDynamic', ['gridMeSuperSmall', 'centerHorizontally4', 'notEvenSmall']);\r\n         changeCSS('rightDiv', ['fromRight']);\r\n     }\r\n \r\n"
                 }
             ],
             "date": 1642578985874,
