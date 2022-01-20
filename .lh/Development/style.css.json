@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 168,
+            "activePatchIndex": 179,
             "patches": [
                 {
                     "date": 1642579062806,
@@ -680,6 +680,50 @@
                 {
                     "date": 1642667784851,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -188,9 +188,9 @@\n .flexMiddle2{\r\n     display: flex;\r\n     flex-direction: row;\r\n     /* justify-content: center; */\r\n-    /* column-gap:2em; */\r\n+    column-gap:2em;\r\n \r\n }\r\n /* ================= */\r\n \r\n"
+                },
+                {
+                    "date": 1642668759987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n }\r\n .centerHorizontally4{\r\n     /* position: relative; */\r\n     text-align: center;\r\n-    margin: 0 auto;\r\n+    margin: auto;\r\n }\r\n   \r\n \r\n .displayGood{\r\n"
+                },
+                {
+                    "date": 1642668862420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n     display: flex;\r\n     flex-direction: column;\r\n     justify-content: center; /* horizontal */\r\n     align-items: center;\r\n-    text-align: center;  \r\n+    text-align: center; \r\n+    margin: auto; \r\n }\r\n .centerHorizontally2{\r\n   margin: auto;\r\n   width: 800px;\r\n"
+                },
+                {
+                    "date": 1642668904266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,10 @@\n     text-align: center; \r\n     margin: auto; \r\n }\r\n .centerHorizontally2{\r\n-  margin: auto;\r\n-  width: 800px;\r\n+    margin: auto;\r\n+    width: 50%;\r\n }\r\n .centerHorizontally3{\r\n     margin: auto;\r\n     width: 80%;\r\n"
+                },
+                {
+                    "date": 1642668970884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,14 @@\n     /* position: relative; */\r\n     text-align: center;\r\n     margin: auto;\r\n }\r\n+.center{\r\n+    margin: auto;\r\n+    width: 50%;\r\n+}\r\n+\r\n+/* ============================= */\r\n   \r\n \r\n .displayGood{\r\n     display: block;\r\n"
+                },
+                {
+                    "date": 1642669063784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,10 @@\n .centerHorizontally{\r\n     display: flex;\r\n     flex-direction: column;\r\n     justify-content: center; /* horizontal */\r\n-    align-items: center;\r\n+    /* align-items: center; */\r\n     text-align: center; \r\n-    margin: auto; \r\n }\r\n .centerHorizontally2{\r\n     margin: auto;\r\n     width: 50%;\r\n"
+                },
+                {
+                    "date": 1642669244698,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -200,10 +200,10 @@\n }\r\n /* ================= */\r\n \r\n .rightMe{ \r\n-    position: relative;\r\n-    right: 4em;\r\n+    margin-right: 2em;\r\n+    width: 40%;\r\n }\r\n \r\n /* #add{\r\n     font-size: 3em;\r\n"
+                },
+                {
+                    "date": 1642669264974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -200,10 +200,9 @@\n }\r\n /* ================= */\r\n \r\n .rightMe{ \r\n-    margin-right: 2em;\r\n-    width: 40%;\r\n+    margin-right: 12em;\r\n }\r\n \r\n /* #add{\r\n     font-size: 3em;\r\n"
+                },
+                {
+                    "date": 1642669306528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -200,9 +200,9 @@\n }\r\n /* ================= */\r\n \r\n .rightMe{ \r\n-    margin-right: 12em;\r\n+    margin-right: 835em;\r\n }\r\n \r\n /* #add{\r\n     font-size: 3em;\r\n"
+                },
+                {
+                    "date": 1642669337142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -200,10 +200,13 @@\n }\r\n /* ================= */\r\n \r\n .rightMe{ \r\n-    margin-right: 835em;\r\n+    margin-right: 8.5em;\r\n }\r\n+.rightMeFurther{\r\n+    margin-right: 12em;\r\n+}\r\n \r\n /* #add{\r\n     font-size: 3em;\r\n } */\r\n"
+                },
+                {
+                    "date": 1642669443784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -203,9 +203,9 @@\n .rightMe{ \r\n     margin-right: 8.5em;\r\n }\r\n .rightMeFurther{\r\n-    margin-right: 12em;\r\n+    margin-right: 4em;\r\n }\r\n \r\n /* #add{\r\n     font-size: 3em;\r\n"
+                },
+                {
+                    "date": 1642669793645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -200,9 +200,9 @@\n }\r\n /* ================= */\r\n \r\n .rightMe{ \r\n-    margin-right: 8.5em;\r\n+    margin-right: .5em;\r\n }\r\n .rightMeFurther{\r\n     margin-right: 4em;\r\n }\r\n"
                 }
             ],
             "date": 1642579062806,

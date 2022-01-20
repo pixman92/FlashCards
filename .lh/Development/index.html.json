@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 92,
+            "activePatchIndex": 98,
             "patches": [
                 {
                     "date": 1642578608394,
@@ -376,6 +376,30 @@
                 {
                     "date": 1642667996295,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,9 +124,9 @@\n             Deck1\r\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n-            <div class=\"meToFlex marginBottom \">\r\n+            <div class=\"marginBottom \">\r\n               <div class=\"leftDiv\"></div>\r\n               <div class=\"middleDiv flexMeHere flexMiddle2\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n"
+                },
+                {
+                    "date": 1642668167624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,11 +124,11 @@\n             Deck1\r\n           </div>\r\n         </div>\r\n         <div class=\"addingCards\">\r\n-            <div class=\"marginBottom \">\r\n+           \r\n               <div class=\"leftDiv\"></div>\r\n-              <div class=\"middleDiv flexMeHere flexMiddle2\">\r\n+              <div class=\"middleDiv\">\r\n                 <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n                 <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n               </div>\r\n               <div class=\"rightDiv\">\r\n"
+                },
+                {
+                    "date": 1642668187871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,10 +117,9 @@\n       </div>\r\n \r\n       <!-- ==============Edit Boxes Screen=============== -->\r\n       </div>\r\n-      <div class=\"comboParent\">\r\n-        <div class=\"headerQAs\">\r\n+      <div class=\"editCardsParentDiv\">\r\n           <div class=\"editDecknameScreenSize paddingAllAround centerHorizontally\">\r\n             Deck1\r\n           </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1642668198335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,9 @@\n       <div class=\"editCardsParentDiv\">\r\n           <div class=\"editDecknameScreenSize paddingAllAround centerHorizontally\">\r\n             Deck1\r\n           </div>\r\n-        </div>\r\n+      </div>\r\n         <div class=\"addingCards\">\r\n            \r\n               <div class=\"leftDiv\"></div>\r\n               <div class=\"middleDiv\">\r\n"
+                },
+                {
+                    "date": 1642668275631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,47 +102,45 @@\n \r\n     <!-- ===========EDIT DECK INFO================== -->\r\n \r\n     <div class=\"editDeck\">\r\n-      <div class=\"name\">\r\n-        <div class=\"deckHeadderEditScreen\">Deck 1</div>\r\n-      </div>\r\n-      <div class=\"tagsEditScreen\"></div>\r\n+        <div class=\"name\">\r\n+          <div class=\"deckHeadderEditScreen\">Deck 1</div>\r\n+        </div>\r\n+        <div class=\"tagsEditScreen\"></div>\r\n \r\n-      <div class=\"sharedEmailsEditScreen\">\r\n-        <div class=\"emailListEditScreen\"></div>\r\n-      </div>\r\n+        <div class=\"sharedEmailsEditScreen\">\r\n+          <div class=\"emailListEditScreen\"></div>\r\n+        </div>\r\n \r\n-      <div class=\"score\">\r\n-        10\r\n-      </div>\r\n+        <div class=\"score\">\r\n+          10\r\n+        </div>\r\n+    </div>\r\n \r\n       <!-- ==============Edit Boxes Screen=============== -->\r\n-      </div>\r\n       <div class=\"editCardsParentDiv\">\r\n           <div class=\"editDecknameScreenSize paddingAllAround centerHorizontally\">\r\n             Deck1\r\n           </div>\r\n       </div>\r\n-        <div class=\"addingCards\">\r\n-           \r\n-              <div class=\"leftDiv\"></div>\r\n-              <div class=\"middleDiv\">\r\n-                <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n-                <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n-              </div>\r\n-              <div class=\"rightDiv\">\r\n-                <div class=\"deleteButton\"><button>x</button></div>\r\n-              </div>\r\n-              </div>\r\n+      <div class=\"addingCards\">\r\n+           <div class=\"leftDiv\"></div>\r\n+           <div class=\"middleDiv\">\r\n+              <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n+              <div class=\"answerText\"><textarea class=\"AText\"></textarea></div>\r\n+           </div>\r\n+            <div class=\"rightDiv\">\r\n+              <div class=\"deleteButton\"><button>x</button></div>\r\n+            </div>\r\n+        </div>\r\n           </div>\r\n-        </div>\r\n+      </div>\r\n \r\n           <div class=\"gridAddButton\">\r\n             <div class=\"tmp\"></div>\r\n             <div class=\"rightMe\"><button class=\"addButton\" id=\"add\">+</button></div>\r\n           </div>\r\n-      </div>\r\n   </div>\r\n \r\n </body>\r\n </html>\r\n"
+                },
+                {
+                    "date": 1642668383922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -118,9 +118,9 @@\n     </div>\r\n \r\n       <!-- ==============Edit Boxes Screen=============== -->\r\n       <div class=\"editCardsParentDiv\">\r\n-          <div class=\"editDecknameScreenSize paddingAllAround centerHorizontally\">\r\n+          <div class=\"editDecknameScreenSize paddingAllAround centerHorizontally4\">\r\n             Deck1\r\n           </div>\r\n       </div>\r\n       <div class=\"addingCards\">\r\n"
+                },
+                {
+                    "date": 1642668676344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,8 @@\n       <div class=\"editCardsParentDiv\">\r\n           <div class=\"editDecknameScreenSize paddingAllAround centerHorizontally4\">\r\n             Deck1\r\n           </div>\r\n-      </div>\r\n       <div class=\"addingCards\">\r\n            <div class=\"leftDiv\"></div>\r\n            <div class=\"middleDiv\">\r\n               <div class=\"questionText\"><textarea class=\"QText\"></textarea></div>\r\n@@ -139,8 +138,9 @@\n           <div class=\"gridAddButton\">\r\n             <div class=\"tmp\"></div>\r\n             <div class=\"rightMe\"><button class=\"addButton\" id=\"add\">+</button></div>\r\n           </div>\r\n+        </div>\r\n   </div>\r\n \r\n </body>\r\n </html>\r\n"
                 }
             ],
             "date": 1642578608394,

@@ -69,6 +69,30 @@ function runMyCSS(){
 
 }
 
+
+function runCSS2(){
+    changeCSS('BIGDiv', ['width450px', 'center']);
+    changeCSS('editCardsParentDiv', ['widthFull', 'center']);
+
+    if($('body').width()>=740){       
+        changeCSS('addingCards', ['grid1']);
+        changeCSS('middleDiv', ['flexGridQA']);
+
+        changeCSS('addButton', ['rightMeFurther']);
+    }
+    if($('body').width()<=739){
+        // changeCSS('editCardsParentDiv', ['widthFull', 'center']);
+
+
+        changeCSS('addingCards', ['grid1']);
+        changeCSS('middleDiv', ['flexGridQA']);
+        
+        changeCSS('addButton', ['rightMe']);
+
+    }
+}
+
+
 window.addEventListener('resize', function(event){
-    runMyCSS();
+    runCSS2();
 });

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 149,
+            "activePatchIndex": 175,
             "patches": [
                 {
                     "date": 1642578985874,
@@ -604,6 +604,110 @@
                 {
                     "date": 1642668078597,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,11 +26,11 @@\n         changeCSS('QText', ['widthAuto']);  //Question textbox\r\n         changeCSS('AText', ['widthAuto']);  //Answer textbox\r\n \r\n         // changeCSS('boxComboDynamic', ['gridMe', 'centerHorizontally4', 'widtth45em'])\r\n-        // changeCSS('meToFlex', ['flexMiddle', 'centerHorizontally4', 'notEvenSmall']);\r\n+        changeCSS('meToFlex', ['flexMiddle', 'centerHorizontally4', 'notEvenSmall']);\r\n \r\n-        changeCSS('flexMeHere', ['flexMiddle', 'width300px']);\r\n+        // changeCSS('flexMeHere', ['flexMiddle', 'width300px']);\r\n \r\n         // changeCSS('deleteButton', ['deleteSetup']);\r\n \r\n     }\r\n"
+                },
+                {
+                    "date": 1642668139313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,7 +68,13 @@\n     }\r\n \r\n }\r\n \r\n+\r\n+function runCSS2(){\r\n+    \r\n+}\r\n+\r\n+\r\n window.addEventListener('resize', function(event){\r\n-    runMyCSS();\r\n+    runCSS2();\r\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642668317527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,11 @@\n }\r\n \r\n \r\n function runCSS2(){\r\n-    \r\n+    if($('body').width()>=740){\r\n+        changeCSS('middleDiv', ['flexGridQA']);\r\n+    }\r\n }\r\n \r\n \r\n window.addEventListener('resize', function(event){\r\n"
+                },
+                {
+                    "date": 1642668356933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,8 +71,11 @@\n \r\n \r\n function runCSS2(){\r\n     if($('body').width()>=740){\r\n+        changeCSS('editCardsParentDiv', ['width450px']);\r\n+        // =============================\r\n+\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642668454266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,10 @@\n \r\n \r\n function runCSS2(){\r\n     if($('body').width()>=740){\r\n-        changeCSS('editCardsParentDiv', ['width450px']);\r\n+        changeCSS('BIGDiv', ['width450px']);\r\n+        changeCSS('editCardsParentDiv', ['widthFull']);\r\n         // =============================\r\n \r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n"
+                },
+                {
+                    "date": 1642668553236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,8 +75,9 @@\n         changeCSS('BIGDiv', ['width450px']);\r\n         changeCSS('editCardsParentDiv', ['widthFull']);\r\n         // =============================\r\n \r\n+        changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642668610218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,8 +78,15 @@\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n+    if($('body').width()<=740){\r\n+        changeCSS('BIGDiv', ['width450px']);\r\n+        changeCSS('editCardsParentDiv', ['widthFull']);\r\n+\r\n+        changeCSS('addingCards', ['grid1']);\r\n+        changeCSS('middleDiv', ['flexGridQA']);\r\n+    }\r\n }\r\n \r\n \r\n window.addEventListener('resize', function(event){\r\n"
+                },
+                {
+                    "date": 1642668713658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,18 +70,18 @@\n }\r\n \r\n \r\n function runCSS2(){\r\n+    changeCSS('BIGDiv', ['width450px']);\r\n     if($('body').width()>=740){\r\n-        changeCSS('BIGDiv', ['width450px']);\r\n         changeCSS('editCardsParentDiv', ['widthFull']);\r\n         // =============================\r\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n     if($('body').width()<=740){\r\n-        changeCSS('BIGDiv', ['width450px']);\r\n+        // changeCSS('BIGDiv', ['width450px']);\r\n         changeCSS('editCardsParentDiv', ['widthFull']);\r\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n"
+                },
+                {
+                    "date": 1642668739001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,17 +72,17 @@\n \r\n function runCSS2(){\r\n     changeCSS('BIGDiv', ['width450px']);\r\n     if($('body').width()>=740){\r\n-        changeCSS('editCardsParentDiv', ['widthFull']);\r\n+        changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally4']);\r\n         // =============================\r\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n     if($('body').width()<=740){\r\n         // changeCSS('BIGDiv', ['width450px']);\r\n-        changeCSS('editCardsParentDiv', ['widthFull']);\r\n+        changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally4']);\r\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n"
+                },
+                {
+                    "date": 1642668779047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,17 +72,17 @@\n \r\n function runCSS2(){\r\n     changeCSS('BIGDiv', ['width450px']);\r\n     if($('body').width()>=740){\r\n-        changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally4']);\r\n+        changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n         // =============================\r\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n     if($('body').width()<=740){\r\n         // changeCSS('BIGDiv', ['width450px']);\r\n-        changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally4']);\r\n+        changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n"
+                },
+                {
+                    "date": 1642668801561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,8 +71,10 @@\n \r\n \r\n function runCSS2(){\r\n     changeCSS('BIGDiv', ['width450px']);\r\n+    changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n+    \r\n     if($('body').width()>=740){\r\n         changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n         // =============================\r\n \r\n@@ -80,9 +82,9 @@\n         changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n     if($('body').width()<=740){\r\n         // changeCSS('BIGDiv', ['width450px']);\r\n-        changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n+       \r\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n"
+                },
+                {
+                    "date": 1642668807824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,11 +72,11 @@\n \r\n function runCSS2(){\r\n     changeCSS('BIGDiv', ['width450px']);\r\n     changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n-    \r\n+\r\n     if($('body').width()>=740){\r\n-        changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n+        // changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n         // =============================\r\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n"
+                },
+                {
+                    "date": 1642668820658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,9 @@\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n-    if($('body').width()<=740){\r\n+    if($('body').width()<=739){\r\n         // changeCSS('BIGDiv', ['width450px']);\r\n        \r\n \r\n         changeCSS('addingCards', ['grid1']);\r\n"
+                },
+                {
+                    "date": 1642668917713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n \r\n \r\n function runCSS2(){\r\n     changeCSS('BIGDiv', ['width450px']);\r\n-    changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n+    changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally2']);\r\n \r\n     if($('body').width()>=740){\r\n         // changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n         // =============================\r\n"
+                },
+                {
+                    "date": 1642668978099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n \r\n \r\n function runCSS2(){\r\n     changeCSS('BIGDiv', ['width450px']);\r\n-    changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally2']);\r\n+    changeCSS('editCardsParentDiv', ['widthFull', 'center']);\r\n \r\n     if($('body').width()>=740){\r\n         // changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n         // =============================\r\n"
+                },
+                {
+                    "date": 1642668994402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,17 +77,17 @@\n     if($('body').width()>=740){\r\n         // changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n         // =============================\r\n \r\n-        changeCSS('addingCards', ['grid1']);\r\n-        changeCSS('middleDiv', ['flexGridQA']);\r\n-    }\r\n+    //     changeCSS('addingCards', ['grid1']);\r\n+    //     changeCSS('middleDiv', ['flexGridQA']);\r\n+    // }\r\n     if($('body').width()<=739){\r\n         // changeCSS('BIGDiv', ['width450px']);\r\n        \r\n \r\n-        changeCSS('addingCards', ['grid1']);\r\n-        changeCSS('middleDiv', ['flexGridQA']);\r\n+        // changeCSS('addingCards', ['grid1']);\r\n+        // changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1642669009560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,10 +78,10 @@\n         // changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n         // =============================\r\n \r\n     //     changeCSS('addingCards', ['grid1']);\r\n-    //     changeCSS('middleDiv', ['flexGridQA']);\r\n-    // }\r\n+        // changeCSS('middleDiv', ['flexGridQA']);\r\n+    }\r\n     if($('body').width()<=739){\r\n         // changeCSS('BIGDiv', ['width450px']);\r\n        \r\n \r\n"
+                },
+                {
+                    "date": 1642669024001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,20 +74,20 @@\n     changeCSS('BIGDiv', ['width450px']);\r\n     changeCSS('editCardsParentDiv', ['widthFull', 'center']);\r\n \r\n     if($('body').width()>=740){\r\n-        // changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n-        // =============================\r\n+        changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n+        =============================\r\n \r\n-    //     changeCSS('addingCards', ['grid1']);\r\n-        // changeCSS('middleDiv', ['flexGridQA']);\r\n+        changeCSS('addingCards', ['grid1']);\r\n+        changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n     if($('body').width()<=739){\r\n-        // changeCSS('BIGDiv', ['width450px']);\r\n+        changeCSS('BIGDiv', ['width450px']);\r\n        \r\n \r\n-        // changeCSS('addingCards', ['grid1']);\r\n-        // changeCSS('middleDiv', ['flexGridQA']);\r\n+        changeCSS('addingCards', ['grid1']);\r\n+        changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1642669033843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n     changeCSS('editCardsParentDiv', ['widthFull', 'center']);\r\n \r\n     if($('body').width()>=740){\r\n         changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n-        =============================\r\n+        // =============================\r\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n"
+                },
+                {
+                    "date": 1642669104758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n }\r\n \r\n \r\n function runCSS2(){\r\n-    changeCSS('BIGDiv', ['width450px']);\r\n+    changeCSS('BIGDiv', ['width450px', 'center']);\r\n     changeCSS('editCardsParentDiv', ['widthFull', 'center']);\r\n \r\n     if($('body').width()>=740){\r\n         changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n"
+                },
+                {
+                    "date": 1642669213114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,8 +86,11 @@\n        \r\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n+        \r\n+        changeCSS('deleteButton', ['fromRight']);\r\n+\r\n     }\r\n }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1642669226187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -87,9 +87,9 @@\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n         \r\n-        changeCSS('deleteButton', ['fromRight']);\r\n+        changeCSS('deleteButton', ['rightMe']);\r\n \r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642669290174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,11 +81,11 @@\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n     }\r\n     if($('body').width()<=739){\r\n-        changeCSS('BIGDiv', ['width450px']);\r\n-       \r\n+        changeCSS('editCardsParentDiv', ['widthFull', 'center']);\r\n \r\n+\r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n         \r\n         changeCSS('deleteButton', ['rightMe']);\r\n"
+                },
+                {
+                    "date": 1642669365788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,8 +79,10 @@\n         // =============================\r\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n+\r\n+        changeCSS('deleteButton', ['rightMeFurther']);\r\n     }\r\n     if($('body').width()<=739){\r\n         changeCSS('editCardsParentDiv', ['widthFull', 'center']);\r\n \r\n"
+                },
+                {
+                    "date": 1642669399704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,18 +80,18 @@\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n \r\n-        changeCSS('deleteButton', ['rightMeFurther']);\r\n+        changeCSS('addButton', ['rightMeFurther']);\r\n     }\r\n     if($('body').width()<=739){\r\n         changeCSS('editCardsParentDiv', ['widthFull', 'center']);\r\n \r\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n         \r\n-        changeCSS('deleteButton', ['rightMe']);\r\n+        changeCSS('addButton', ['rightMe']);\r\n \r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642669428602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,19 +73,16 @@\n function runCSS2(){\r\n     changeCSS('BIGDiv', ['width450px', 'center']);\r\n     changeCSS('editCardsParentDiv', ['widthFull', 'center']);\r\n \r\n-    if($('body').width()>=740){\r\n-        changeCSS('editCardsParentDiv', ['widthFull', 'centerHorizontally']);\r\n-        // =============================\r\n-\r\n+    if($('body').width()>=740){       \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n \r\n         changeCSS('addButton', ['rightMeFurther']);\r\n     }\r\n     if($('body').width()<=739){\r\n-        changeCSS('editCardsParentDiv', ['widthFull', 'center']);\r\n+        // changeCSS('editCardsParentDiv', ['widthFull', 'center']);\r\n \r\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n"
+                },
+                {
+                    "date": 1642669697425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,9 @@\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n         \r\n-        changeCSS('addButton', ['rightMe']);\r\n+        // changeCSS('addButton', ['rightMe']);\r\n \r\n     }\r\n }\r\n \r\n"
                 }
             ],
             "date": 1642578985874,
