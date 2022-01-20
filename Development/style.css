@@ -109,3 +109,18 @@
 .title { grid-area: title; }
 .area1 { grid-area: area1; }
 .area2 { grid-area: area2; }
+
+/* ================= */
+.comboGrid{
+    
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "question answer delete"; 
+  }
+.question { grid-area: question; }
+.answer { grid-area: answer; }
+.delete { grid-area: delete; }
+
