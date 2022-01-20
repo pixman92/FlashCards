@@ -1,4 +1,4 @@
-var arrayOfClasses = ["firstScreen", "editDeck"];
+var arrayOfClasses = ["firstScreen", "editDeck", "comboParent"];
 function hide() {
     for (var i = 0; i < arrayOfClasses.length; i++) {
         document.querySelector('.' + arrayOfClasses[i]).style.display = 'none';

@@ -9,6 +9,6 @@ window.onload = ()=>{
     // addQuestionAddAnswer('favorite hobby?', 'programming')
     runMyCSS();
     hide();
-    show('editDeck');
+    show('comboParent');
 
 };

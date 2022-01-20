@@ -68,6 +68,9 @@
 .widthFull{
     width: 100%;
 }
+.width70P{
+    width: 70%;
+}
 
 /* ============================= */
 .headerFont{
@@ -111,16 +114,28 @@
 .area2 { grid-area: area2; }
 
 /* ================= */
-.comboGrid{
+/* .comboGrid{
     
     display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 3fr 3fr 1.3fr; 
     grid-template-rows: 1fr; 
     gap: 0px 0px; 
+    text-align: center;
     grid-template-areas: 
       "question answer delete"; 
   }
 .question { grid-area: question; }
 .answer { grid-area: answer; }
-.delete { grid-area: delete; }
+.delete { grid-area: delete; } */
 
+.width20em{
+    width: 20em;
+}
+
+.flexGridQA{
+    display:flex;
+    justify-content: space-around;
+    column-gap: 2em;
+}
+.flexts
+/* ================= *

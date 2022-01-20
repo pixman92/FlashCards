@@ -12,5 +12,9 @@ function runMyCSS(){
     changeCSS('boxMeCards', ['marginMe']);
 
     changeCSS('cardExample', ['marginAllAround', 'greyBorder']);
-    changeCSS('deckNameText', ['headerFont'])
+    changeCSS('deckNameText', ['headerFont']);
+
+    changeCSS('question', ['paddingRight']);
+    changeCSS('anwser', ['paddingLeft']);
+    
 }
