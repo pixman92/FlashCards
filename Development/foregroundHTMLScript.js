@@ -51,3 +51,9 @@ function editDeck(){
 
 
 }
+
+
+// =============================
+// DONE - edit Deck obj info - logic works
+// TODO - edit Deck obj info - tap to edit
+// TODO - edit Deck obj info - CSS styling
