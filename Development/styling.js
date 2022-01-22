@@ -5,6 +5,9 @@ function runMyCSS(){
     
     if($('body').width()>=760){
 
+        // changeCSS('comboParent', ['widthAuto']);
+        // changeCSS('headerQAs', ['widthAuto']);
+        // changeCSS('addingCards', ['widthAuto'])
         changeCSS('BIGDiv', ['centerHorizontally4', 'width300px']);
         // =============================
 
