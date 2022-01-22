@@ -41,6 +41,13 @@ function addBoxesToHTML
 
 // =================
 function editDeck(){
-    $('.name').html(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1]);
+    $('.deckHeadderEditScreen').html(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1]);
+
     
+    $('.tagsEditScreen').html(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][4][0][1][0].join(', '));
+
+    $('.scorePercent').html(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][1]);
+
+
+
 }

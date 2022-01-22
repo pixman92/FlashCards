@@ -1,273 +1,34 @@
-.centerHorizontally{
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* horizontal */
-    /* align-items: center; */
-    text-align: center; 
-}
-.centerHorizontally2{
-    margin: auto;
-    width: 50%;
-}
-.centerHorizontally3{
-    margin: auto;
-    width: 80%;
-}
-.centerHorizontally4{
-    /* position: relative; */
-    text-align: center;
-    margin: auto;
-}
 .center{
     margin: auto;
     width: 50%;
 }
-
-/* ============================= */
-  
-
-.displayGood{
-    display: block;
-}
-.center-screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-  }
-  
-.column{
-    float: left;
-    width: 25%;
-    height: 400px;
-    border: 1px solid red;
-    
-}
-
-.column2{
-    float: left;
-    width: 15%;
-    /* height: 400px; */
-    border: 1px solid red;
-    
-}
-
 /* ================= */
-
-.marginUpAndDown{
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-/* ============================= */
-.none{
-    display: none;
-}
-
-/* ================= */
-
-.grid1{
-    display: grid;
-    justify-items: center;
-    align-items: center;
-}
-
-.marginTop{
-  margin-top:1.8em;
-}   
-.marginBottom{
-    margin-bottom: 2.2em;
-}
-
-/* ============================= */
-.width300px{
-    width: 300px;
-}
-.width450px{
-    width: 450px;
-}
-.width500px{
-    width: 500px;
-}
-.widthFull{
-    width: 100%;
-}
-.width70P{
-    width: 70%;
-}
-.width50P{
-    width: 50%;
-}
-.widthAuto{
-    width: auto;
-}
-/* ============================= */
-.headerFont{
-    font-size: 3em;
-}
-
-.marginAllAround{
-    margin: 1em 1em 1em 1em;
-}
-.paddingAllAround{
-    padding: .8em .8em .8em .8em ;
-}
-.paddingUp{
-    padding-top: 1.2em;
-}
-.paddingDown{
-    padding-bottom: 1.8em;
-}
-.paddingRight{
-    padding-right: 1.8em;
-}
-.paddingLeftSmall{
-    padding-left:1.8em;
-}
-
-.left{
-    position: relative;
-    left: .8em;
-}
-.greyBorder{
-    border: 2px solid grey;
-}
-
-/* ============================= */
-.cardGrid {
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 2em 2em; 
-    grid-template-areas: 
-      "title area1"
-      "title area2"; 
-}
-.title { grid-area: title; }
-.area1 { grid-area: area1; }
-.area2 { grid-area: area2; }
-
-/* ================= */
-/* .comboGrid{
-    
-    display: grid; 
-    grid-template-columns: 3fr 3fr 1.3fr; 
-    grid-template-rows: 1fr; 
-    gap: 0px 0px; 
-    text-align: center;
-    grid-template-areas: 
-      "question answer delete"; 
-  }
-.question { grid-area: question; }
-.answer { grid-area: answer; }
-.delete { grid-area: delete; } */
-
-.width20em{
-    width: 20em;
-}
-.width25em{
-    width: 25em;
-}
-.width45em{
-    width: 45em;
-}
-.flexGridQA{
-    display:flex;
-    justify-content: space-evenly;
-    /* column-gap: 1.3em; */
-}
-
-/* .gridMe{
-    display: grid;
-    grid-template-columns: 1fr 9fr 1fr;
-} */
-
-
-.flexMiddle{
+.flexContainer{
     display: flex;
     flex-direction: row;
-    /* justify-content: space-between; */
-    column-gap:2em;
+
+    flex-basis: 800px;
+    align-content: center;
+    justify-content: center;
 
 }
-.flexMiddle2{
+
+.middleFlex{
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
-    column-gap:2em;
 
-}
-/* ================= */
-
-.rightMe{ 
-    margin-right: .5em;
-}
-.rightMeFurther{
-    margin-right: 4em;
-}
-
-/* #add{
-    font-size: 3em;
-} */
-
-
-.gridAddButton{
-    margin-top: 2.2em;
-    display: grid;
-    grid-template-columns: 10fr 1fr;
+    /* flex-basis: 200px; */
+    /* align-content:space-around;
+     */
+     align-content: space-between;
+     justify-content: center;
+     column-gap: 2em;
 
 }
 
-.deleteSetup{
-    position: relative;
-    right: 0;
-    width: content;
+.middleDiv div{
+    /* width: 100px; */
 }
-
-/* ============Small Screen width================= */
-.smallFont{
-    font-size: 2.3em;
-}
-.smallerFont{
-    font-size: .08em;
-}
-.color{
-    color:red;
-}
-.widthSmall{
-    width: 95%;
-}
-.gridMeSmall{
-    display: grid;
-    /* grid-template-columns: 1fr 1fr .13fr; */
-    grid-template-columns: .2fr 6.5fr .2fr;
-    /* justify-items: center; */
-    column-gap:.02em;
-}
-
-.smallButWide{
-    width: 35em;
-}
-
-/* ============EVEN SMALLER================= */
-.gridMeSuperSmall{
-    display: grid;
-    /* grid-template-columns: 1fr 1fr .13fr; */
-    grid-template-columns: .1fr 1.6fr .01fr .9fr;
-    /* justify-items: center; */
-    column-gap:3em;
-}
-.notEvenSmall{
-    width: 42em;
-}
-
-.flexMiddle3{
-    display: flex;
-    justify-content: center;
-    /* align-content: stretch; */
-    column-gap: 0;
-}
-.meGrow{
-    flex-grow: 2;
+.rightDiv{
+    /* flex:1; */
 }

@@ -46,7 +46,7 @@ function makingEmail(){
     pushToEmail('sam@gmail.com');
 }
 function firstIndex(title){
-    myJSONFlashCards.addMoreToIndex(0, [[[0], [['emailOwner', 'sam@gmail.com'],['title', title], ['sharedWithEmails', '-1']]]]);
+    myJSONFlashCards.addMoreToIndex(0, [[[0], [['emailOwner', 'sam@gmail.com'],['title', title], ['sharedWithEmails', '-1'], ['deckScore', '0']]]]);
 }
 
 function addQuestionAddAnswerToPushFlashCards(question, answer){

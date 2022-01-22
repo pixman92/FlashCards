@@ -53,7 +53,7 @@ the magic? - the elem of DOM is held in memory!-->
 <script src="firebaseJS.js"></script>
 <script src="backgroundLogicScript.js"></script>
 <script src="foregroundHTMLScript.js"></script>
-<script src="styling.js"></script>
+<script src="sytlingNEW.js"></script>
 
 
 <!-- =================== -->
@@ -113,34 +113,37 @@ the magic? - the elem of DOM is held in memory!-->
         </div>
 
         <div class="score">
-          10
+          <div class="scorePercent">
+            10
+          </div>
         </div>
     </div>
 
       <!-- ==============Edit Boxes Screen=============== -->
-      <div class="editCardsParentDiv">
+      <div class="editScreen">
+          <div class="editCardsParentDiv">
+
           <div class="editDecknameScreenSize paddingAllAround centerHorizontally4">
             Deck1
           </div>
-      <div class="addingCards">
-           <div class="leftDiv"></div>
-           <div class="middleDiv">
-              <div class="questionText"><textarea class="QText"></textarea></div>
-              <div class="answerText"><textarea class="AText"></textarea></div>
-           </div>
-            <div class="rightDiv">
-              <div class="deleteButton"><button>x</button></div>
+        <div class="center addingCards flexContainer">
+            <div class="leftDiv"></div>
+            <div class="middleDiv middleFlex">
+                <div class="questionText"><textarea class="QText"></textarea></div>
+                <div class="answerText"><textarea class="AText"></textarea></div>
             </div>
+              <div class="rightDiv">
+                <div class="deleteButton"><button>x</button></div>
+              </div>
         </div>
-          </div>
-      </div>
-
+        
           <div class="gridAddButton">
             <div class="tmp"></div>
             <div class="rightMe"><button class="addButton" id="add">+</button></div>
           </div>
         </div>
-  </div>
+      </div>
+    </div>
 
 </body>
 </html>
