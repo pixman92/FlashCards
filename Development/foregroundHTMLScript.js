@@ -1,4 +1,4 @@
-var arrayOfClasses = ["firstScreen", "editDeck", "comboParent"];
+var arrayOfClasses = ["firstScreen", "editDeck", "editScreen"];
 function hide() {
     for (var i = 0; i < arrayOfClasses.length; i++) {
         document.querySelector('.' + arrayOfClasses[i]).style.display = 'none';
@@ -32,8 +32,15 @@ function makeEditMode(){
 
 //=============================
 var indexOfBoxes;
-function addBoxesToHTML(indexOfBoxes, questionText, answerText){
+function addBoxesToHTML
+(indexOfBoxes, questionText, answerText){
+    // adding Q/As boxes - with delete button
+ 
     $('.addingCards').html($('.addingCards').html()+['<div class="gridMe centerHorizontally3 marginBottom">','<div class="questionText"><textarea class="widthFull ',indexOfBoxes,'">', questionText, '</textarea></div>','<div class="answerText"><textarea class="widthFull">', answerText, '</textarea></div>','<div class="deleteButton ', indexOfBoxes,'"><button>x</button></div></div>'].join(''));
 }
 
-
+// =================
+function editDeck(){
+    $('.name').html(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1]);
+    
+}
