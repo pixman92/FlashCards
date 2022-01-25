@@ -10,6 +10,7 @@ function show(classIt) {
     document.querySelector("." + classIt).style.display = 'block';
 }
 
+// =============================
 
 
 async function makeDeckNameHTML(){
@@ -41,7 +42,7 @@ function addBoxesToHTML
 
 // =================
 function editDeck(){
-    $('.deckHeadderEditScreen').html(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1]);
+    $('.deckHeaderEditScreen').html(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1]);
 
     
     $('.tagsEditScreen').html(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][4][0][1][0].join(', '));
@@ -49,6 +50,73 @@ function editDeck(){
     $('.scorePercent').html(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][1]);
 
 
+
+}
+// =============================
+// making divs editable
+var tmp;
+// REMEBER
+// await prepForPullingJSON()
+// editDeck()
+// makeThemEditable()
+
+
+function makeThemEditable(){
+    
+    //DeckNAME and Outside Click
+
+    var savedHeader = $('.deckHeaderEditScreen').text();
+
+    $('.deckHeaderEditScreen').on('click', (event)=>{
+        event.stopPropagation();
+        // var tmp = $('.deckHeaderEditScreen').html();
+        $('.deckHeaderEditScreen').html('<textarea class="deckNameEdit">'+savedHeader+'</textarea>')
+        tmp = $('.deckNameEdit').text();
+        // $('.deckHeaderEditScreen').on('click', );
+        $('.deckHeaderEditScreen').off(); 
+        
+    });        
+    // =============================
+    $('body').on('click', (event) => {
+        if (!$(event.target).closest('.deckNameEdit').length) {
+            // the click occured outside '#element'
+            console.log('i ran out of the box');
+            $('.deckHeaderEditScreen').html();
+            $('.deckHeaderEditScreen').html('<div>'+ tmp + '</div>');
+            makeThemEditable();
+        }        
+        });
+
+    // =============================
+    //TEXT and Outside Click
+    var TagTextArray = [];
+
+    var TagTextArray = $('.tagsEditScreen').text();
+
+
+    $('.tagsEditScreen').on('click', (event)=>{
+        event.stopPropagation();
+        // var tmp = $('.deckHeaderEditScreen').html();
+        $('.tagsEditScreen').html('<textarea class="tags">'+TagTextArray+'</textarea>')
+    });
+
+    $('body').on('click', (event) => {
+        if (!$(event.target).closest('.tagsEditScreen').length) {
+            // the click occured outside '#element'
+            console.log('i ran out of the box');
+            $('.tagsEditScreen').html();
+            $('.tagsEditScreen').html('<div>'+ TagTextArray + '</div>');
+            makeThemEditable();
+        }        
+        });
+
+
+
+
+    // $('window').on('focus', ()=>{
+    //     $('.deckHeaderEditScreen').html('<div>'+ tmp + '</div>');
+    //     makeThemEditable();
+    // });
 
 }
 
