@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1642578822132,
@@ -24,6 +24,10 @@
                 {
                     "date": 1642579698124,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n     // addQuestionAddAnswer('time of day?', 'noon')\r\n     // addQuestionAddAnswer('favorite hobby?', 'programming')\r\n     runMyCSS();\r\n     hide();\r\n-    show('deckMode');\r\n+    show('firstScreen');\r\n \r\n };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1643241021316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,7 @@\n     runMyCSS();\r\n     hide();\r\n     show('firstScreen');\r\n \r\n+    makeThemEditable();\r\n+\r\n };\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1642578822132,

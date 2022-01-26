@@ -60,7 +60,7 @@ var tmp;
 // editDeck()
 // makeThemEditable()
 
-var holding1;
+var holding1; var holdingTAGS; var savedDeckNameFrontScreen; var savedTAGS;
 function makeThemEditable(){
     
     //DeckNAME and Outside Click
@@ -118,7 +118,7 @@ function makeThemEditable(){
     //     makeThemEditable();
     // });
 
-    var savedDeckNameFrontScreen = $('.deckNameText').text();           //saving text before edit
+    savedDeckNameFrontScreen = $('.deckNameText').text();           //saving text before edit
     $('.deckNameText').on('click', (event)=>{                           //setting up DOM eventlistener
         event.stopPropagation();
         // var tmp = $('.deckHeaderEditScreen').html();
@@ -129,6 +129,22 @@ function makeThemEditable(){
         // $('.deckHeaderEditScreen').on('click', );
     });        
 
+    // var holdingTAGS;
+    savedTAGS = $('.TAGS').text();
+    $('.TAGS').on('click', (event)=>{
+        event.stopPropagation();
+
+        $('.TAGS').html('<textarea class="TAGChange">' + savedTAGS + '</textarea>');
+
+        $('.TAGS').off();
+    });
+    // $('window').on('click', (event)=>{
+        
+    // });
+
+
+
+    // ==========On clicks for DeckName and TAGS=================
     $('.deckNameTextArea').on('keypress', (event)=>{
         deckName(event);
     });
@@ -148,44 +164,36 @@ function makeThemEditable(){
         //     // $('.deckNameText').html('<div>'+ holding1 + '</div>');
         //     $('.deckNameText').text(holding1);
         //     makeThemEditable();
-        // }        
+        // }
+        makeThemEditable();        
     });
     // ==============Clicking TAG array===============
-    var holdingTAGS;
-    var savedTAGS = $('.TAGS').text();
-    $('.TAGS').on('click', (event)=>{
-        event.stopPropagation();
 
-        $('.TAGS').html('<textarea class="TAGChange">' + savedTAGS + '</textarea>');
-
-        $('.TAGS').off();
-    });
-    $('window').on('click', (event)=>{
-        
-    });
     
 }
 function TAGS(event){
     if (!$(event.target).closest('.TAGChange').length) {
+        console.log('TAG clicked away');
         holdingTAGS = $('.TAGChange').val();
         $('.TAGS').html();
         // $('.TAGS').html('<div>'+ holdingTAGS + '</div>');
         $('.TAGS').text(holdingTAGS);
-        makeThemEditable();
+        // makeThemEditable();
     }
 }
 
 function deckName(event){
     if (!$(event.target).closest('.deckNameTextArea').length) {                     // if click is outside
         // the click occured outside '#element'
-        console.log('i ran out of the box');     
+        console.log('Deck clicked away');     
         holding1 = $('.deckNameTextArea').val(); 
         $('.deckNameText').html();                                          //reset html
         // $('.deckNameText').html('<div>'+ holding1 + '</div>');
         $('.deckNameText').text(holding1);
-        makeThemEditable();
+        // makeThemEditable();
     }      
 }
+
 
 // =============================
 // DONE - edit Deck obj info - logic works

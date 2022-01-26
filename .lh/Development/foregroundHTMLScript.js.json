@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 67,
+            "activePatchIndex": 86,
             "patches": [
                 {
                     "date": 1642578758960,
@@ -276,6 +276,82 @@
                 {
                     "date": 1643091069747,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,12 +129,12 @@\n         // $('.deckHeaderEditScreen').on('click', );\r\n     });        \r\n \r\n     $('.deckNameTextArea').on('keypress', (event)=>{\r\n-        deckName();\r\n+        deckName(event);\r\n     });\r\n     $('.TAGChange').on('keypress', (event)=>{\r\n-        TAGS();\r\n+        TAGS(event);\r\n     });\r\n \r\n     $('body').on('click', (event) => {                          \r\n         deckName(event);\r\n"
+                },
+                {
+                    "date": 1643240445509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,8 +128,10 @@\n         $('.deckNameText').off();\r\n         // $('.deckHeaderEditScreen').on('click', );\r\n     });        \r\n \r\n+\r\n+    // ==========On clicks for DeckName and TAGS=================\r\n     $('.deckNameTextArea').on('keypress', (event)=>{\r\n         deckName(event);\r\n     });\r\n     $('.TAGChange').on('keypress', (event)=>{\r\n"
+                },
+                {
+                    "date": 1643240594779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -152,20 +152,20 @@\n         //     makeThemEditable();\r\n         // }        \r\n     });\r\n     // ==============Clicking TAG array===============\r\n-    var holdingTAGS;\r\n-    var savedTAGS = $('.TAGS').text();\r\n-    $('.TAGS').on('click', (event)=>{\r\n-        event.stopPropagation();\r\n+    // var holdingTAGS;\r\n+    // var savedTAGS = $('.TAGS').text();\r\n+    // $('.TAGS').on('click', (event)=>{\r\n+    //     event.stopPropagation();\r\n \r\n-        $('.TAGS').html('<textarea class=\"TAGChange\">' + savedTAGS + '</textarea>');\r\n+    //     $('.TAGS').html('<textarea class=\"TAGChange\">' + savedTAGS + '</textarea>');\r\n \r\n-        $('.TAGS').off();\r\n-    });\r\n-    $('window').on('click', (event)=>{\r\n+    //     $('.TAGS').off();\r\n+    // });\r\n+    // $('window').on('click', (event)=>{\r\n         \r\n-    });\r\n+    // });\r\n     \r\n }\r\n function TAGS(event){\r\n     if (!$(event.target).closest('.TAGChange').length) {\r\n"
+                },
+                {
+                    "date": 1643240683284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,9 +128,23 @@\n         $('.deckNameText').off();\r\n         // $('.deckHeaderEditScreen').on('click', );\r\n     });        \r\n \r\n+    var holdingTAGS;\r\n+    var savedTAGS = $('.TAGS').text();\r\n+    $('.TAGS').on('click', (event)=>{\r\n+        event.stopPropagation();\r\n \r\n+        $('.TAGS').html('<textarea class=\"TAGChange\">' + savedTAGS + '</textarea>');\r\n+\r\n+        $('.TAGS').off();\r\n+    });\r\n+    $('window').on('click', (event)=>{\r\n+        \r\n+    });\r\n+\r\n+\r\n+\r\n     // ==========On clicks for DeckName and TAGS=================\r\n     $('.deckNameTextArea').on('keypress', (event)=>{\r\n         deckName(event);\r\n     });\r\n@@ -152,20 +166,9 @@\n         //     makeThemEditable();\r\n         // }        \r\n     });\r\n     // ==============Clicking TAG array===============\r\n-    // var holdingTAGS;\r\n-    // var savedTAGS = $('.TAGS').text();\r\n-    // $('.TAGS').on('click', (event)=>{\r\n-    //     event.stopPropagation();\r\n \r\n-    //     $('.TAGS').html('<textarea class=\"TAGChange\">' + savedTAGS + '</textarea>');\r\n-\r\n-    //     $('.TAGS').off();\r\n-    // });\r\n-    // $('window').on('click', (event)=>{\r\n-        \r\n-    // });\r\n     \r\n }\r\n function TAGS(event){\r\n     if (!$(event.target).closest('.TAGChange').length) {\r\n"
+                },
+                {
+                    "date": 1643240705433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n // await prepForPullingJSON()\r\n // editDeck()\r\n // makeThemEditable()\r\n \r\n-var holding1;\r\n+var holding1; var holdingTAGS;\r\n function makeThemEditable(){\r\n     \r\n     //DeckNAME and Outside Click\r\n \r\n"
+                },
+                {
+                    "date": 1643240727795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -137,11 +137,11 @@\n         $('.TAGS').html('<textarea class=\"TAGChange\">' + savedTAGS + '</textarea>');\r\n \r\n         $('.TAGS').off();\r\n     });\r\n-    $('window').on('click', (event)=>{\r\n+    // $('window').on('click', (event)=>{\r\n         \r\n-    });\r\n+    // });\r\n \r\n \r\n \r\n     // ==========On clicks for DeckName and TAGS=================\r\n"
+                },
+                {
+                    "date": 1643240750701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -144,14 +144,14 @@\n \r\n \r\n \r\n     // ==========On clicks for DeckName and TAGS=================\r\n-    $('.deckNameTextArea').on('keypress', (event)=>{\r\n-        deckName(event);\r\n-    });\r\n-    $('.TAGChange').on('keypress', (event)=>{\r\n-        TAGS(event);\r\n-    });\r\n+    // $('.deckNameTextArea').on('keypress', (event)=>{\r\n+    //     deckName(event);\r\n+    // });\r\n+    // $('.TAGChange').on('keypress', (event)=>{\r\n+    //     TAGS(event);\r\n+    // });\r\n \r\n     $('body').on('click', (event) => {                          \r\n         deckName(event);\r\n         TAGS(event);\r\n"
+                },
+                {
+                    "date": 1643240762022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -144,14 +144,14 @@\n \r\n \r\n \r\n     // ==========On clicks for DeckName and TAGS=================\r\n-    // $('.deckNameTextArea').on('keypress', (event)=>{\r\n-    //     deckName(event);\r\n-    // });\r\n-    // $('.TAGChange').on('keypress', (event)=>{\r\n-    //     TAGS(event);\r\n-    // });\r\n+    $('.deckNameTextArea').on('keypress', (event)=>{\r\n+        deckName(event);\r\n+    });\r\n+    $('.TAGChange').on('keypress', (event)=>{\r\n+        TAGS(event);\r\n+    });\r\n \r\n     $('body').on('click', (event) => {                          \r\n         deckName(event);\r\n         TAGS(event);\r\n"
+                },
+                {
+                    "date": 1643240771218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -151,11 +151,11 @@\n     $('.TAGChange').on('keypress', (event)=>{\r\n         TAGS(event);\r\n     });\r\n \r\n-    $('body').on('click', (event) => {                          \r\n-        deckName(event);\r\n-        TAGS(event);\r\n+    // $('body').on('click', (event) => {                          \r\n+    //     deckName(event);\r\n+    //     TAGS(event);\r\n         //event for, clicking outside\r\n         // if (!$(event.target).closest('.deckNameTextArea').length) {                     // if click is outside\r\n         //     // the click occured outside '#element'\r\n         //     console.log('i ran out of the box');     \r\n@@ -164,9 +164,9 @@\n         //     // $('.deckNameText').html('<div>'+ holding1 + '</div>');\r\n         //     $('.deckNameText').text(holding1);\r\n         //     makeThemEditable();\r\n         // }        \r\n-    });\r\n+    // });\r\n     // ==============Clicking TAG array===============\r\n \r\n     \r\n }\r\n"
+                },
+                {
+                    "date": 1643240795858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -144,18 +144,18 @@\n \r\n \r\n \r\n     // ==========On clicks for DeckName and TAGS=================\r\n-    $('.deckNameTextArea').on('keypress', (event)=>{\r\n+    // $('.deckNameTextArea').on('keypress', (event)=>{\r\n+    //     deckName(event);\r\n+    // });\r\n+    // $('.TAGChange').on('keypress', (event)=>{\r\n+    //     TAGS(event);\r\n+    // });\r\n+\r\n+    $('body').on('click', (event) => {                          \r\n         deckName(event);\r\n-    });\r\n-    $('.TAGChange').on('keypress', (event)=>{\r\n         TAGS(event);\r\n-    });\r\n-\r\n-    // $('body').on('click', (event) => {                          \r\n-    //     deckName(event);\r\n-    //     TAGS(event);\r\n         //event for, clicking outside\r\n         // if (!$(event.target).closest('.deckNameTextArea').length) {                     // if click is outside\r\n         //     // the click occured outside '#element'\r\n         //     console.log('i ran out of the box');     \r\n@@ -164,9 +164,9 @@\n         //     // $('.deckNameText').html('<div>'+ holding1 + '</div>');\r\n         //     $('.deckNameText').text(holding1);\r\n         //     makeThemEditable();\r\n         // }        \r\n-    // });\r\n+    });\r\n     // ==============Clicking TAG array===============\r\n \r\n     \r\n }\r\n"
+                },
+                {
+                    "date": 1643240882067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -144,14 +144,14 @@\n \r\n \r\n \r\n     // ==========On clicks for DeckName and TAGS=================\r\n-    // $('.deckNameTextArea').on('keypress', (event)=>{\r\n-    //     deckName(event);\r\n-    // });\r\n-    // $('.TAGChange').on('keypress', (event)=>{\r\n-    //     TAGS(event);\r\n-    // });\r\n+    $('.deckNameTextArea').on('keypress', (event)=>{\r\n+        deckName(event);\r\n+    });\r\n+    $('.TAGChange').on('keypress', (event)=>{\r\n+        TAGS(event);\r\n+    });\r\n \r\n     $('body').on('click', (event) => {                          \r\n         deckName(event);\r\n         TAGS(event);\r\n"
+                },
+                {
+                    "date": 1643240914955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,11 +146,13 @@\n \r\n     // ==========On clicks for DeckName and TAGS=================\r\n     $('.deckNameTextArea').on('keypress', (event)=>{\r\n         deckName(event);\r\n+        makeThemEditable();\r\n     });\r\n     $('.TAGChange').on('keypress', (event)=>{\r\n         TAGS(event);\r\n+        makeThemEditable();\r\n     });\r\n \r\n     $('body').on('click', (event) => {                          \r\n         deckName(event);\r\n"
+                },
+                {
+                    "date": 1643240948153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,13 +146,11 @@\n \r\n     // ==========On clicks for DeckName and TAGS=================\r\n     $('.deckNameTextArea').on('keypress', (event)=>{\r\n         deckName(event);\r\n-        makeThemEditable();\r\n     });\r\n     $('.TAGChange').on('keypress', (event)=>{\r\n         TAGS(event);\r\n-        makeThemEditable();\r\n     });\r\n \r\n     $('body').on('click', (event) => {                          \r\n         deckName(event);\r\n"
+                },
+                {
+                    "date": 1643240961736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,9 +128,9 @@\n         $('.deckNameText').off();\r\n         // $('.deckHeaderEditScreen').on('click', );\r\n     });        \r\n \r\n-    var holdingTAGS;\r\n+    // var holdingTAGS;\r\n     var savedTAGS = $('.TAGS').text();\r\n     $('.TAGS').on('click', (event)=>{\r\n         event.stopPropagation();\r\n \r\n"
+                },
+                {
+                    "date": 1643240975946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -163,9 +163,10 @@\n         //     $('.deckNameText').html();                                          //reset html\r\n         //     // $('.deckNameText').html('<div>'+ holding1 + '</div>');\r\n         //     $('.deckNameText').text(holding1);\r\n         //     makeThemEditable();\r\n-        // }        \r\n+        // }\r\n+        makeThemEditable();        \r\n     });\r\n     // ==============Clicking TAG array===============\r\n \r\n     \r\n"
+                },
+                {
+                    "date": 1643240984200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -192,8 +192,10 @@\n         makeThemEditable();\r\n     }      \r\n }\r\n \r\n+makeThemEditable();\r\n+\r\n // =============================\r\n // DONE - edit Deck obj info - logic works\r\n // TODO - edit Deck obj info - tap to edit\r\n // TODO - edit Deck obj info - CSS styling\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1643241026717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -192,9 +192,8 @@\n         makeThemEditable();\r\n     }      \r\n }\r\n \r\n-makeThemEditable();\r\n \r\n // =============================\r\n // DONE - edit Deck obj info - logic works\r\n // TODO - edit Deck obj info - tap to edit\r\n"
+                },
+                {
+                    "date": 1643241103085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -188,9 +188,9 @@\n         holding1 = $('.deckNameTextArea').val(); \r\n         $('.deckNameText').html();                                          //reset html\r\n         // $('.deckNameText').html('<div>'+ holding1 + '</div>');\r\n         $('.deckNameText').text(holding1);\r\n-        makeThemEditable();\r\n+        // makeThemEditable();\r\n     }      \r\n }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1643241124680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -172,20 +172,21 @@\n     \r\n }\r\n function TAGS(event){\r\n     if (!$(event.target).closest('.TAGChange').length) {\r\n+        console.log('TAG clicked away');\r\n         holdingTAGS = $('.TAGChange').val();\r\n         $('.TAGS').html();\r\n         // $('.TAGS').html('<div>'+ holdingTAGS + '</div>');\r\n         $('.TAGS').text(holdingTAGS);\r\n-        makeThemEditable();\r\n+        // makeThemEditable();\r\n     }\r\n }\r\n \r\n function deckName(event){\r\n     if (!$(event.target).closest('.deckNameTextArea').length) {                     // if click is outside\r\n         // the click occured outside '#element'\r\n-        console.log('i ran out of the box');     \r\n+        console.log('Deck clicked away');     \r\n         holding1 = $('.deckNameTextArea').val(); \r\n         $('.deckNameText').html();                                          //reset html\r\n         // $('.deckNameText').html('<div>'+ holding1 + '</div>');\r\n         $('.deckNameText').text(holding1);\r\n"
+                },
+                {
+                    "date": 1643241186095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n // await prepForPullingJSON()\r\n // editDeck()\r\n // makeThemEditable()\r\n \r\n-var holding1; var holdingTAGS;\r\n+var holding1; var holdingTAGS; var savedDeckNameFrontScreen; var savedTAGS;\r\n function makeThemEditable(){\r\n     \r\n     //DeckNAME and Outside Click\r\n \r\n@@ -117,9 +117,9 @@\n     //     $('.deckHeaderEditScreen').html('<div>'+ tmp + '</div>');\r\n     //     makeThemEditable();\r\n     // });\r\n \r\n-    var savedDeckNameFrontScreen = $('.deckNameText').text();           //saving text before edit\r\n+    savedDeckNameFrontScreen = $('.deckNameText').text();           //saving text before edit\r\n     $('.deckNameText').on('click', (event)=>{                           //setting up DOM eventlistener\r\n         event.stopPropagation();\r\n         // var tmp = $('.deckHeaderEditScreen').html();\r\n         $('.deckNameText').html('<textarea class=\"deckNameTextArea\">'+savedDeckNameFrontScreen+'</textarea>')       //transfer to NEW HTML\r\n@@ -129,9 +129,9 @@\n         // $('.deckHeaderEditScreen').on('click', );\r\n     });        \r\n \r\n     // var holdingTAGS;\r\n-    var savedTAGS = $('.TAGS').text();\r\n+    savedTAGS = $('.TAGS').text();\r\n     $('.TAGS').on('click', (event)=>{\r\n         event.stopPropagation();\r\n \r\n         $('.TAGS').html('<textarea class=\"TAGChange\">' + savedTAGS + '</textarea>');\r\n"
                 }
             ],
             "date": 1642578758960,

@@ -11,4 +11,6 @@ window.onload = ()=>{
     hide();
     show('firstScreen');
 
+    makeThemEditable();
+
 };
