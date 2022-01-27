@@ -10,7 +10,13 @@ function show(classIt) {
     document.querySelector("." + classIt).style.display = 'block';
 }
 
-// =============================
+// ==========================================================
+//SUPER important Function - with SUPER important 'deckArray'
+var deckArray = [];
+function pushingToDeckArray(name, TAGS){
+    deckArray.push([['name', name], ['TAGS', TAGS]]);
+}
+// ==========================================================
 
 
 async function makeDeckNameHTML(){
@@ -52,6 +58,19 @@ function editDeck(){
 
 
 }
+
+// =============================
+
+var keepingArray = [];
+function clickable(index){
+    $('.deckNameText'+index).on('click', ()=>{
+        keepingArray.push($('.deckNameText'+index).text());;           //saving text before edit
+        console.log('keepingArray', keepingArray);
+    });
+}
+
+
+
 // =============================
 // making divs editable
 var tmp;
@@ -61,135 +80,91 @@ var tmp;
 // makeThemEditable()
 
 var holding1; var holdingTAGS; var savedDeckNameFrontScreen; var savedTAGS;
-function makeThemEditable(){
-    
+var globalIndex = 0;
+function makeThemEditable(indexMe){
+    //REM
+
+    console.log('indexMe', indexMe);
+    globalIndex = indexMe;
+
     //DeckNAME and Outside Click
 
-    // var savedHeader = $('.deckHeaderEditScreen').text();
+    // deckArray.forEach((item, indexMe)=>{
 
-    // $('.deckHeaderEditScreen').on('click', (event)=>{
-    //     event.stopPropagation();
-    //     // var tmp = $('.deckHeaderEditScreen').html();
-    //     $('.deckHeaderEditScreen').html('<textarea class="deckNameEdit">'+savedHeader+'</textarea>')
-    //     tmp = $('.deckNameEdit').text();
-    //     // $('.deckHeaderEditScreen').on('click', );
-    //     $('.deckHeaderEditScreen').off(); 
-        
-    // });        
-    // // =============================
-    // $('body').on('click', (event) => {
-    //     if (!$(event.target).closest('.deckNameEdit').length) {
-    //         // the click occured outside '#element'
-    //         console.log('i ran out of the box');
-    //         $('.deckHeaderEditScreen').html();
-    //         $('.deckHeaderEditScreen').html('<div>'+ tmp + '</div>');
-    //         makeThemEditable();
-    //     }        
-    // });
-
-    // // =============================
-    // //TEXT and Outside Click
-    // var TagTextArray = [];
-
-    // var TagTextArray = $('.tagsEditScreen').text();
-
-
-    // $('.tagsEditScreen').on('click', (event)=>{
-    //     event.stopPropagation();
-    //     // var tmp = $('.deckHeaderEditScreen').html();
-    //     $('.tagsEditScreen').html('<textarea class="tags">'+TagTextArray+'</textarea>')
-    // });
-
-    // $('body').on('click', (event) => {
-    //     if (!$(event.target).closest('.tagsEditScreen').length) {
-    //         // the click occured outside '#element'
-    //         console.log('i ran out of the box');
-    //         $('.tagsEditScreen').html();
-    //         $('.tagsEditScreen').html('<div>'+ TagTextArray + '</div>');
-    //         makeThemEditable();
-    //     }        
-    //     });
-
-
-
-
-    // $('window').on('focus', ()=>{
-    //     $('.deckHeaderEditScreen').html('<div>'+ tmp + '</div>');
-    //     makeThemEditable();
-    // });
-
-    savedDeckNameFrontScreen = $('.deckNameText').text();           //saving text before edit
-    $('.deckNameText').on('click', (event)=>{                           //setting up DOM eventlistener
-        event.stopPropagation();
-        // var tmp = $('.deckHeaderEditScreen').html();
-        $('.deckNameText').html('<textarea class="deckNameTextArea">'+savedDeckNameFrontScreen+'</textarea>')       //transfer to NEW HTML
-        // holding1 = $('.deckNameTextArea').html();
-        // console.log('holding1', holding1);
-        $('.deckNameText').off();
-        // $('.deckHeaderEditScreen').on('click', );
-    });        
-
-    // var holdingTAGS;
-    savedTAGS = $('.TAGS').text();
-    $('.TAGS').on('click', (event)=>{
-        event.stopPropagation();
-
-        $('.TAGS').html('<textarea class="TAGChange">' + savedTAGS + '</textarea>');
-
-        $('.TAGS').off();
-    });
-    // $('window').on('click', (event)=>{
-        
-    // });
-
-
-
-    // ==========On clicks for DeckName and TAGS=================
-    $('.deckNameTextArea').on('keypress', (event)=>{
-        deckName(event);
-    });
-    $('.TAGChange').on('keypress', (event)=>{
-        TAGS(event);
-    });
-
-    $('body').on('click', (event) => {                          
-        deckName(event);
-        TAGS(event);
-        //event for, clicking outside
-        // if (!$(event.target).closest('.deckNameTextArea').length) {                     // if click is outside
-        //     // the click occured outside '#element'
-        //     console.log('i ran out of the box');     
-        //     holding1 = $('.deckNameTextArea').val(); 
-        //     $('.deckNameText').html();                                          //reset html
-        //     // $('.deckNameText').html('<div>'+ holding1 + '</div>');
-        //     $('.deckNameText').text(holding1);
-        //     makeThemEditable();
-        // }
-        makeThemEditable();        
-    });
-    // ==============Clicking TAG array===============
-
+        savedDeckNameFrontScreen = $('.deckNameText'+indexMe).text();           //saving text before edit
+        // debugger;
+        console.log('savedDeckNameFrontScreen', savedDeckNameFrontScreen);
+        $('.deckNameText'+indexMe).on('click', (event)=>{                           //setting up DOM eventlistener
+            event.stopPropagation();
+            // var tmp = $('.deckHeaderEditScreen').html();
+            $('.deckNameText'+indexMe).html('<textarea class="deckNameTextArea'+indexMe+'">'+savedDeckNameFrontScreen+'</textarea>')       //transfer to NEW HTML
+            // holding1 = $('.deckNameTextArea'+indexMe+'").html();
+            // console.log('holding1', holding1);
+            $('.deckNameText'+indexMe).off();
+            // $('.deckHeaderEditScreen').on('click', );
+        });        
     
+        // var holdingTAGS;
+        savedTAGS = $('.TAGS'+indexMe).text();
+        $('.TAGS'+indexMe).on('click', (event)=>{
+            event.stopPropagation();
+    
+            $('.TAGS'+indexMe).html('<textarea class="TAGChange'+indexMe+'">' + savedTAGS + '</textarea>');
+    
+            $('.TAGS'+indexMe).off();
+        });
+        // $('window').on('click', (event)=>{
+            
+        // });
+    
+    
+    
+        // ==========On clicks for DeckName and TAGS=================
+        $(".deckNameTextArea"+indexMe).on('keypress', (event)=>{
+            deckName(event, indexMe);
+            // debugger;
+        });
+        $('.TAGChange'+indexMe).on('keypress', (event)=>{
+            TAGS(event, indexMe);
+        });
+    
+        $('body').on('click', (event) => {                          
+            deckName(event);
+            TAGS(event);
+            //event for, clicking outside
+            // if (!$(event.target).closest('.deckNameTextArea').length) {                     // if click is outside
+            //     // the click occured outside '#element'
+            //     console.log('i ran out of the box');     
+            //     holding1 = $('.deckNameTextArea').val(); 
+            //     $('.deckNameText').html();                                          //reset html
+            //     // $('.deckNameText').html('<div>'+ holding1 + '</div>');
+            //     $('.deckNameText').text(holding1);
+            //     makeThemEditable();
+            // }
+            makeThemEditable(globalIndex);        
+        });
+        // ==============Clicking TAG array===============
+    // });
 }
 function TAGS(event){
-    if (!$(event.target).closest('.TAGChange').length) {
-        console.log('TAG clicked away');
-        holdingTAGS = $('.TAGChange').val();
-        $('.TAGS').html();
-        // $('.TAGS').html('<div>'+ holdingTAGS + '</div>');
-        $('.TAGS').text(holdingTAGS);
+    if (!$(event.target).closest('.TAGChange'+globalIndex).length) {
+        console.log('TAG clicked away, at globalIndex, ', globalIndex);
+        holdingTAGS = $('.TAGChange'+globalIndex).val();
+        $('.TAGS'+globalIndex).html();
+        // $('.TAGS'+globalIndex).html('<div>'+ holdingTAGS + '</div>');
+        $('.TAGS'+globalIndex).text(holdingTAGS);
         // makeThemEditable();
     }
 }
 
 function deckName(event){
-    if (!$(event.target).closest('.deckNameTextArea').length) {                     // if click is outside
+    if (!$(event.target).closest('.deckNameTextArea'+globalIndex).length) {                     // if click is outside
         // the click occured outside '#element'
-        console.log('Deck clicked away');     
-        holding1 = $('.deckNameTextArea').val(); 
-        $('.deckNameText').html();                                          //reset html
-        // $('.deckNameText').html('<div>'+ holding1 + '</div>');
-        $('.deckNameText').text(holding1);
+        console.log('Deck clicked away, at globalIndex, ', globalIndex);     
+        holding1 = $('.deckNameTextArea'+globalIndex).val(); 
+        $('.deckNameText'+globalIndex).html();                                          //reset html
+        // $('.deckNameText'+globalIndex).html('<div>'+ holding1 + '</div>');
+        $('.deckNameText'+globalIndex).text(holding1);
         // makeThemEditable();
     }      
 }
@@ -199,3 +174,41 @@ function deckName(event){
 // DONE - edit Deck obj info - logic works
 // TODO - edit Deck obj info - tap to edit
 // TODO - edit Deck obj info - CSS styling
+
+// =============================
+// Making More Decks!!!
+// TODO - deck colors! if be
+
+var sendingHTMLSTring = "";
+function makeMoreDecks(){
+    deckArray.forEach((item, index)=>{
+        sendingHTMLSTring += ['<div class="cardExample marginTop w3-card-2 ">',
+        '            <div class="w3-container w3-blue">',
+        '              <div class="deckNameAndButtonsGrid">',
+        '                <div class="title centerHorizontally ">',
+        '                  <div class="paddingUp paddingDown">',
+        '                    <div class="deckNameText',index,'">',deckArray[index][0][1],'</div>',
+        '                  </div>',
+        '                </div>',
+        '                <div class="area1 paddingUp"><button id="edit1">Edit</button></div>',
+        '                <div class="area2 paddingDown"><button id="study1">Study</button></div>',
+        '              </div>',
+        '              </div>',
+        '            </div>',
+        '            <div class="w3-container greyBorder">',
+        '              <div class="tagsAndEmailsGrid marginUpAndDown">',
+        '                <div class="TAGS',index,'">', deckArray[index][1][1] ,'</div>',
+        '                <div class="EmailsSharedButton">',
+        '                  <button class="emailsSharedList">Shared With</button>',
+        '                </div>',
+        '              </div>',
+        '            </div>',
+        '          </div>',
+        ].join('');
+    });
+
+
+
+
+    $('.boxMeCards').html($('.boxMeCards').html()+ sendingHTMLSTring);
+}

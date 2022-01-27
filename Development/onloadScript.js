@@ -11,6 +11,11 @@ window.onload = ()=>{
     hide();
     show('firstScreen');
 
-    makeThemEditable();
+    pushingToDeckArray('Spanish', 'language, understanding, awesomeness')
+    pushingToDeckArray('math', 'hard')
+    pushingToDeckArray('science', 'hard, disappointing')
+    makeMoreDecks();
+    // makeThemEditable(0);
+
 
 };

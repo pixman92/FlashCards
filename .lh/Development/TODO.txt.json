@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Development/TODO.txt",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1643243836032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1643243836032,
+            "name": "Commit-0",
+            "content": "TODO - home button - top left\r\nTODO - login button - top right ( Wayyy later )\r\n\r\nTODO - Edit HTML page\r\nTODO - delete / add  Q/A s\r\n\r\nTODO - study Mode -> question, tap > answer > tap, back\r\n\r\n\r\n\r\nhttps://url-decode.com/tool/create-array-js\r\ntake plain HTML => converts to JS Array => add .join(\"\") at the end, and plop it into program!"
+        }
+    ]
+}

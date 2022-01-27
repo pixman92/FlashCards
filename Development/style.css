@@ -2,6 +2,10 @@
     margin: auto;
     width: 50%;
 }
+.center2{
+    margin: auto;
+    text-align: center;
+}
 /* ================= */
 .flexContainer{
     display: flex;
@@ -84,3 +88,16 @@
     margin-bottom: .8em;
 }
 
+.marginTop{
+    margin-top: 2em;
+}
+/* ============================= */
+.decksFlex{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.deckFlexItems{
+    align-self:center;
+}

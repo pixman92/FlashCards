@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1642578822132,
@@ -28,6 +28,26 @@
                 {
                     "date": 1643241021316,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,7 @@\n     runMyCSS();\r\n     hide();\r\n     show('firstScreen');\r\n \r\n+    makeThemEditable();\r\n+\r\n };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1643247410025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,10 @@\n     runMyCSS();\r\n     hide();\r\n     show('firstScreen');\r\n \r\n-    makeThemEditable();\r\n+    pushingToDeckArray('Spanish', 'language, understanding, awesomeness')\r\n+    pushingToDeckArray('math', 'hard')\r\n+    pushingToDeckArray('science', 'hard, disappointing')\r\n+    makeThemEditable(0);\r\n \r\n };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1643247422428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,9 @@\n \r\n     pushingToDeckArray('Spanish', 'language, understanding, awesomeness')\r\n     pushingToDeckArray('math', 'hard')\r\n     pushingToDeckArray('science', 'hard, disappointing')\r\n+    makeMoreDecks();\r\n     makeThemEditable(0);\r\n \r\n+\r\n };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1643247451516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n     pushingToDeckArray('Spanish', 'language, understanding, awesomeness')\r\n     pushingToDeckArray('math', 'hard')\r\n     pushingToDeckArray('science', 'hard, disappointing')\r\n     makeMoreDecks();\r\n-    makeThemEditable(0);\r\n+    makeThemEditable('0');\r\n \r\n \r\n };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1643247466113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n     pushingToDeckArray('Spanish', 'language, understanding, awesomeness')\r\n     pushingToDeckArray('math', 'hard')\r\n     pushingToDeckArray('science', 'hard, disappointing')\r\n     makeMoreDecks();\r\n-    makeThemEditable('0');\r\n+    makeThemEditable(0);\r\n \r\n \r\n };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1643247798086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n     pushingToDeckArray('Spanish', 'language, understanding, awesomeness')\r\n     pushingToDeckArray('math', 'hard')\r\n     pushingToDeckArray('science', 'hard, disappointing')\r\n     makeMoreDecks();\r\n-    makeThemEditable(0);\r\n+    // makeThemEditable(0);\r\n \r\n \r\n };\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1642578822132,

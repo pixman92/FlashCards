@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 120,
+            "activePatchIndex": 132,
             "patches": [
                 {
                     "date": 1642578608394,
@@ -488,6 +488,54 @@
                 {
                     "date": 1643242532157,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,9 @@\n               </div>\r\n               </div>\r\n             </div>\r\n             <div class=\"w3-container greyBorder\">\r\n-              <div class=\"tagsAndEmailsGrid w3-padding-4\">\r\n+              <div class=\"tagsAndEmailsGrid marginUpAndDown\">\r\n                 <div class=\"TAGS\">afasfasdsdf</div>\r\n                 <div class=\"EmailsSharedButton\">\r\n                   <button class=\"emailsSharedList\">Shared With</button>\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1643242591402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n \r\n     <!-- ============DECKS================= -->\r\n     <div class=\"firstScreen\">\r\n       <div class=\"deckMode centerHorizontally2\">\r\n-        <div class=\"headerDeckMode\">Deck Names</div>\r\n+        <div class=\"headerDeckMode center\">Deck Names</div>\r\n   \r\n     \r\n         <div class=\"boxMeCards\">\r\n           <div class=\"cardExample w3-card-2 \">\r\n"
+                },
+                {
+                    "date": 1643242612939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n   <div class=\"BIGDiv\">\r\n \r\n     <!-- ============DECKS================= -->\r\n     <div class=\"firstScreen\">\r\n-      <div class=\"deckMode centerHorizontally2\">\r\n+      <div class=\"deckMode\">\r\n         <div class=\"headerDeckMode center\">Deck Names</div>\r\n   \r\n     \r\n         <div class=\"boxMeCards\">\r\n"
+                },
+                {
+                    "date": 1643242666531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,10 +62,12 @@\n \r\n     <!-- ============DECKS================= -->\r\n     <div class=\"firstScreen\">\r\n       <div class=\"deckMode\">\r\n-        <div class=\"headerDeckMode center\">Deck Names</div>\r\n-  \r\n+        <div class=\"headerDeckMode\"><div class=\"center\">\r\n+          DeckNames\r\n+        </div> \r\n+        </div>\r\n     \r\n         <div class=\"boxMeCards\">\r\n           <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n"
+                },
+                {
+                    "date": 1643242696563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,11 +62,9 @@\n \r\n     <!-- ============DECKS================= -->\r\n     <div class=\"firstScreen\">\r\n       <div class=\"deckMode\">\r\n-        <div class=\"headerDeckMode\"><div class=\"center\">\r\n-          DeckNames\r\n-        </div> \r\n+        <div class=\"headerDeckMode\"><div class=\"center\">DeckNames</div> \r\n         </div>\r\n     \r\n         <div class=\"boxMeCards\">\r\n           <div class=\"cardExample w3-card-2 \">\r\n"
+                },
+                {
+                    "date": 1643242704993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,10 +62,9 @@\n \r\n     <!-- ============DECKS================= -->\r\n     <div class=\"firstScreen\">\r\n       <div class=\"deckMode\">\r\n-        <div class=\"headerDeckMode\"><div class=\"center\">DeckNames</div> \r\n-        </div>\r\n+        <div class=\"headerDeckMode\"><div class=\"center\">DeckNames</div></div>\r\n     \r\n         <div class=\"boxMeCards\">\r\n           <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n"
+                },
+                {
+                    "date": 1643242832131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,10 +61,10 @@\n   <div class=\"BIGDiv\">\r\n \r\n     <!-- ============DECKS================= -->\r\n     <div class=\"firstScreen\">\r\n-      <div class=\"deckMode\">\r\n-        <div class=\"headerDeckMode\"><div class=\"center\">DeckNames</div></div>\r\n+      <div class=\"deckMode center\">\r\n+        <div class=\"headerDeckMode\"><div class=\"center2\">DeckNames</div></div>\r\n     \r\n         <div class=\"boxMeCards\">\r\n           <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n"
+                },
+                {
+                    "date": 1643242841293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n   <div class=\"BIGDiv\">\r\n \r\n     <!-- ============DECKS================= -->\r\n     <div class=\"firstScreen\">\r\n-      <div class=\"deckMode center\">\r\n+      <div class=\"deckMode\">\r\n         <div class=\"headerDeckMode\"><div class=\"center2\">DeckNames</div></div>\r\n     \r\n         <div class=\"boxMeCards\">\r\n           <div class=\"cardExample w3-card-2 \">\r\n"
+                },
+                {
+                    "date": 1643242861662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n \r\n     <!-- ============DECKS================= -->\r\n     <div class=\"firstScreen\">\r\n       <div class=\"deckMode\">\r\n-        <div class=\"headerDeckMode\"><div class=\"center2\">DeckNames</div></div>\r\n+        <div class=\"headerDeckMode center2\"><div class=\"\">DeckNames</div></div>\r\n     \r\n         <div class=\"boxMeCards\">\r\n           <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n"
+                },
+                {
+                    "date": 1643243257649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,8 +65,10 @@\n       <div class=\"deckMode\">\r\n         <div class=\"headerDeckMode center2\"><div class=\"\">DeckNames</div></div>\r\n     \r\n         <div class=\"boxMeCards\">\r\n+        <!-- beginning of new Decks -->\r\n+\r\n           <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n               <div class=\"deckNameAndButtonsGrid\">\r\n                 <div class=\"title centerHorizontally \">\r\n@@ -87,8 +89,10 @@\n                 </div>\r\n               </div>\r\n             </div>\r\n           </div>\r\n+\r\n+          <!-- end of new Decks -->\r\n         </div>\r\n   \r\n       </div>\r\n \r\n"
+                },
+                {
+                    "date": 1643243997285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n     \r\n         <div class=\"boxMeCards\">\r\n         <!-- beginning of new Decks -->\r\n \r\n-          <div class=\"cardExample w3-card-2 \">\r\n+          <!-- <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n               <div class=\"deckNameAndButtonsGrid\">\r\n                 <div class=\"title centerHorizontally \">\r\n                   <div class=\"paddingUp paddingDown\">\r\n@@ -88,9 +88,9 @@\n                   <button class=\"emailsSharedList\">Shared With</button>\r\n                 </div>\r\n               </div>\r\n             </div>\r\n-          </div>\r\n+          </div> -->\r\n \r\n           <!-- end of new Decks -->\r\n         </div>\r\n   \r\n"
+                },
+                {
+                    "date": 1643248952940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,8 +53,9 @@\n <script src=\"firebaseJS.js\"></script>\r\n <script src=\"backgroundLogicScript.js\"></script>\r\n <script src=\"foregroundHTMLScript.js\"></script>\r\n <script src=\"sytlingNEW.js\"></script>\r\n+<script src=\"refactorDecks.js\"></script>\r\n \r\n \r\n <!-- =================== -->\r\n <body>\r\n"
+                },
+                {
+                    "date": 1643252282567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,8 @@\n <script src=\"firebaseJS.js\"></script>\r\n <script src=\"backgroundLogicScript.js\"></script>\r\n <script src=\"foregroundHTMLScript.js\"></script>\r\n <script src=\"sytlingNEW.js\"></script>\r\n-<script src=\"refactorDecks.js\"></script>\r\n \r\n \r\n <!-- =================== -->\r\n <body>\r\n"
                 }
             ],
             "date": 1642578608394,

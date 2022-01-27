@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 194,
+            "activePatchIndex": 201,
             "patches": [
                 {
                     "date": 1642579062806,
@@ -784,6 +784,34 @@
                 {
                     "date": 1643242526141,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,4 +78,9 @@\n }\r\n .TAGS { grid-area: TAGS; }\r\n .EmailsSharedButton { grid-area: EmailsSharedButton; }\r\n \r\n+.marginUpAndDown{\r\n+    margin-top: .8em;\r\n+    margin-bottom: .8em;\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1643242824141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,11 @@\n .center{\r\n     margin: auto;\r\n     width: 50%;\r\n }\r\n+.center2{\r\n+    margin: 0 auto;\r\n+}\r\n /* ================= */\r\n .flexContainer{\r\n     display: flex;\r\n     flex-direction: row;\r\n"
+                },
+                {
+                    "date": 1643242871618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     margin: auto;\r\n     width: 50%;\r\n }\r\n .center2{\r\n-    margin: 0 auto;\r\n+    margin: auto;\r\n }\r\n /* ================= */\r\n .flexContainer{\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1643242887669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n     width: 50%;\r\n }\r\n .center2{\r\n     margin: auto;\r\n+    text-align: center;\r\n }\r\n /* ================= */\r\n .flexContainer{\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1643242920089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -87,4 +87,9 @@\n     margin-top: .8em;\r\n     margin-bottom: .8em;\r\n }\r\n \r\n+/* ============================= */\r\n+.decksFlex{\r\n+    display: flex;\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1643242999991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,6 +90,11 @@\n \r\n /* ============================= */\r\n .decksFlex{\r\n     display: flex;\r\n+    flex-direction: column;\r\n+\r\n }\r\n \r\n+.deckFlexItems{\r\n+    align-self:center;\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1643244564996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -87,8 +87,11 @@\n     margin-top: .8em;\r\n     margin-bottom: .8em;\r\n }\r\n \r\n+.marginTop{\r\n+    margin-top: 1em;\r\n+}\r\n /* ============================= */\r\n .decksFlex{\r\n     display: flex;\r\n     flex-direction: column;\r\n"
+                },
+                {
+                    "date": 1643244588811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,9 +88,9 @@\n     margin-bottom: .8em;\r\n }\r\n \r\n .marginTop{\r\n-    margin-top: 1em;\r\n+    margin-top: 2em;\r\n }\r\n /* ============================= */\r\n .decksFlex{\r\n     display: flex;\r\n"
                 }
             ],
             "date": 1642579062806,
