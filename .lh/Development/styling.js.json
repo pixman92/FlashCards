@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 175,
+            "activePatchIndex": 177,
             "patches": [
                 {
                     "date": 1642578985874,
@@ -708,6 +708,14 @@
                 {
                     "date": 1642669697425,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,9 @@\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n         \r\n-        changeCSS('addButton', ['rightMe']);\r\n+        // changeCSS('addButton', ['rightMe']);\r\n \r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1643241288061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,8 +68,9 @@\n     }\r\n \r\n }\r\n \r\n+// ==========================================================\r\n \r\n function runCSS2(){\r\n     changeCSS('BIGDiv', ['width450px', 'center']);\r\n     changeCSS('editCardsParentDiv', ['widthFull', 'center']);\r\n@@ -86,9 +87,9 @@\n \r\n         changeCSS('addingCards', ['grid1']);\r\n         changeCSS('middleDiv', ['flexGridQA']);\r\n         \r\n-        // changeCSS('addButton', ['rightMe']);\r\n+        changeCSS('addButton', ['rightMe']);\r\n \r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1643241294708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n     }\r\n \r\n }\r\n \r\n-// ==========================================================\r\n+// ==================NEW CSS=======================================\r\n \r\n function runCSS2(){\r\n     changeCSS('BIGDiv', ['width450px', 'center']);\r\n     changeCSS('editCardsParentDiv', ['widthFull', 'center']);\r\n"
                 }
             ],
             "date": 1642578985874,

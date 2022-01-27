@@ -32,3 +32,55 @@
 .rightDiv{
     /* flex:1; */
 }
+
+/* ============================= */
+.paddingUp{
+    padding-top: 1.3em;
+}
+
+.paddingDown{
+    padding-bottom: 1.3em;
+}
+
+.deckNameAndButtonsGrid{   
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 1.3em 1.2em; 
+    grid-template-areas: 
+      "title area1"
+      "title area2"; 
+}
+.title { grid-area: title; }
+.area1 { grid-area: area1; }
+.area2 { grid-area: area2; }
+
+
+.centerHorizontally {        
+    display: flex;
+    align-items: center;
+}
+
+.deckNameText{
+    font-size: 1.8em;
+}
+.greyBorder{
+    border: 1px solid grey;
+}
+
+.tagsAndEmailsGrid{
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 1.3em 1.2em; 
+    grid-template-areas: 
+      "TAGS EmailsSharedButton";
+}
+.TAGS { grid-area: TAGS; }
+.EmailsSharedButton { grid-area: EmailsSharedButton; }
+
+.marginUpAndDown{
+    margin-top: .8em;
+    margin-bottom: .8em;
+}
+

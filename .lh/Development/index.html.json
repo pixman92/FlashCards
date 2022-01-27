@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 100,
+            "activePatchIndex": 120,
             "patches": [
                 {
                     "date": 1642578608394,
@@ -408,6 +408,86 @@
                 {
                     "date": 1643090318247,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,11 +77,9 @@\n                 <div class=\"area2 paddingDown\"><button id=\"study1\">Study</button></div>\r\n               </div>\r\n             </div>\r\n             <div class=\"w3-container\">\r\n-              <div class=\"TAGS\">\r\n-                afasfasdsdf\r\n-              </div>\r\n+              <div class=\"TAGS\">afasfasdsdf</div>\r\n             </div>\r\n           </div>\r\n         </div>\r\n   \r\n"
+                },
+                {
+                    "date": 1643241428554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n     \r\n         <div class=\"boxMeCards\">\r\n           <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n-              <div class=\"cardGrid\">\r\n+              <div class=\"deckNameAndButtonsGrid\">\r\n                 <div class=\"title paddingUp paddingDown\">\r\n                   <div class=\"deckNameText\">Spanish</div>\r\n                 </div>\r\n                 <div class=\"area1 paddingUp\"><button id=\"edit1\">Edit</button></div>\r\n"
+                },
+                {
+                    "date": 1643241498429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,10 +69,12 @@\n         <div class=\"boxMeCards\">\r\n           <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n               <div class=\"deckNameAndButtonsGrid\">\r\n-                <div class=\"title paddingUp paddingDown\">\r\n-                  <div class=\"deckNameText\">Spanish</div>\r\n+                <div class=\"title\">\r\n+                  <div class=\"paddingUp addingDown\">\r\n+                    <div class=\"deckNameText\">Spanish</div>\r\n+                  </div>\r\n                 </div>\r\n                 <div class=\"area1 paddingUp\"><button id=\"edit1\">Edit</button></div>\r\n                 <div class=\"area2 paddingDown\"><button id=\"study1\">Study</button></div>\r\n               </div>\r\n"
+                },
+                {
+                    "date": 1643241545496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,10 +74,10 @@\n                   <div class=\"paddingUp addingDown\">\r\n                     <div class=\"deckNameText\">Spanish</div>\r\n                   </div>\r\n                 </div>\r\n-                <div class=\"area1 paddingUp\"><button id=\"edit1\">Edit</button></div>\r\n-                <div class=\"area2 paddingDown\"><button id=\"study1\">Study</button></div>\r\n+                <div class=\"area1\"><button id=\"edit1\">Edit</button></div>\r\n+                <div class=\"area2\"><b id=\"study1\">Study</button></div>\r\n               </div>\r\n             </div>\r\n             <div class=\"w3-container\">\r\n               <div class=\"TAGS\">afasfasdsdf</div>\r\n"
+                },
+                {
+                    "date": 1643241553729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                     <div class=\"deckNameText\">Spanish</div>\r\n                   </div>\r\n                 </div>\r\n                 <div class=\"area1\"><button id=\"edit1\">Edit</button></div>\r\n-                <div class=\"area2\"><b id=\"study1\">Study</button></div>\r\n+                <div class=\"area2\"><button id=\"study1\">Study</button></div>\r\n               </div>\r\n             </div>\r\n             <div class=\"w3-container\">\r\n               <div class=\"TAGS\">afasfasdsdf</div>\r\n"
+                },
+                {
+                    "date": 1643241746160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,15 +69,24 @@\n         <div class=\"boxMeCards\">\r\n           <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n               <div class=\"deckNameAndButtonsGrid\">\r\n-                <div class=\"title\">\r\n+               <div class=\"title\">\r\n+                hey\r\n+               </div>\r\n+               <div class=\"area1\">\r\n+                nope\r\n+               </div>\r\n+               <div class=\"area2\">\r\n+                yup\r\n+               </div>\r\n+                <!-- <div class=\"title\">\r\n                   <div class=\"paddingUp addingDown\">\r\n                     <div class=\"deckNameText\">Spanish</div>\r\n                   </div>\r\n                 </div>\r\n                 <div class=\"area1\"><button id=\"edit1\">Edit</button></div>\r\n-                <div class=\"area2\"><button id=\"study1\">Study</button></div>\r\n+                <div class=\"area2\"><button id=\"study1\">Study</button></div> -->\r\n               </div>\r\n             </div>\r\n             <div class=\"w3-container\">\r\n               <div class=\"TAGS\">afasfasdsdf</div>\r\n"
+                },
+                {
+                    "date": 1643241777030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n     \r\n         <div class=\"boxMeCards\">\r\n           <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n-              <div class=\"deckNameAndButtonsGrid\">\r\n+              <div class=\"gridMe\">\r\n                <div class=\"title\">\r\n                 hey\r\n                </div>\r\n                <div class=\"area1\">\r\n"
+                },
+                {
+                    "date": 1643241801430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,25 +68,28 @@\n     \r\n         <div class=\"boxMeCards\">\r\n           <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n-              <div class=\"gridMe\">\r\n-               <div class=\"title\">\r\n-                hey\r\n-               </div>\r\n-               <div class=\"area1\">\r\n-                nope\r\n-               </div>\r\n-               <div class=\"area2\">\r\n-                yup\r\n-               </div>\r\n-                <!-- <div class=\"title\">\r\n-                  <div class=\"paddingUp addingDown\">\r\n-                    <div class=\"deckNameText\">Spanish</div>\r\n+              <div>\r\n+                <div class=\"gridMe\">\r\n+                 <div class=\"title\">\r\n+                  hey\r\n+                 </div>\r\n+                 <div class=\"area1\">\r\n+                  nope\r\n+                 </div>\r\n+                 <div class=\"area2\">\r\n+                  yup\r\n+                 </div>\r\n+                  <!-- <div class=\"title\">\r\n+                    <div class=\"paddingUp addingDown\">\r\n+                      <div class=\"deckNameText\">Spanish</div>\r\n+                    </div>\r\n                   </div>\r\n+                  <div class=\"area1\"><button id=\"edit1\">Edit</button></div>\r\n+                  <div class=\"area2\"><button id=\"study1\">Study</button></div> -->\r\n                 </div>\r\n-                <div class=\"area1\"><button id=\"edit1\">Edit</button></div>\r\n-                <div class=\"area2\"><button id=\"study1\">Study</button></div> -->\r\n+\r\n               </div>\r\n             </div>\r\n             <div class=\"w3-container\">\r\n               <div class=\"TAGS\">afasfasdsdf</div>\r\n"
+                },
+                {
+                    "date": 1643241889273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n           <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n               <div>\r\n                 <div class=\"gridMe\">\r\n-                 <div class=\"title\">\r\n+                 <div class=\"title1\">\r\n                   hey\r\n                  </div>\r\n                  <div class=\"area1\">\r\n                   nope\r\n"
+                },
+                {
+                    "date": 1643241980676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,26 +68,16 @@\n     \r\n         <div class=\"boxMeCards\">\r\n           <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n-              <div>\r\n-                <div class=\"gridMe\">\r\n-                 <div class=\"title1\">\r\n-                  hey\r\n-                 </div>\r\n-                 <div class=\"area1\">\r\n-                  nope\r\n-                 </div>\r\n-                 <div class=\"area2\">\r\n-                  yup\r\n-                 </div>\r\n-                  <!-- <div class=\"title\">\r\n+              </div>\r\n+                  <div class=\"title\">\r\n                     <div class=\"paddingUp addingDown\">\r\n                       <div class=\"deckNameText\">Spanish</div>\r\n                     </div>\r\n                   </div>\r\n                   <div class=\"area1\"><button id=\"edit1\">Edit</button></div>\r\n-                  <div class=\"area2\"><button id=\"study1\">Study</button></div> -->\r\n+                  <div class=\"area2\"><button id=\"study1\">Study</button></div>\r\n                 </div>\r\n \r\n               </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1643242044140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,19 +68,18 @@\n     \r\n         <div class=\"boxMeCards\">\r\n           <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n-              </div>\r\n-                  <div class=\"title\">\r\n-                    <div class=\"paddingUp addingDown\">\r\n-                      <div class=\"deckNameText\">Spanish</div>\r\n-                    </div>\r\n+              <div class=\"deckNameAndButtonsGrid\">\r\n+                <div class=\"title\">\r\n+                  <div class=\"paddingUp addingDown\">\r\n+                    <div class=\"deckNameText\">Spanish</div>\r\n                   </div>\r\n-                  <div class=\"area1\"><button id=\"edit1\">Edit</button></div>\r\n-                  <div class=\"area2\"><button id=\"study1\">Study</button></div>\r\n                 </div>\r\n-\r\n+                <div class=\"area1\"><button id=\"edit1\">Edit</button></div>\r\n+                <div class=\"area2\"><button id=\"study1\">Study</button></div>\r\n               </div>\r\n+              </div>\r\n             </div>\r\n             <div class=\"w3-container\">\r\n               <div class=\"TAGS\">afasfasdsdf</div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1643242081117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n           <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n               <div class=\"deckNameAndButtonsGrid\">\r\n                 <div class=\"title\">\r\n-                  <div class=\"paddingUp addingDown\">\r\n+                  <div class=\"paddingUp paddingDown\">\r\n                     <div class=\"deckNameText\">Spanish</div>\r\n                   </div>\r\n                 </div>\r\n                 <div class=\"area1\"><button id=\"edit1\">Edit</button></div>\r\n"
+                },
+                {
+                    "date": 1643242094231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,10 +74,10 @@\n                   <div class=\"paddingUp paddingDown\">\r\n                     <div class=\"deckNameText\">Spanish</div>\r\n                   </div>\r\n                 </div>\r\n-                <div class=\"area1\"><button id=\"edit1\">Edit</button></div>\r\n-                <div class=\"area2\"><button id=\"study1\">Study</button></div>\r\n+                <div class=\"area1 paddingUp\"><button id=\"edit1\">Edit</button></div>\r\n+                <div class=\"area2 paddingDown\"><button id=\"study1\">Study</button></div>\r\n               </div>\r\n               </div>\r\n             </div>\r\n             <div class=\"w3-container\">\r\n"
+                },
+                {
+                    "date": 1643242194549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n         <div class=\"boxMeCards\">\r\n           <div class=\"cardExample w3-card-2 \">\r\n             <div class=\"w3-container w3-blue\">\r\n               <div class=\"deckNameAndButtonsGrid\">\r\n-                <div class=\"title\">\r\n+                <div class=\"title centerHorizontally \">\r\n                   <div class=\"paddingUp paddingDown\">\r\n                     <div class=\"deckNameText\">Spanish</div>\r\n                   </div>\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1643242248733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,9 +79,9 @@\n                 <div class=\"area2 paddingDown\"><button id=\"study1\">Study</button></div>\r\n               </div>\r\n               </div>\r\n             </div>\r\n-            <div class=\"w3-container\">\r\n+            <div class=\"w3-container w3-border-gray\">\r\n               <div class=\"TAGS\">afasfasdsdf</div>\r\n             </div>\r\n           </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1643242260759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,9 +79,9 @@\n                 <div class=\"area2 paddingDown\"><button id=\"study1\">Study</button></div>\r\n               </div>\r\n               </div>\r\n             </div>\r\n-            <div class=\"w3-container w3-border-gray\">\r\n+            <div class=\"w3-container greyBorder\">\r\n               <div class=\"TAGS\">afasfasdsdf</div>\r\n             </div>\r\n           </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1643242403701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,14 @@\n               </div>\r\n               </div>\r\n             </div>\r\n             <div class=\"w3-container greyBorder\">\r\n-              <div class=\"TAGS\">afasfasdsdf</div>\r\n+              <div class=\"tagsAndEmailsGrid\">\r\n+                <div class=\"TAGS\">afasfasdsdf</div>\r\n+                <div class=\"EmailsSharedButton\">\r\n+                  <button class=\"emailsSharedList\">Shared With</button>\r\n+                </div>\r\n+              </div>\r\n             </div>\r\n           </div>\r\n         </div>\r\n   \r\n"
+                },
+                {
+                    "date": 1643242425451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,9 @@\n               </div>\r\n               </div>\r\n             </div>\r\n             <div class=\"w3-container greyBorder\">\r\n-              <div class=\"tagsAndEmailsGrid\">\r\n+              <div class=\"tagsAndEmailsGrid paddingDown paddingUp\">\r\n                 <div class=\"TAGS\">afasfasdsdf</div>\r\n                 <div class=\"EmailsSharedButton\">\r\n                   <button class=\"emailsSharedList\">Shared With</button>\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1643242438806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,9 @@\n               </div>\r\n               </div>\r\n             </div>\r\n             <div class=\"w3-container greyBorder\">\r\n-              <div class=\"tagsAndEmailsGrid paddingDown paddingUp\">\r\n+              <div class=\"tagsAndEmailsGrid w3-padding-16\">\r\n                 <div class=\"TAGS\">afasfasdsdf</div>\r\n                 <div class=\"EmailsSharedButton\">\r\n                   <button class=\"emailsSharedList\">Shared With</button>\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1643242445242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,9 @@\n               </div>\r\n               </div>\r\n             </div>\r\n             <div class=\"w3-container greyBorder\">\r\n-              <div class=\"tagsAndEmailsGrid w3-padding-16\">\r\n+              <div class=\"tagsAndEmailsGrid w3-padding-4\">\r\n                 <div class=\"TAGS\">afasfasdsdf</div>\r\n                 <div class=\"EmailsSharedButton\">\r\n                   <button class=\"emailsSharedList\">Shared With</button>\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1643242532157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,9 @@\n               </div>\r\n               </div>\r\n             </div>\r\n             <div class=\"w3-container greyBorder\">\r\n-              <div class=\"tagsAndEmailsGrid w3-padding-4\">\r\n+              <div class=\"tagsAndEmailsGrid marginUpAndDown\">\r\n                 <div class=\"TAGS\">afasfasdsdf</div>\r\n                 <div class=\"EmailsSharedButton\">\r\n                   <button class=\"emailsSharedList\">Shared With</button>\r\n                 </div>\r\n"
                 }
             ],
             "date": 1642578608394,
