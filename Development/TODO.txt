@@ -11,3 +11,13 @@ TODO - study Mode -> question, tap > answer > tap, back
 https://url-decode.com/tool/create-array-js
 take plain HTML => converts to JS Array => add .join("") at the end, and plop it into program!
 
+
+=============================
+str = holdingPullArray[0].stringMe()        //pulls a String cast of the JSONobj
+
+makeInstanceFlashCards()        //to make a new global FlashCard obj
+
+myJSONFlashCards.insertJSON(str)        //push the 'str' variable to the new instance
+myJSONFlashCards.parseMe()              //make it into objs
+
+pushFlashCardsManipulateTAGS(['time will tell', 'nope', 'peace'])
