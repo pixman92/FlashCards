@@ -12,9 +12,16 @@ function show(classIt) {
 
 // ==========================================================
 //SUPER important Function - with SUPER important 'deckArray'
-var deckArray = [];
-function pushingToDeckArray(name, TAGS){
-    deckArray.push([['name', name], ['TAGS', TAGS]]);
+// var deckArray = [];
+// function pushingToDeckArray(name, TAGS){
+//     deckArray.push([['name', name], ['TAGS', TAGS]]);
+// }
+
+var decksArray = []
+async function saveDeckObjInfo(index){
+    await prepForPullingJSON();
+    decksArray.push(myJSONFlashCardsPULLED);
+    makeMoreDecks(decksArray[index].JSONobj.innerArray[0][0][1][1], decksArray[index].JSONobj.innerArray[0][0][4][0][1][0], index);
 }
 // ==========================================================
 
@@ -180,14 +187,14 @@ function deckName(event){
 // TODO - deck colors! if be
 
 var sendingHTMLSTring = "";
-function makeMoreDecks(){
-    deckArray.forEach((item, index)=>{
-        sendingHTMLSTring += ['<div class="cardExample marginTop w3-card-2 ">',
+function makeMoreDecks(deckName, deckTags, index){
+    // deckArray.forEach((item, index)=>{
+        sendingHTMLSTring = ['<div class="cardExample marginTop w3-card-2 ">',
         '            <div class="w3-container w3-blue">',
         '              <div class="deckNameAndButtonsGrid">',
         '                <div class="title centerHorizontally ">',
         '                  <div class="paddingUp paddingDown">',
-        '                    <div class="deckNameText',index,'">',deckArray[index][0][1],'</div>',
+        '                    <div class="deckNameText',index,'">',deckName,'</div>',
         '                  </div>',
         '                </div>',
         '                <div class="area1 paddingUp"><button id="edit1">Edit</button></div>',
@@ -197,7 +204,7 @@ function makeMoreDecks(){
         '            </div>',
         '            <div class="w3-container greyBorder">',
         '              <div class="tagsAndEmailsGrid marginUpAndDown">',
-        '                <div class="TAGS',index,'">', deckArray[index][1][1] ,'</div>',
+        '                <div class="TAGS',index,'">', deckTags ,'</div>',
         '                <div class="EmailsSharedButton">',
         '                  <button class="emailsSharedList">Shared With</button>',
         '                </div>',
@@ -205,10 +212,11 @@ function makeMoreDecks(){
         '            </div>',
         '          </div>',
         ].join('');
-    });
+    // });
 
 
 
 
     $('.boxMeCards').html($('.boxMeCards').html()+ sendingHTMLSTring);
 }
+

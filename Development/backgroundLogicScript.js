@@ -21,10 +21,10 @@ async function prepForPullingJSON(){
     emailSearch = "sam@gmail.com"; deckName = 'history';
     await tmp(()=>{}).then(async()=>{
         await getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName).then(async()=>{
-                await makeDeckNameHTML();
-        }).then(async()=>{
-                await makeTagsHTML();    
-        })
+                // await saveDeckObjInfo();
+        // }).then(async()=>{
+                // await makeTagsHTML();    
+        });
 });
 
 
