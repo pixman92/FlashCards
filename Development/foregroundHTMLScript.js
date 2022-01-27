@@ -17,11 +17,34 @@ function show(classIt) {
 //     deckArray.push([['name', name], ['TAGS', TAGS]]);
 // }
 
-var decksArray = []
-async function saveDeckObjInfo(index){
+var decksArray = []; 
+var keyMe;  var tmpPull; var tmpPull2;
+async function pullAllDecksToHTML(){
     await prepForPullingJSON();
-    decksArray.push(myJSONFlashCardsPULLED);
-    makeMoreDecks(decksArray[index].JSONobj.innerArray[0][0][1][1], decksArray[index].JSONobj.innerArray[0][0][4][0][1][0], index);
+    decksArray = wholeDocDataPull;
+    keyMe = Object.keys(wholeDocDataPull[0]);
+    // decksArray = Object.values(wholeDocDataPull[0]);
+
+    tmpPull = new JSON_Instance();
+    tmpPull2 = new JSON_Instance();    
+    
+    decksArray.forEach((item, index)=>{
+        if(item!='email'){
+            console.log('item', decksArray[0][keyMe[index]]);
+            
+            tmpPull.insertJSON(decksArray[0][keyMe[index]]); 
+            tmpPull2.insertJSON(decksArray[0][keyMe[index]])
+        
+            console.log('tmpPull', tmpPull);
+            // debugger;
+            tmpPull.parseMe();
+            tmpPull2.parseMe();
+            // var holdTmpPull = tmpPull.parseMe(); 
+            // var holdTmpPull2 = tmpPull2.parseMe();
+            makeMoreDecks(tmpPull.JSONobj.innerArray[0][0][1][1], );       //sending DECKName and DECK TAGS
+            // tmp="";
+        }
+    });
 }
 // ==========================================================
 

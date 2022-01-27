@@ -85,6 +85,7 @@ async function pushFlashCardData(){
 
 var values = [];
 var myJSONFlashCardsPULLED = {}; 
+var allDeckArrays = [];
 async function getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName){
     // function to make a new instance OBJ, that will hold pulled JSON Data
     // pushes out JSON data (my custom) - to myJSONFlashCardsPULLED
@@ -108,7 +109,6 @@ async function getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName){
     }
     // =============================
     
-    // =============================
     async function pushToRetrieveLocalVariable(entryName){
         var keys = Object.keys(wholeDocDataPull[0]);
         values = Object.values(wholeDocDataPull[0]);

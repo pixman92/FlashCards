@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 181,
+            "activePatchIndex": 217,
             "patches": [
                 {
                     "date": 1642578758960,
@@ -732,6 +732,150 @@
                 {
                     "date": 1643268756855,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -188,9 +188,9 @@\n \r\n var sendingHTMLSTring = \"\";\r\n function makeMoreDecks(deckName, deckTags, index){\r\n     // deckArray.forEach((item, index)=>{\r\n-        sendingHTMLSTring += ['<div class=\"cardExample marginTop w3-card-2 \">',\r\n+        sendingHTMLSTring = ['<div class=\"cardExample marginTop w3-card-2 \">',\r\n         '            <div class=\"w3-container w3-blue\">',\r\n         '              <div class=\"deckNameAndButtonsGrid\">',\r\n         '                <div class=\"title centerHorizontally \">',\r\n         '                  <div class=\"paddingUp paddingDown\">',\r\n"
+                },
+                {
+                    "date": 1643268990398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,11 @@\n //     deckArray.push([['name', name], ['TAGS', TAGS]]);\r\n // }\r\n \r\n var decksArray = []\r\n-async function saveDeckObjInfo(index){\r\n+async function pullAllDecksToHTML(index){\r\n     await prepForPullingJSON();\r\n-    decksArray.push(myJSONFlashCardsPULLED);\r\n+    \r\n     makeMoreDecks(decksArray[index].JSONobj.innerArray[0][0][1][1], decksArray[index].JSONobj.innerArray[0][0][4][0][1][0], index);\r\n }\r\n // ==========================================================\r\n \r\n"
+                },
+                {
+                    "date": 1643269098673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,12 +17,12 @@\n //     deckArray.push([['name', name], ['TAGS', TAGS]]);\r\n // }\r\n \r\n var decksArray = []\r\n-async function pullAllDecksToHTML(index){\r\n+async function pullAllDecksToHTML(){\r\n     await prepForPullingJSON();\r\n     \r\n-    makeMoreDecks(decksArray[index].JSONobj.innerArray[0][0][1][1], decksArray[index].JSONobj.innerArray[0][0][4][0][1][0], index);\r\n+    // makeMoreDecks(decksArray[index].JSONobj.innerArray[0][0][1][1], decksArray[index].JSONobj.innerArray[0][0][4][0][1][0], index);\r\n }\r\n // ==========================================================\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1643269227649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \r\n var decksArray = []\r\n async function pullAllDecksToHTML(){\r\n     await prepForPullingJSON();\r\n-    \r\n+    deckArray = wholeDocDataPull;\r\n     // makeMoreDecks(decksArray[index].JSONobj.innerArray[0][0][1][1], decksArray[index].JSONobj.innerArray[0][0][4][0][1][0], index);\r\n }\r\n // ==========================================================\r\n \r\n"
+                },
+                {
+                    "date": 1643269245291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \r\n var decksArray = []\r\n async function pullAllDecksToHTML(){\r\n     await prepForPullingJSON();\r\n-    deckArray = wholeDocDataPull;\r\n+    decksArray = wholeDocDataPull;\r\n     // makeMoreDecks(decksArray[index].JSONobj.innerArray[0][0][1][1], decksArray[index].JSONobj.innerArray[0][0][4][0][1][0], index);\r\n }\r\n // ==========================================================\r\n \r\n"
+                },
+                {
+                    "date": 1643269344210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,12 @@\n var decksArray = []\r\n async function pullAllDecksToHTML(){\r\n     await prepForPullingJSON();\r\n     decksArray = wholeDocDataPull;\r\n-    // makeMoreDecks(decksArray[index].JSONobj.innerArray[0][0][1][1], decksArray[index].JSONobj.innerArray[0][0][4][0][1][0], index);\r\n+    decksArray.forEach((item, index)=>{\r\n+        console.log('item', item);\r\n+    });\r\n+    // makeMoreDecks(decksArray[0], decksArray[index].JSONobj.innerArray[0][0][4][0][1][0], index);\r\n }\r\n // ==========================================================\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1643269367822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,10 @@\n     await prepForPullingJSON();\r\n     decksArray = wholeDocDataPull;\r\n     decksArray.forEach((item, index)=>{\r\n         console.log('item', item);\r\n+        makeMoreDecks(item, index);\r\n     });\r\n-    // makeMoreDecks(decksArray[0], decksArray[index].JSONobj.innerArray[0][0][4][0][1][0], index);\r\n }\r\n // ==========================================================\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1643269520011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n var decksArray = []\r\n async function pullAllDecksToHTML(){\r\n     await prepForPullingJSON();\r\n     decksArray = wholeDocDataPull;\r\n+    var tmp = new JSON_Instance();\r\n     decksArray.forEach((item, index)=>{\r\n         console.log('item', item);\r\n         makeMoreDecks(item, index);\r\n     });\r\n"
+                },
+                {
+                    "date": 1643270019442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,14 @@\n \r\n var decksArray = []\r\n async function pullAllDecksToHTML(){\r\n     await prepForPullingJSON();\r\n-    decksArray = wholeDocDataPull;\r\n+    // decksArray = wholeDocDataPull;\r\n+    var keys = Object.keys(wholeDocDataPull[0]);\r\n+    decksArray = Object.values(wholeDocDataPull[0]);\r\n+\r\n     var tmp = new JSON_Instance();\r\n+    \r\n     decksArray.forEach((item, index)=>{\r\n         console.log('item', item);\r\n         makeMoreDecks(item, index);\r\n     });\r\n"
+                },
+                {
+                    "date": 1643270043541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     var tmp = new JSON_Instance();\r\n     \r\n     decksArray.forEach((item, index)=>{\r\n         console.log('item', item);\r\n-        makeMoreDecks(item, index);\r\n+        // makeMoreDecks(deckArray, index);\r\n     });\r\n }\r\n // ==========================================================\r\n \r\n"
+                },
+                {
+                    "date": 1643270076440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \r\n var decksArray = []\r\n async function pullAllDecksToHTML(){\r\n     await prepForPullingJSON();\r\n-    // decksArray = wholeDocDataPull;\r\n+    decksArray = wholeDocDataPull;\r\n     var keys = Object.keys(wholeDocDataPull[0]);\r\n     decksArray = Object.values(wholeDocDataPull[0]);\r\n \r\n     var tmp = new JSON_Instance();\r\n"
+                },
+                {
+                    "date": 1643270085924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n async function pullAllDecksToHTML(){\r\n     await prepForPullingJSON();\r\n     decksArray = wholeDocDataPull;\r\n     var keys = Object.keys(wholeDocDataPull[0]);\r\n-    decksArray = Object.values(wholeDocDataPull[0]);\r\n+    // decksArray = Object.values(wholeDocDataPull[0]);\r\n \r\n     var tmp = new JSON_Instance();\r\n     \r\n     decksArray.forEach((item, index)=>{\r\n"
+                },
+                {
+                    "date": 1643270096824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \r\n     var tmp = new JSON_Instance();\r\n     \r\n     decksArray.forEach((item, index)=>{\r\n-        console.log('item', item);\r\n+        console.log('item', item[0][keys[index]]);\r\n         // makeMoreDecks(deckArray, index);\r\n     });\r\n }\r\n // ==========================================================\r\n"
+                },
+                {
+                    "date": 1643270160061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     var tmp = new JSON_Instance();\r\n     \r\n     decksArray.forEach((item, index)=>{\r\n         console.log('item', item[0][keys[index]]);\r\n-        // makeMoreDecks(deckArray, index);\r\n+        makeMoreDecks(deckArray, item[0][keys[index]]);\r\n     });\r\n }\r\n // ==========================================================\r\n \r\n"
+                },
+                {
+                    "date": 1643270593837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,11 +25,13 @@\n     // decksArray = Object.values(wholeDocDataPull[0]);\r\n \r\n     var tmp = new JSON_Instance();\r\n     \r\n+    \r\n     decksArray.forEach((item, index)=>{\r\n         console.log('item', item[0][keys[index]]);\r\n-        makeMoreDecks(deckArray, item[0][keys[index]]);\r\n+        tmp.insertJSON(decksArray[0][keys[index]]) \r\n+        makeMoreDecks(item[0][keys[index]]);\r\n     });\r\n }\r\n // ==========================================================\r\n \r\n"
+                },
+                {
+                    "date": 1643270655934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,11 @@\n     \r\n     \r\n     decksArray.forEach((item, index)=>{\r\n         console.log('item', item[0][keys[index]]);\r\n-        tmp.insertJSON(decksArray[0][keys[index]]) \r\n-        makeMoreDecks(item[0][keys[index]]);\r\n+        tmp.insertJSON(decksArray[0][keys[index]]); \r\n+        tmp.parseMe(); \r\n+        makeMoreDecks(item[0][keys[index]], tmp.stringMe());\r\n     });\r\n }\r\n // ==========================================================\r\n \r\n"
+                },
+                {
+                    "date": 1643270664142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,9 @@\n         console.log('item', item[0][keys[index]]);\r\n         tmp.insertJSON(decksArray[0][keys[index]]); \r\n         tmp.parseMe(); \r\n         makeMoreDecks(item[0][keys[index]], tmp.stringMe());\r\n+        tmp=\"\";\r\n     });\r\n }\r\n // ==========================================================\r\n \r\n"
+                },
+                {
+                    "date": 1643270698819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     var tmp = new JSON_Instance();\r\n     \r\n     \r\n     decksArray.forEach((item, index)=>{\r\n-        console.log('item', item[0][keys[index]]);\r\n+        console.log('item', decksArray[0][keys[index]]);\r\n         tmp.insertJSON(decksArray[0][keys[index]]); \r\n         tmp.parseMe(); \r\n         makeMoreDecks(item[0][keys[index]], tmp.stringMe());\r\n         tmp=\"\";\r\n"
+                },
+                {
+                    "date": 1643270723293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     decksArray.forEach((item, index)=>{\r\n         console.log('item', decksArray[0][keys[index]]);\r\n         tmp.insertJSON(decksArray[0][keys[index]]); \r\n         tmp.parseMe(); \r\n-        makeMoreDecks(item[0][keys[index]], tmp.stringMe());\r\n+        makeMoreDecks(decksArray[0][keys[index]], tmp.stringMe());\r\n         tmp=\"\";\r\n     });\r\n }\r\n // ==========================================================\r\n"
+                },
+                {
+                    "date": 1643270749312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n // function pushingToDeckArray(name, TAGS){\r\n //     deckArray.push([['name', name], ['TAGS', TAGS]]);\r\n // }\r\n \r\n-var decksArray = []\r\n+var decksArray = []; var tmp;\r\n async function pullAllDecksToHTML(){\r\n     await prepForPullingJSON();\r\n     decksArray = wholeDocDataPull;\r\n     var keys = Object.keys(wholeDocDataPull[0]);\r\n"
+                },
+                {
+                    "date": 1643271379534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,16 +23,16 @@\n     decksArray = wholeDocDataPull;\r\n     var keys = Object.keys(wholeDocDataPull[0]);\r\n     // decksArray = Object.values(wholeDocDataPull[0]);\r\n \r\n-    var tmp = new JSON_Instance();\r\n+    tmp = new JSON_Instance();\r\n     \r\n     \r\n     decksArray.forEach((item, index)=>{\r\n         console.log('item', decksArray[0][keys[index]]);\r\n         tmp.insertJSON(decksArray[0][keys[index]]); \r\n         tmp.parseMe(); \r\n-        makeMoreDecks(decksArray[0][keys[index]], tmp.stringMe());\r\n+        makeMoreDecks(decksArray[0][keys[index]], tmp.JSONobj.innerArray[0][0][4][0][1][0]);       //sending DECKName and DECK TAGS\r\n         tmp=\"\";\r\n     });\r\n }\r\n // ==========================================================\r\n"
+                },
+                {
+                    "date": 1643271538577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,9 @@\n     \r\n     decksArray.forEach((item, index)=>{\r\n         console.log('item', decksArray[0][keys[index]]);\r\n         tmp.insertJSON(decksArray[0][keys[index]]); \r\n+        debugger;\r\n         tmp.parseMe(); \r\n         makeMoreDecks(decksArray[0][keys[index]], tmp.JSONobj.innerArray[0][0][4][0][1][0]);       //sending DECKName and DECK TAGS\r\n         tmp=\"\";\r\n     });\r\n"
+                },
+                {
+                    "date": 1643271654581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,11 +23,11 @@\n     decksArray = wholeDocDataPull;\r\n     var keys = Object.keys(wholeDocDataPull[0]);\r\n     // decksArray = Object.values(wholeDocDataPull[0]);\r\n \r\n-    tmp = new JSON_Instance();\r\n+    var tmp = new JSON_Instance();\r\n+    var tmp2 = new JSON_Instance();    \r\n     \r\n-    \r\n     decksArray.forEach((item, index)=>{\r\n         console.log('item', decksArray[0][keys[index]]);\r\n         tmp.insertJSON(decksArray[0][keys[index]]); \r\n         debugger;\r\n"
+                },
+                {
+                    "date": 1643271770429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,14 +27,18 @@\n     var tmp = new JSON_Instance();\r\n     var tmp2 = new JSON_Instance();    \r\n     \r\n     decksArray.forEach((item, index)=>{\r\n-        console.log('item', decksArray[0][keys[index]]);\r\n-        tmp.insertJSON(decksArray[0][keys[index]]); \r\n-        debugger;\r\n-        tmp.parseMe(); \r\n-        makeMoreDecks(decksArray[0][keys[index]], tmp.JSONobj.innerArray[0][0][4][0][1][0]);       //sending DECKName and DECK TAGS\r\n-        tmp=\"\";\r\n+        if(item!=email){\r\n+            console.log('item', decksArray[0][keys[index]]);\r\n+            \r\n+            tmp.insertJSON(decksArray[0][keys[index]]); \r\n+            tmp2.insertJSON(decksArray[0][keys[index]])\r\n+            debugger;\r\n+            tmp.parseMe(); \r\n+            makeMoreDecks(tmp[0][keys[index]], tmp2.JSONobj.innerArray[0][0][4][0][1][0]);       //sending DECKName and DECK TAGS\r\n+            tmp=\"\";\r\n+        }\r\n     });\r\n }\r\n // ==========================================================\r\n \r\n"
+                },
+                {
+                    "date": 1643271788264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n             tmp.insertJSON(decksArray[0][keys[index]]); \r\n             tmp2.insertJSON(decksArray[0][keys[index]])\r\n             debugger;\r\n             tmp.parseMe(); \r\n-            makeMoreDecks(tmp[0][keys[index]], tmp2.JSONobj.innerArray[0][0][4][0][1][0]);       //sending DECKName and DECK TAGS\r\n+            makeMoreDecks(tmp[0][keys[index]]);       //sending DECKName and DECK TAGS\r\n             tmp=\"\";\r\n         }\r\n     });\r\n }\r\n"
+                },
+                {
+                    "date": 1643271830664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,18 +23,18 @@\n     decksArray = wholeDocDataPull;\r\n     var keys = Object.keys(wholeDocDataPull[0]);\r\n     // decksArray = Object.values(wholeDocDataPull[0]);\r\n \r\n-    var tmp = new JSON_Instance();\r\n+    tmp = new JSON_Instance();\r\n     var tmp2 = new JSON_Instance();    \r\n     \r\n     decksArray.forEach((item, index)=>{\r\n         if(item!=email){\r\n             console.log('item', decksArray[0][keys[index]]);\r\n             \r\n             tmp.insertJSON(decksArray[0][keys[index]]); \r\n             tmp2.insertJSON(decksArray[0][keys[index]])\r\n-            debugger;\r\n+            // debugger;\r\n             tmp.parseMe(); \r\n             makeMoreDecks(tmp[0][keys[index]]);       //sending DECKName and DECK TAGS\r\n             tmp=\"\";\r\n         }\r\n"
+                },
+                {
+                    "date": 1643271851263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     tmp = new JSON_Instance();\r\n     var tmp2 = new JSON_Instance();    \r\n     \r\n     decksArray.forEach((item, index)=>{\r\n-        if(item!=email){\r\n+        if(item!='email'){\r\n             console.log('item', decksArray[0][keys[index]]);\r\n             \r\n             tmp.insertJSON(decksArray[0][keys[index]]); \r\n             tmp2.insertJSON(decksArray[0][keys[index]])\r\n"
+                },
+                {
+                    "date": 1643271953383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n             tmp2.insertJSON(decksArray[0][keys[index]])\r\n             // debugger;\r\n             tmp.parseMe(); \r\n             makeMoreDecks(tmp[0][keys[index]]);       //sending DECKName and DECK TAGS\r\n-            tmp=\"\";\r\n+            // tmp=\"\";\r\n         }\r\n     });\r\n }\r\n // ==========================================================\r\n"
+                },
+                {
+                    "date": 1643272088554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,23 +20,23 @@\n var decksArray = []; var tmp;\r\n async function pullAllDecksToHTML(){\r\n     await prepForPullingJSON();\r\n     decksArray = wholeDocDataPull;\r\n-    var keys = Object.keys(wholeDocDataPull[0]);\r\n+    var keyMe = Object.keyMe(wholeDocDataPull[0]);\r\n     // decksArray = Object.values(wholeDocDataPull[0]);\r\n \r\n     tmp = new JSON_Instance();\r\n     var tmp2 = new JSON_Instance();    \r\n     \r\n     decksArray.forEach((item, index)=>{\r\n         if(item!='email'){\r\n-            console.log('item', decksArray[0][keys[index]]);\r\n+            console.log('item', decksArray[0][keyMe[index]]);\r\n             \r\n-            tmp.insertJSON(decksArray[0][keys[index]]); \r\n-            tmp2.insertJSON(decksArray[0][keys[index]])\r\n+            tmp.insertJSON(decksArray[0][keyMe[index]]); \r\n+            tmp2.insertJSON(decksArray[0][keyMe[index]])\r\n             // debugger;\r\n             tmp.parseMe(); \r\n-            makeMoreDecks(tmp[0][keys[index]]);       //sending DECKName and DECK TAGS\r\n+            makeMoreDecks(tmp[0][keyMe[index]]);       //sending DECKName and DECK TAGS\r\n             // tmp=\"\";\r\n         }\r\n     });\r\n }\r\n"
+                },
+                {
+                    "date": 1643272097913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n var decksArray = []; var tmp;\r\n async function pullAllDecksToHTML(){\r\n     await prepForPullingJSON();\r\n     decksArray = wholeDocDataPull;\r\n-    var keyMe = Object.keyMe(wholeDocDataPull[0]);\r\n+    var keyMe = Object.keys(wholeDocDataPull[0]);\r\n     // decksArray = Object.values(wholeDocDataPull[0]);\r\n \r\n     tmp = new JSON_Instance();\r\n     var tmp2 = new JSON_Instance();    \r\n"
+                },
+                {
+                    "date": 1643272171927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,12 +17,13 @@\n //     deckArray.push([['name', name], ['TAGS', TAGS]]);\r\n // }\r\n \r\n var decksArray = []; var tmp;\r\n+var keyMe;\r\n async function pullAllDecksToHTML(){\r\n     await prepForPullingJSON();\r\n     decksArray = wholeDocDataPull;\r\n-    var keyMe = Object.keys(wholeDocDataPull[0]);\r\n+    keyMe = Object.keys(wholeDocDataPull[0]);\r\n     // decksArray = Object.values(wholeDocDataPull[0]);\r\n \r\n     tmp = new JSON_Instance();\r\n     var tmp2 = new JSON_Instance();    \r\n"
+                },
+                {
+                    "date": 1643272279355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,18 +16,18 @@\n // function pushingToDeckArray(name, TAGS){\r\n //     deckArray.push([['name', name], ['TAGS', TAGS]]);\r\n // }\r\n \r\n-var decksArray = []; var tmp;\r\n+var decksArray = []; var tmpPull;\r\n var keyMe;\r\n async function pullAllDecksToHTML(){\r\n     await prepForPullingJSON();\r\n     decksArray = wholeDocDataPull;\r\n     keyMe = Object.keys(wholeDocDataPull[0]);\r\n     // decksArray = Object.values(wholeDocDataPull[0]);\r\n \r\n-    tmp = new JSON_Instance();\r\n-    var tmp2 = new JSON_Instance();    \r\n+    tmpPull = new JSON_Instance();\r\n+    var tmpPull2 = new JSON_Instance();    \r\n     \r\n     decksArray.forEach((item, index)=>{\r\n         if(item!='email'){\r\n             console.log('item', decksArray[0][keyMe[index]]);\r\n"
+                },
+                {
+                    "date": 1643272291242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,13 +31,13 @@\n     decksArray.forEach((item, index)=>{\r\n         if(item!='email'){\r\n             console.log('item', decksArray[0][keyMe[index]]);\r\n             \r\n-            tmp.insertJSON(decksArray[0][keyMe[index]]); \r\n-            tmp2.insertJSON(decksArray[0][keyMe[index]])\r\n+            tmpPull.insertJSON(decksArray[0][keyMe[index]]); \r\n+            tmpPull2.insertJSON(decksArray[0][keyMe[index]])\r\n             // debugger;\r\n-            tmp.parseMe(); \r\n-            makeMoreDecks(tmp[0][keyMe[index]]);       //sending DECKName and DECK TAGS\r\n+            tmpPull.parseMe(); \r\n+            makeMoreDecks(tmpPull[0][keyMe[index]]);       //sending DECKName and DECK TAGS\r\n             // tmp=\"\";\r\n         }\r\n     });\r\n }\r\n"
+                },
+                {
+                    "date": 1643272320748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n             \r\n             tmpPull.insertJSON(decksArray[0][keyMe[index]]); \r\n             tmpPull2.insertJSON(decksArray[0][keyMe[index]])\r\n             // debugger;\r\n-            tmpPull.parseMe(); \r\n+            // tmpPull.parseMe(); \r\n             makeMoreDecks(tmpPull[0][keyMe[index]]);       //sending DECKName and DECK TAGS\r\n             // tmp=\"\";\r\n         }\r\n     });\r\n"
+                },
+                {
+                    "date": 1643272420605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n             \r\n             tmpPull.insertJSON(decksArray[0][keyMe[index]]); \r\n             tmpPull2.insertJSON(decksArray[0][keyMe[index]])\r\n             // debugger;\r\n-            // tmpPull.parseMe(); \r\n+            tmpPull.parseMe(); \r\n             makeMoreDecks(tmpPull[0][keyMe[index]]);       //sending DECKName and DECK TAGS\r\n             // tmp=\"\";\r\n         }\r\n     });\r\n"
+                },
+                {
+                    "date": 1643272444685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,9 @@\n             tmpPull.insertJSON(decksArray[0][keyMe[index]]); \r\n             tmpPull2.insertJSON(decksArray[0][keyMe[index]])\r\n             // debugger;\r\n             var holdTmpPull = tmpPull.parseMe(); \r\n+            var \r\n             makeMoreDecks(tmpPull[0][keyMe[index]]);       //sending DECKName and DECK TAGS\r\n             // tmp=\"\";\r\n         }\r\n     });\r\n"
+                },
+                {
+                    "date": 1643272856985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n //     deckArray.push([['name', name], ['TAGS', TAGS]]);\r\n // }\r\n \r\n var decksArray = []; \r\n-var keyMe;  var tmpPull;\r\n+var keyMe;  var tmpPull; var tmpPull2;\r\n async function pullAllDecksToHTML(){\r\n     await prepForPullingJSON();\r\n     decksArray = wholeDocDataPull;\r\n     keyMe = Object.keys(wholeDocDataPull[0]);\r\n"
                 }
             ],
             "date": 1642578758960,
