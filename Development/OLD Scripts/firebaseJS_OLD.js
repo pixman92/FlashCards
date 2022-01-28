@@ -1,3 +1,11 @@
+
+// =================
+
+
+// const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+
+
 // =================
 var db; 
 function firebaseInit(){ 
@@ -41,16 +49,39 @@ function pushData(data){
       console.error("Error adding document: ", error); 
     });
 }   
-
+// =================
+// adding Firebase to project
+// import firebase from 'firebase';
+ 
+// const firebaseConfig = {
+//     apiKey: "AIzaSyBYD67JqdmGaAJpDyj8iLy1e5xXjB4rp-c",
+//     authDomain: "flashcards-ca11e.firebaseapp.com",
+//     projectId: "flashcards-ca11e",
+//     storageBucket: "flashcards-ca11e.appspot.com",
+//     messagingSenderId: "686642076264",
+//     appId: "1:686642076264:web:94d5224c8cf76aeb4779dd"
+//   };
+ 
+ 
+// const firebaseApp = firebase.initializeApp(firebaseConfig);
+ 
+ 
+// // for database 
+// const db = firebaseApp.firestore();
+ 
+// =================
+ 
+// =================
+// basic adding email
 function pushToEmail(newEmail){
     //use this function to push new Email to Firebase 
     pushData({'email': newEmail});
 }
-
+ 
 var userUID = "";
 var savedUIDstr ="";
 async function pullEmailGetUID(emailSearch){
-    //pull based on email address -> fills global variable - containing  - that uses ALL method
+    //pull - that uses ALL method
     // async function pull(_callback){
     var savedArrayUID = []; var savedArrayEmails = [];
     await db.collection(collectionName).get().then((querySnapshot) => {
@@ -82,11 +113,11 @@ function pullEmailGetUIDWhere(emailSearch){
         console.log("Error getting documents: ", error);
     });
 }
-
+ 
 var foundMe = false;
 //helper function
 function runningThroughSavedArrays(savedArrayEmails, savedArrayUID, emailSearch){
-    //helper function - that takes the arrays, and runs through them
+    //function that takes the arrays, and runs through them
     //to find the corresponding email
     savedArrayEmails.forEach((item, index)=>{
         // console.log(item) 
@@ -105,9 +136,9 @@ function runningThroughSavedArrays(savedArrayEmails, savedArrayUID, emailSearch)
         }
     });
 }
-
-// ==========End of Search (by email) functions===================
-
+ 
+ 
+//=================
 var wholeDocDataPull = [];
 async function pullDataBasedOnUID(){
     //pulls based on a found 'savedUIDstr'
@@ -121,7 +152,7 @@ async function pullDataBasedOnUID(){
         console.log('Errored out at, ', err);
     }
 }
-
+ 
 function addToFirebaseBasedOnUID(objName, dataString){
     //pushes custom obj - using <objName> & <dataString>
     // to make custom obj, that is pushed to a record - found by UID
@@ -142,3 +173,5 @@ function addToFirebaseBasedOnUID(objName, dataString){
     }
  
 }
+ 
+// ==================================

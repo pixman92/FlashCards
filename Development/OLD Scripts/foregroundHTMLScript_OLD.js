@@ -1,4 +1,3 @@
-//hiding and showing functions
 var arrayOfClasses = ["firstScreen", "editDeck", "editScreen"];
 function hide() {
     for (var i = 0; i < arrayOfClasses.length; i++) {
@@ -10,7 +9,13 @@ function hide() {
 function show(classIt) {
     document.querySelector("." + classIt).style.display = 'block';
 }
-// =============================
+
+// ==========================================================
+//SUPER important Function - with SUPER important 'deckArray'
+// var deckArray = [];
+// function pushingToDeckArray(name, TAGS){
+//     deckArray.push([['name', name], ['TAGS', TAGS]]);
+// }
 
 var decksArray = []; 
 var keyMe;  var tmpPull; var tmpPull2;
@@ -20,8 +25,10 @@ async function pullAllDecksToHTML(){
     await prepForPullingJSON();
     decksArray = wholeDocDataPull;
     keyMe = Object.keys(wholeDocDataPull[0]);
+    // decksArray = Object.values(wholeDocDataPull[0]);
 
     tmpPull = new JSON_Instance();
+    // tmpPull2 = new JSON_Instance();    
     
     keyMe.forEach((item, index)=>{
         if(item!='email'){
@@ -29,12 +36,15 @@ async function pullAllDecksToHTML(){
             var tmpString = decksArray[0][keyMe[index]];
 
             tmpPull.insertJSON(tmpString); 
+            // tmpPull2.insertJSON(tmpString)
         
             tmpPull.parseMe();
 
             holdingPullArray.push(tmpPull);
 
+            // tmpPull2.parseMe();
             console.log('tmpPull', tmpPull);
+            // debugger;
             tmpPull = new JSON_Instance();
 
         }
@@ -45,47 +55,81 @@ async function pullAllDecksToHTML(){
         //for loop for parsing through ALL Decks from a SINGLE User
         //NO need to slice out EMAIL - already taken care of
 
+        // var holdTmpPull = tmpPull.parseMe(); 
+        // var holdTmpPull2 = tmpPull2.parseMe();
         try{
             makeMoreDecks( holdingPullArray[i].JSONobj.innerArray[0][0][1][1], holdingPullArray[i].JSONobj.innerArray[0][0][4][0][1][0])
         }catch(err){
             console.log('err,', err);
             makeMoreDecks( holdingPullArray[i].JSONobj.innerArray[0][0][1][1], "NONE found");
         }
+        // if(holdingPullArray)
+            // if(holdingPullArray[i].JSONobj.innerArray[0][0][4][0][1][0]==undefined){
+            //     makeMoreDecks(holdingPullArray[i].JSONobj.innerArray[0][0][1][1], "None Found" );       //sending DECKName and DECK TAGS
+            // }else{
+            //     makeMoreDecks( holdingPullArray[i].JSONobj.innerArray[0][0][1][1], holdingPullArray[i].JSONobj.innerArray[0][0][4][0][1][0])
+            // }
+        // }catch(err){
+        //     console.log('Sorry ', err);
+        // }
+    
+        // tmpPull = new JSON_Instance();
+        // tmpPull2 = new JSON_Instance();   
     }
 }
 // ==========================================================
 
-var indexOfBoxes;
-function addBoxesToHTML(indexOfBoxes, questionText, answerText){
-    //boxes HTML - to be made with 'https://url-decode.com/tool/create-array-js'
-    // adding Q/As boxes - with delete button
 
-    //these boxes don't have to be clickable
-    //just a save button at the end
-    //and save button
+async function makeDeckNameHTML(){
+    // MAKE Sure to pull myJSONFlCardPULLED data
+
+    //pushes TITLE to HTML header
+    // await $('.deckNameText').html(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1])
+    document.getElementsByClassName('deckNameText')[0].innerHTML = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1];
+    console.log('myJSON',   );
+} 
+
+async function makeTagsHTML(){
+    // MAKE Sure to pull myJSONFlCardPULLED data
+    $('.TAGS').html(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0]);
+}
+
+function makeEditMode(){
+
+}
+
+//=============================
+var indexOfBoxes;
+function addBoxesToHTML
+(indexOfBoxes, questionText, answerText){
+    // adding Q/As boxes - with delete button
  
     $('.addingCards').html($('.addingCards').html()+['<div class="gridMe centerHorizontally3 marginBottom">','<div class="questionText"><textarea class="widthFull ',indexOfBoxes,'">', questionText, '</textarea></div>','<div class="answerText"><textarea class="widthFull">', answerText, '</textarea></div>','<div class="deleteButton ', indexOfBoxes,'"><button>x</button></div></div>'].join(''));
 }
 
-// TODO 
-function makeAddingSaveButton(){
-    //function that makes the save button
-    //when clicked on it, it will save to local and save to Firebase
+// =================
+function editDeck(){
+    $('.deckHeaderEditScreen').html(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1]);
+
+    
+    $('.tagsEditScreen').html(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][4][0][1][0].join(', '));
+
+    $('.scorePercent').html(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][1]);
+
+
+
 }
 
-//TODO 
-function makeStudyDIV(){
+// =============================
 
+var keepingArray = [];
+function clickable(index){
+    $('.deckNameText'+index).on('click', ()=>{
+        keepingArray.push($('.deckNameText'+index).text());;           //saving text before edit
+        console.log('keepingArray', keepingArray);
+    });
 }
 
-// TODO
-function studyDIVPage(){
-    // display question/answer (on click)
-    // know it/don't know it
-
-    //next Q/A
-    //score - overall - deck
-}
 
 
 // =============================
@@ -188,6 +232,14 @@ function deckName(event){
 
 
 // =============================
+// DONE - edit Deck obj info - logic works
+// TODO - edit Deck obj info - tap to edit
+// TODO - edit Deck obj info - CSS styling
+
+// =============================
+// Making More Decks!!!
+// TODO - deck colors! if be
+
 var sendingHTMLSTring = "";
 function makeMoreDecks(deckName, deckTags, index){
     // deckArray.forEach((item, index)=>{
@@ -221,3 +273,7 @@ function makeMoreDecks(deckName, deckTags, index){
 
     $('.boxMeCards').html($('.boxMeCards').html()+ sendingHTMLSTring);
 }
+
+
+
+// =============================

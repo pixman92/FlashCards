@@ -9,7 +9,7 @@ window.onload = ()=>{
     // addQuestionAddAnswer('favorite hobby?', 'programming')
     runMyCSS();
     hide();
-    show('firstScreen');
+    show('editScreen');
 
     // pushingToDeckArray('Spanish', 'language, understanding, awesomeness')
     // pushingToDeckArray('math', 'hard')

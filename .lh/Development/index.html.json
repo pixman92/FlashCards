@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 132,
+            "activePatchIndex": 135,
             "patches": [
                 {
                     "date": 1642578608394,
@@ -536,6 +536,18 @@
                 {
                     "date": 1643252282567,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,8 @@\n <script src=\"firebaseJS.js\"></script>\r\n <script src=\"backgroundLogicScript.js\"></script>\r\n <script src=\"foregroundHTMLScript.js\"></script>\r\n <script src=\"sytlingNEW.js\"></script>\r\n-<script src=\"refactorDecks.js\"></script>\r\n \r\n \r\n <!-- =================== -->\r\n <body>\r\n"
+                },
+                {
+                    "date": 1643353134562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,8 +53,9 @@\n <script src=\"firebaseJS.js\"></script>\r\n <script src=\"backgroundLogicScript.js\"></script>\r\n <script src=\"foregroundHTMLScript.js\"></script>\r\n <script src=\"sytlingNEW.js\"></script>\r\n+<script src=\"backgroundToForeground.js\"></script>\r\n \r\n \r\n <!-- =================== -->\r\n <body>\r\n"
+                },
+                {
+                    "date": 1643353526602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n <script src=\"firebaseJS.js\"></script>\r\n <script src=\"backgroundLogicScript.js\"></script>\r\n <script src=\"foregroundHTMLScript.js\"></script>\r\n <script src=\"sytlingNEW.js\"></script>\r\n-<script src=\"backgroundToForeground.js\"></script>\r\n+<script src=\"fromBackgroundToForeground.js\"></script>\r\n \r\n \r\n <!-- =================== -->\r\n <body>\r\n"
+                },
+                {
+                    "date": 1643353626692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -108,9 +108,9 @@\n \r\n     <!-- TODO - save button -->\r\n \r\n     <!-- ===========EDIT DECK INFO================== -->\r\n-\r\n+    <!-- what button to use to get here?? -->\r\n     <div class=\"editDeck\">\r\n         <div class=\"name\">\r\n           <div class=\"deckHeaderEditScreen\"><div class=\"deckName\">\r\n               Deck 1</div>\r\n"
                 }
             ],
             "date": 1642578608394,

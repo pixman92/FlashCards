@@ -1,3 +1,9 @@
+
+// Account Setup:
+// email: is the Account holder
+// history/math/etc: deckNames
+//
+
 // 2 Functions - 1 goes up. 1 pulls down
 function prepForSendingJSON(){
     makeInstanceFlashCards();
@@ -11,31 +17,32 @@ function prepForSendingJSON(){
 }
 async function tmp(){}
 
-var emailSearch;
-
 async function prepForPullingJSON(){
     emailSearch = "sam@gmail.com"; deckName = 'alegra';
     await tmp(()=>{}).then(async()=>{
-        await getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName).then(async()=>{
-            await makeFlashCardPulledInstance().then(async()=>{
-        })
-        })});
+        await makeFlashCardPulledInstance().then(async()=>{
+            await getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName)
+        });
+
+                // await saveDeckObjInfo();
+        // }).then(async()=>{
+                // await makeTagsHTML();    
+        });
 // });
 }
 
-// ===========End of Send/Receive Decks functions==================
+
+//=============================
 
 var myJSONFlashCards;       // global variable for 'pushed' variable
 
-// =============================
+
+//creates the myJSONFlashCards instance
 function makeInstanceFlashCards(){
-    //creates the myJSONFlashCards instance
-    myJSONFlashCards = new JSON_Instance();
+  myJSONFlashCards = new JSON_Instance();
 }
 
-// =============================
 function makingEmail(){
-    //makes email UID path, first off - for creating a collection in Firebase
     pushToEmail('sam@gmail.com');
 }
 function firstIndex(title){
@@ -71,6 +78,7 @@ async function pushFlashCardData(){
     addToFirebaseBasedOnUID(myJSONFlashCards.JSONobj.innerArray[0][0][1][1], myJSONFlashCards.stringMe())
 
 }
+
 // =============================
 async function changeName(newName){
     //function that changes the name of give Deck
@@ -80,17 +88,10 @@ async function changeName(newName){
     addToFirebaseBasedOnUID(newName, myJSONFlashCards.stringMe())
 }
 
-// TODO - delete old NAME
-async function deleteMyKeyThenChangeToNewName(){
-        //pulls all DECK data from a single USER
 
-        await prepForPullingJSON();
-        decksArray = wholeDocDataPull;
-        keyMe = Object.keys(wholeDocDataPull[0]);
-}
-// =============================
 
-// BIG list of functions that pull Firebase OBJ data
+// =================
+
 var values = [];
 var myJSONFlashCardsPULLED = {}; 
 var allDeckArrays = [];
@@ -164,4 +165,68 @@ async function searchForEmailGetUID(emailSearch){
         });
     });
 
+}
+// ==========================================================
+function addQuestionAddAnswerToPullFlashCards(question, answer){
+    //function to add questions to PULLED OBJ
+    myJSONFlashCardsPULLED.addToObj([[[0], [['question', question], ['answer', answer], ['score', -1]]]])
+    myJSONFlashCardsPULLED.print();
+
+    
+    addToFirebaseBasedOnUID(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1], myJSONFlashCardsPULLED.stringMe())       //this code adds back, with NEW Q/As
+}
+function pullFlashCardsManipulateTAGS(TAGMe){
+    //this is the Indexing - to get to TAGS within the first element of Flash Card data
+    if(myJSONFlashCardsPULLED){
+        myTagsArray = myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0];
+    
+        myTagsArray.push(TAGMe);
+        myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][3][0][1][0] = myTagsArray;
+        
+        pushFlashCardDataAfterEdit();
+    }else{
+        console.log('Destination - Undefined');
+    }
+}
+
+function changeScore(index, newScore){
+    if(index!=0){
+        myJSONFlashCardsPULLED.JSONobj.innerArray[index][0][2][1] = newScore;
+    
+        pushFlashCardDataAfterEdit();
+    }else{
+        console.log('Cannot manipulate 0th index - RESTRICTED AREA -');
+    }
+}
+
+
+function deleteAQuestion(index){
+    if(index!=0){
+        myJSONFlashCardsPULLED.JSONobj.innerArray.splice(index, 1);
+        pushFlashCardDataAfterEdit();
+    }else{
+        console.log('Cannot delete 0th index, RESTRICTED AREA');
+    }
+
+}
+
+//=============================
+async function pushFlashCardDataAfterEdit(){
+    await pullEmailGetUID('sam@gmail.com')
+    // saves title and data
+    // to be pushed to Firebase
+
+    //title, JSON.stringMe() - my own JSON.stringify
+    addToFirebaseBasedOnUID(myJSONFlashCardsPULLED.JSONobj.innerArray[0][0][1][1], myJSONFlashCardsPULLED.stringMe())
+}
+
+// =============================
+async function pullAllDocData(emailSearch){
+    //function to get ALL 'key' data from Firebase Decks
+    // essentially DeckNames
+    await searchForEmailGetUID(emailSearch);        //found local
+    await pullDataBasedOnUID();  
+    console.log('wholeDocDataPull', wholeDocDataPull);
+    var keys = Object.keys(wholeDocDataPull[0]);
+    console.log('keys!', keys);
 }
