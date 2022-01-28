@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 11,
+            "activePatchIndex": 12,
             "patches": [
                 {
                     "date": 1642578822132,
@@ -52,6 +52,10 @@
                 {
                     "date": 1643268272985,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,12 +10,12 @@\n     runMyCSS();\r\n     hide();\r\n     show('firstScreen');\r\n \r\n-    pushingToDeckArray('Spanish', 'language, understanding, awesomeness')\r\n-    pushingToDeckArray('math', 'hard')\r\n-    pushingToDeckArray('science', 'hard, disappointing')\r\n-    makeMoreDecks();\r\n+    // pushingToDeckArray('Spanish', 'language, understanding, awesomeness')\r\n+    // pushingToDeckArray('math', 'hard')\r\n+    // pushingToDeckArray('science', 'hard, disappointing')\r\n+    // makeMoreDecks();\r\n     // makeThemEditable(0);\r\n \r\n \r\n };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1643352275024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,12 @@\n     // pushingToDeckArray('math', 'hard')\r\n     // pushingToDeckArray('science', 'hard, disappointing')\r\n     // makeMoreDecks();\r\n     // makeThemEditable(0);\r\n+    pullAllDecksToHTML()\r\n+    makeInstanceFlashCards()\r\n+    firstIndex('algebra')\r\n+    addQuestionAddAnswerToPushFlashCards('where to begin?', 'x+y');\r\n+    addQuestionAddAnswerToPushFlashCards('does x = this?' , 'nope');\r\n+    pushFlashCardsManipulateTAGS('math', 'working', 'learning')\r\n \r\n-\r\n };\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1642578822132,

@@ -18,17 +18,17 @@ function prepForSendingJSON(){
 async function tmp(){}
 
 async function prepForPullingJSON(){
-    emailSearch = "sam@gmail.com"; deckName = 'history';
+    emailSearch = "sam@gmail.com"; deckName = 'alegra';
     await tmp(()=>{}).then(async()=>{
-        await getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName).then(async()=>{
+        await makeFlashCardPulledInstance().then(async()=>{
+            await getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName)
+        });
+
                 // await saveDeckObjInfo();
         // }).then(async()=>{
                 // await makeTagsHTML();    
         });
-});
-
-
-
+// });
 }
 
 
@@ -63,7 +63,7 @@ function pushFlashCardsManipulateTAGS(tagsArray){
         function run(){
             holdingArr = Array.from(arguments);
         }
-        myJSONFlashCards.JSONobj.innerArray[0][0].push([['TAGS', holdingArr]]);
+        myJSONFlashCards.JSONobj.innerArray[0][0][4] =[['TAGS', holdingArr]];
         // myJSONFlashCards.addToObj([[[0], holdingArr]]);
     }else{
         console.log('Destination - undefined!');
@@ -77,6 +77,15 @@ async function pushFlashCardData(){
     // to be pushed to Firebase
     addToFirebaseBasedOnUID(myJSONFlashCards.JSONobj.innerArray[0][0][1][1], myJSONFlashCards.stringMe())
 
+}
+
+// =============================
+async function changeName(newName){
+    //function that changes the name of give Deck
+    //save same deck, new name/delete old Deck
+
+    await pullEmailGetUID('sam@gmail.com')
+    addToFirebaseBasedOnUID(newName, myJSONFlashCards.stringMe())
 }
 
 

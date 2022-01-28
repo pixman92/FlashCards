@@ -16,6 +16,11 @@ window.onload = ()=>{
     // pushingToDeckArray('science', 'hard, disappointing')
     // makeMoreDecks();
     // makeThemEditable(0);
-
+    pullAllDecksToHTML()
+    makeInstanceFlashCards()
+    firstIndex('algebra')
+    addQuestionAddAnswerToPushFlashCards('where to begin?', 'x+y');
+    addQuestionAddAnswerToPushFlashCards('does x = this?' , 'nope');
+    pushFlashCardsManipulateTAGS('math', 'working', 'learning')
 
 };

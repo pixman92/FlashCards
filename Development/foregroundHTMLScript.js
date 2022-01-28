@@ -19,32 +19,63 @@ function show(classIt) {
 
 var decksArray = []; 
 var keyMe;  var tmpPull; var tmpPull2;
+var holdingPullArray=[];
 async function pullAllDecksToHTML(){
+    //pulls all DECK data from a single USER
     await prepForPullingJSON();
     decksArray = wholeDocDataPull;
     keyMe = Object.keys(wholeDocDataPull[0]);
     // decksArray = Object.values(wholeDocDataPull[0]);
 
     tmpPull = new JSON_Instance();
-    tmpPull2 = new JSON_Instance();    
+    // tmpPull2 = new JSON_Instance();    
     
-    decksArray.forEach((item, index)=>{
+    keyMe.forEach((item, index)=>{
         if(item!='email'){
             console.log('item', decksArray[0][keyMe[index]]);
-            
-            tmpPull.insertJSON(decksArray[0][keyMe[index]]); 
-            tmpPull2.insertJSON(decksArray[0][keyMe[index]])
+            var tmpString = decksArray[0][keyMe[index]];
+
+            tmpPull.insertJSON(tmpString); 
+            // tmpPull2.insertJSON(tmpString)
         
+            tmpPull.parseMe();
+
+            holdingPullArray.push(tmpPull);
+
+            // tmpPull2.parseMe();
             console.log('tmpPull', tmpPull);
             // debugger;
-            tmpPull.parseMe();
-            tmpPull2.parseMe();
-            // var holdTmpPull = tmpPull.parseMe(); 
-            // var holdTmpPull2 = tmpPull2.parseMe();
-            makeMoreDecks(tmpPull.JSONobj.innerArray[0][0][1][1], );       //sending DECKName and DECK TAGS
-            // tmp="";
+            tmpPull = new JSON_Instance();
+
         }
     });
+
+    // holdingPullArray.forEach((item, index)=>{
+    for(var i=0; i<holdingPullArray.length; i++){
+        //for loop for parsing through ALL Decks from a SINGLE User
+        //NO need to slice out EMAIL - already taken care of
+
+        // var holdTmpPull = tmpPull.parseMe(); 
+        // var holdTmpPull2 = tmpPull2.parseMe();
+        try{
+            makeMoreDecks( holdingPullArray[i].JSONobj.innerArray[0][0][1][1], holdingPullArray[i].JSONobj.innerArray[0][0][4][0][1][0])
+        }catch(err){
+            console.log('err,', err);
+            makeMoreDecks( holdingPullArray[i].JSONobj.innerArray[0][0][1][1], "NONE found");
+        }
+        // if(holdingPullArray)
+            // if(holdingPullArray[i].JSONobj.innerArray[0][0][4][0][1][0]==undefined){
+            //     makeMoreDecks(holdingPullArray[i].JSONobj.innerArray[0][0][1][1], "None Found" );       //sending DECKName and DECK TAGS
+            // }else{
+            //     makeMoreDecks( holdingPullArray[i].JSONobj.innerArray[0][0][1][1], holdingPullArray[i].JSONobj.innerArray[0][0][4][0][1][0])
+            // }
+        // }catch(err){
+        //     console.log('Sorry ', err);
+        // }
+    
+        // tmpPull = new JSON_Instance();
+        // tmpPull2 = new JSON_Instance();   
+    }
 }
 // ==========================================================
 
@@ -243,3 +274,16 @@ function makeMoreDecks(deckName, deckTags, index){
     $('.boxMeCards').html($('.boxMeCards').html()+ sendingHTMLSTring);
 }
 
+
+
+// =============================
+function exhangeFromPulledObjToLocalObj(){
+    str = holdingPullArray[0].stringMe()        //pulls a String cast of the JSONobj
+
+    makeInstanceFlashCards()        //to make a new global FlashCard obj
+
+    myJSONFlashCards.insertJSON(str)        //push the 'str' variable to the new instance
+    myJSONFlashCards.parseMe()              //make it into objs
+
+    pushFlashCardsManipulateTAGS(['time will tell', 'nope', 'peace'])
+}

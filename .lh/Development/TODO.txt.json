@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1643243836032,
@@ -12,6 +12,14 @@
                 {
                     "date": 1643267545283,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,6 @@\n \r\n \r\n \r\n https://url-decode.com/tool/create-array-js\r\n-take plain HTML => converts to JS Array => add .join(\"\") at the end, and plop it into program!\n\\ No newline at end of file\n+take plain HTML => converts to JS Array => add .join(\"\") at the end, and plop it into program!\r\n+\r\n"
+                },
+                {
+                    "date": 1643324674951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,4 +10,12 @@\n \r\n https://url-decode.com/tool/create-array-js\r\n take plain HTML => converts to JS Array => add .join(\"\") at the end, and plop it into program!\r\n \r\n+\r\n+=============================\r\n+str = holdingPullArray[0].stringMe()        //pulls a String cast of the JSONobj\r\n+\r\n+makeInstanceFlashCards()        //to make a new global FlashCard obj\r\n+\r\n+myJSONFlashCards.insertJSON(str)        //push the 'str' variable to the new instance\r\n+myJSONFlashCards.parseMe()              //make it into objs\r\n"
+                },
+                {
+                    "date": 1643327185395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,4 +18,6 @@\n makeInstanceFlashCards()        //to make a new global FlashCard obj\r\n \r\n myJSONFlashCards.insertJSON(str)        //push the 'str' variable to the new instance\r\n myJSONFlashCards.parseMe()              //make it into objs\r\n+\r\n+pushFlashCardsManipulateTAGS(['time will tell', 'nope', 'peace'])\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1643243836032,

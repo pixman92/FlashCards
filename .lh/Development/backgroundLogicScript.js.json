@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 15,
             "patches": [
                 {
                     "date": 1643268388466,
@@ -24,6 +24,50 @@
                 {
                     "date": 1643269078332,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,8 +84,9 @@\n // =================\r\n \r\n var values = [];\r\n var myJSONFlashCardsPULLED = {}; \r\n+var allDeckArrays = [];\r\n async function getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName){\r\n     // function to make a new instance OBJ, that will hold pulled JSON Data\r\n     // pushes out JSON data (my custom) - to myJSONFlashCardsPULLED\r\n     \r\n"
+                },
+                {
+                    "date": 1643324999483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n         run(tagsArray);\r\n         function run(){\r\n             holdingArr = Array.from(arguments);\r\n         }\r\n-        myJSONFlashCards.JSONobj.innerArray[0][0].push([['TAGS', holdingArr]]);\r\n+        myJSONFlashCards.JSONobj.innerArray[0][4] =[['TAGS', holdingArr]];\r\n         // myJSONFlashCards.addToObj([[[0], holdingArr]]);\r\n     }else{\r\n         console.log('Destination - undefined!');\r\n     }\r\n"
+                },
+                {
+                    "date": 1643325130922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n         run(tagsArray);\r\n         function run(){\r\n             holdingArr = Array.from(arguments);\r\n         }\r\n-        myJSONFlashCards.JSONobj.innerArray[0][4] =[['TAGS', holdingArr]];\r\n+        myJSONFlashCards.JSONobj.innerArray[0][0][4] =[['TAGS', holdingArr]];\r\n         // myJSONFlashCards.addToObj([[[0], holdingArr]]);\r\n     }else{\r\n         console.log('Destination - undefined!');\r\n     }\r\n"
+                },
+                {
+                    "date": 1643325337593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,10 +78,19 @@\n     addToFirebaseBasedOnUID(myJSONFlashCards.JSONobj.innerArray[0][0][1][1], myJSONFlashCards.stringMe())\r\n \r\n }\r\n \r\n+// =============================\r\n+function changeName(newName){\r\n+    //function that changes the name of give Deck\r\n+    //save same deck, new name/delete old Deck\r\n \r\n+    await pullEmailGetUID('sam@gmail.com')\r\n+    addToFirebaseBasedOnUID(myJSONFlashCards.JSONobj.innerArray[0][0][1][1], myJSONFlashCards.stringMe())\r\n+}\r\n \r\n+\r\n+\r\n // =================\r\n \r\n var values = [];\r\n var myJSONFlashCardsPULLED = {}; \r\n"
+                },
+                {
+                    "date": 1643325343051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,9 +84,9 @@\n     //function that changes the name of give Deck\r\n     //save same deck, new name/delete old Deck\r\n \r\n     await pullEmailGetUID('sam@gmail.com')\r\n-    addToFirebaseBasedOnUID(myJSONFlashCards.JSONobj.innerArray[0][0][1][1], myJSONFlashCards.stringMe())\r\n+    addToFirebaseBasedOnUID(newName, myJSONFlashCards.stringMe())\r\n }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1643325366427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,9 +79,9 @@\n \r\n }\r\n \r\n // =============================\r\n-function changeName(newName){\r\n+async function changeName(newName){\r\n     //function that changes the name of give Deck\r\n     //save same deck, new name/delete old Deck\r\n \r\n     await pullEmailGetUID('sam@gmail.com')\r\n"
+                },
+                {
+                    "date": 1643327593653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n }\r\n async function tmp(){}\r\n \r\n async function prepForPullingJSON(){\r\n-    emailSearch = \"sam@gmail.com\"; deckName = 'history';\r\n+    emailSearch = \"sam@gmail.com\"; deckName = 'alegra';\r\n     await tmp(()=>{}).then(async()=>{\r\n         await getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName).then(async()=>{\r\n                 // await saveDeckObjInfo();\r\n         // }).then(async()=>{\r\n"
+                },
+                {
+                    "date": 1643327654712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n }\r\n async function tmp(){}\r\n \r\n async function prepForPullingJSON(){\r\n+    makeFlashCardPulledInstance();\r\n     emailSearch = \"sam@gmail.com\"; deckName = 'alegra';\r\n     await tmp(()=>{}).then(async()=>{\r\n         await getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName).then(async()=>{\r\n                 // await saveDeckObjInfo();\r\n"
+                },
+                {
+                    "date": 1643327744726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,12 +17,14 @@\n }\r\n async function tmp(){}\r\n \r\n async function prepForPullingJSON(){\r\n-    makeFlashCardPulledInstance();\r\n     emailSearch = \"sam@gmail.com\"; deckName = 'alegra';\r\n     await tmp(()=>{}).then(async()=>{\r\n-        await getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName).then(async()=>{\r\n+        await makeFlashCardPulledInstance().then(async()=>{\r\n+            await getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName)\r\n+        })\r\n+\r\n                 // await saveDeckObjInfo();\r\n         // }).then(async()=>{\r\n                 // await makeTagsHTML();    \r\n         });\r\n"
+                },
+                {
+                    "date": 1643351572941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n                 // await saveDeckObjInfo();\r\n         // }).then(async()=>{\r\n                 // await makeTagsHTML();    \r\n         });\r\n-});\r\n+// });\r\n \r\n \r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1643352176456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,11 +28,8 @@\n         // }).then(async()=>{\r\n                 // await makeTagsHTML();    \r\n         });\r\n // });\r\n-\r\n-\r\n-\r\n }\r\n \r\n \r\n //=============================\r\n"
+                },
+                {
+                    "date": 1643352195130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     emailSearch = \"sam@gmail.com\"; deckName = 'alegra';\r\n     await tmp(()=>{}).then(async()=>{\r\n         await makeFlashCardPulledInstance().then(async()=>{\r\n             await getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName)\r\n-        })\r\n+        });\r\n \r\n                 // await saveDeckObjInfo();\r\n         // }).then(async()=>{\r\n                 // await makeTagsHTML();    \r\n"
                 }
             ],
             "date": 1643268388466,
