@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 29,
+            "activePatchIndex": 32,
             "patches": [
                 {
                     "date": 1643268388466,
@@ -124,6 +124,18 @@
                 {
                     "date": 1643354673846,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,11 @@\n \r\n async function prepForPullingJSON(){\r\n     emailSearch = \"sam@gmail.com\"; deckName = 'alegra';\r\n     await tmp(()=>{}).then(async()=>{\r\n-        await makeFlashCardPulledInstance().then(async()=>{\r\n-            await getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName)\r\n+        await getDataFromFirebaseToAddToJSONInstance(emailSearch, deckName).then(async()=>{\r\n+            await makeFlashCardPulledInstance().then(async()=>{\r\n+        })\r\n         })});\r\n // });\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1643354970151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,9 +104,9 @@\n             await searchForEmailGetUID(emailSearch);        //found local\r\n             await pullDataBasedOnUID();                     //found in script.js\r\n             await makeFlashCardPulledInstance();            //found local\r\n             await pushToRetrieveLocalVariable(deckName);    //found local\r\n-            myJSONFlashCardsPULLED.parseMe();\r\n+            // myJSONFlashCardsPULLED.parseMe();\r\n         });\r\n     \r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1643355090521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,9 +104,9 @@\n             await searchForEmailGetUID(emailSearch);        //found local\r\n             await pullDataBasedOnUID();                     //found in script.js\r\n             await makeFlashCardPulledInstance();            //found local\r\n             await pushToRetrieveLocalVariable(deckName);    //found local\r\n-            // myJSONFlashCardsPULLED.parseMe();\r\n+            myJSONFlashCardsPULLED.parseMe();\r\n         });\r\n     \r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1643355103810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -108,36 +108,38 @@\n             myJSONFlashCardsPULLED.parseMe();\r\n         });\r\n     \r\n     }\r\n+    \r\n+}\r\n \r\n     // =============================\r\n-    async function tmp(){}\r\n-    async function makeFlashCardPulledInstance(){\r\n-        myJSONFlashCardsPULLED = new JSON_Instance();\r\n-    }\r\n-    // =============================\r\n+async function tmp(){}\r\n+async function makeFlashCardPulledInstance(){\r\n+    myJSONFlashCardsPULLED = new JSON_Instance();\r\n+}\r\n+// =============================\r\n+\r\n+async function pushToRetrieveLocalVariable(entryName){\r\n+    var keys = Object.keys(wholeDocDataPull[0]);\r\n+    values = Object.values(wholeDocDataPull[0]);\r\n+\r\n+    console.log('keys', keys);\r\n+    console.log('values', values);\r\n+\r\n+    var savedIndex = -1;\r\n+    keys.forEach((item, index)=>{\r\n+        console.log('item', item);\r\n+        if(item == entryName){\r\n+            savedIndex = index;\r\n+            console.log('found index', index);\r\n+        }\r\n+    });\r\n+\r\n+    myJSONFlashCardsPULLED.insertJSON(values[savedIndex])\r\n+}\r\n     \r\n-    async function pushToRetrieveLocalVariable(entryName){\r\n-        var keys = Object.keys(wholeDocDataPull[0]);\r\n-        values = Object.values(wholeDocDataPull[0]);\r\n-    \r\n-        console.log('keys', keys);\r\n-        console.log('values', values);\r\n-    \r\n-        var savedIndex = -1;\r\n-        keys.forEach((item, index)=>{\r\n-            console.log('item', item);\r\n-            if(item == entryName){\r\n-                savedIndex = index;\r\n-                console.log('found index', index);\r\n-            }\r\n-        });\r\n-    \r\n-        myJSONFlashCardsPULLED.insertJSON(values[savedIndex])\r\n-    }\r\n-    \r\n-}\r\n+\r\n async function searchForEmailGetUID(emailSearch){\r\n     var savedArrayUID = []; var savedArrayEmails = [];\r\n     await db.collection(collectionName).get().then(async (querySnapshot) => {\r\n         await querySnapshot.forEach(async (doc) => {\r\n"
                 }
             ],
             "date": 1643268388466,
